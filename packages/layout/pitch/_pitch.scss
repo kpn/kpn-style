@@ -1,0 +1,98 @@
+@import "pitch.abstract";
+
+#{$pitch} {
+  $pitch-arrow-size: 20px;
+  background-color: color(gray, subtle);
+  margin-bottom: space(3);
+  position: relative;
+
+  &::after {
+    border: solid transparent;
+    border-top-color: color(gray, subtle);
+    border-width: $pitch-arrow-size;
+    content: "";
+    height: 0;
+    left: calc(50% - #{$pitch-arrow-size});
+    position: absolute;
+    top: 100%;
+    width: 0;
+    z-index: 1;
+  }
+
+  + #{$pitch},
+  &#{$pitch}--next {
+    margin-top: space(-3);
+    padding-top: $pitch-arrow-size;
+  }
+
+  &#{$pitch}--green {
+    color: color(grey, white);
+    background-color: color(green);
+
+    &::after {
+      border-top-color: color(green);
+    }
+
+    #{$pitch}__title {
+      color: color(grey, white);
+    }
+  }
+
+  &#{$pitch}--blue {
+    color: color(grey, white);
+    background-color: color(blue);
+
+    &::after {
+      border-top-color: color(blue);
+    }
+
+    #{$pitch}__title {
+      color: color(grey, white);
+    }
+  }
+
+  &#{$pitch}--white {
+    background-color: color(grey, white);
+
+    &::after {
+      border-top-color: color(grey, white);
+    }
+  }
+
+  &#{$pitch}--limited {
+    #{$pitch}__body {
+      max-width: screen(l);
+    }
+  }
+
+  &#{$pitch}--centered {
+    #{$pitch}__body {
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  &#{$pitch}--last::after {
+    border: none;
+  }
+
+  #{$pitch}__body {
+    @include container(x);
+    padding-bottom: space(4);
+    padding-top: space(4);
+  }
+
+  #{$pitch}__title {
+    @include heading;
+    color: color(green);
+    font-size: $pitch-title-font-size;
+    font-weight: 300;
+    margin-bottom: space(3);
+  }
+
+  #{$pitch}__visual {
+    display: inline-block;
+    height: auto;
+    width: 100%;
+  }
+}

@@ -1,0 +1,194 @@
+@import "button.abstract";
+
+#{$button},
+.kpn-style button:not([class]) {
+  @include ellipsis;
+  @include reset-button;
+  background-color: color(blue);
+  border-radius: $button-height-m / 2;
+  border: 1px solid color(blue);
+  color: color(grey, white);
+  font-size: $button-font-size-m;
+  height: $button-height-m;
+  justify-content: center;
+  padding: 0 space(3);
+
+  &:not(#{$button}--disabled):not([disabled]):hover {
+    background-color: color(blue, dark);
+    border-color: color(blue, dark);
+  }
+
+  &:focus {
+    border-color: color(grey, dark);
+  }
+
+  /**
+   * Elements
+   **/
+  i {
+    font-size: 1.25em;
+    margin-right: space(0.75);
+  }
+
+  /**
+   * Color modifiers
+   **/
+  &#{$button}--disabled,
+  &[disabled] {
+    background-color: color(grey, silver);
+    border-color: color(grey, silver);
+    cursor: default;
+  }
+
+  &#{$button}--secondary {
+    background-color: color(gray, white);
+    border-color: color(blue);
+    color: color(blue, dark);
+
+    &:not(#{$button}--disabled):not([disabled]):hover {
+      border-color: color(blue, dark);
+      color: color(gray, white);
+    }
+
+    &:focus {
+      border-color: color(grey, dark);
+    }
+
+    &#{$button}--disabled,
+    &[disabled] {
+      background-color: color(grey, white);
+      border-color: color(grey, silver);
+      color: color(grey, silver);
+    }
+  }
+
+  &#{$button}--link {
+    background-color: transparent;
+    border-color: transparent;
+    color: color(blue);
+
+    &:not(#{$button}--disabled):not([disabled]):hover {
+      background-color: transparent;
+      border-color: transparent;
+      color: color(blue);
+      text-decoration: underline;
+    }
+
+    &:focus {
+      border-color: color(grey, dark);
+    }
+
+    &#{$button}--disabled,
+    &[disabled] {
+      color: color(grey, silver);
+    }
+  }
+
+  /**
+   * Progress spinner
+   **/
+  $progress-spinner-size: 1.5em !default;
+
+  &#{$button}--spinner {
+    &::before {
+      animation: rotate 0.75s linear infinite;
+      border: 2px solid transparent;
+      border-radius: 50%;
+      border-top-color: currentColor;
+      box-sizing: border-box;
+      content: "";
+      height: 1.5em;
+      margin-left: space(-2);
+      margin-right: space(2);
+      width: 1.5em;
+    }
+  }
+
+  /**
+   * Size modifiers
+   **/
+  &#{$button}--small {
+    border-radius: $button-height-s / 2;
+    height: $button-height-s;
+    font-size: $button-font-size-s;
+    padding: 0 space(2);
+  }
+
+  &#{$button}--large {
+    border-radius: $button-height-l / 2;
+    height: $button-height-l;
+    font-size: $button-font-size-l;
+    padding: 0 space(4);
+  }
+
+  &#{$button}--1 {
+    max-width: 100%;
+    min-width: 8.33%;
+  }
+
+  &#{$button}--2 {
+    max-width: 100%;
+    min-width: 16.67%;
+  }
+
+  &#{$button}--3 {
+    max-width: 100%;
+    min-width: 25%;
+  }
+
+  &#{$button}--4 {
+    max-width: 100%;
+    min-width: 33.33%;
+  }
+
+  &#{$button}--fluid {
+    display: flex;
+    width: 100%;
+  }
+}
+
+#{$button-group} {
+  display: flex;
+  flex-wrap: wrap;
+
+  &#{$button-group}--respond {
+    @include breakpoint(xs, s) {
+      #{$button} {
+        display: flex;
+        // !important used because it will prevent a lot of code to overwrite margin-right in button-group--reverse and button-group--right
+        margin-right: 0 !important;
+        width: 100%;
+      }
+    }
+  }
+
+  &#{$button-group}--right {
+    justify-content: flex-end;
+  }
+
+  &#{$button-group}--reverse {
+    flex-direction: row-reverse;
+
+    #{$button} {
+      &:first-child {
+        margin-right: 0;
+      }
+
+      &:last-child {
+        margin-right: space(2);
+      }
+
+      &:only-child {
+        margin-right: 0;
+      }
+    }
+  }
+
+  #{$button} {
+    margin-bottom: space(2);
+
+    &:not(:last-child) {
+      margin-right: space(2);
+    }
+  }
+}

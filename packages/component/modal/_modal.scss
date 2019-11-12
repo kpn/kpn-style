@@ -1,0 +1,55 @@
+@import "modal.abstract";
+
+#{$modal} {
+  @include border-radius;
+  @include shadow(3);
+  background-color: color(grey, white);
+  display: none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  z-index: 300;
+
+  &#{$modal}--active {
+    display: block;
+  }
+
+  @include breakpoint(xs, s) {
+    left: space();
+    right: space();
+    transform: translateY(-50%);
+  }
+
+  @include breakpoint(s) {
+    transform: translate(-50%, -50%);
+    max-width: screen(l);
+    width: 80vw;
+  }
+
+  #{$modal}__close {
+    @include reset-button;
+    position: absolute;
+    right: space(3);
+    top: space(2);
+
+    &::before {
+      content: $ui-close;
+      font: $ui-font;
+    }
+  }
+
+  #{$modal}__body {
+    box-sizing: border-box;
+    overflow-y: auto;
+    padding: space(4) calc(#{space(4)} + #{$ui-font-size-m}) space(4) space(4);
+
+    @include breakpoint(xs, s) {
+      max-height: calc(100vh - #{space(2)});
+      padding: space(2) calc(#{space(2)} + #{$ui-font-size-m}) space(2) space(2);
+    }
+
+    @include breakpoint(s) {
+      max-height: 80vh;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+#{$label} {
+  display: block;
+  font-weight: 700;
+  margin-bottom: space();
+}
+
+#{$label-for} {
+  align-items: baseline;
+  cursor: pointer;
+  display: inline-flex;
+  margin-bottom: space();
+  margin-right: space(2);
+
+  
+  #{$input} {
+    margin-right: space();
+  }
+}

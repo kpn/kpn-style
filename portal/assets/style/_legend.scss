@@ -1,0 +1,17 @@
+.legend {
+  font-size: 12px;
+
+  .legend__active,
+  .legend__deprecated {
+    padding: 2px space();
+    margin-right: space();
+  }
+
+  .legend__active {
+    background-color: color(blue, subtle);
+  }
+
+  .legend__deprecated {
+    background-color: color(error, light);
+  }
+}

@@ -1,0 +1,20 @@
+// Theme specific
+// @import "../packages/theme/business-market/business-market";
+
+// KPN Style bundle
+@import "../packages/bundle";
+
+// Style guide specific
+@import "./assets/style/code";
+@import "./assets/style/example-color";
+@import "./assets/style/example-icon";
+@import "./assets/style/legend";
+@import "./assets/style/general";
+@import "./assets/style/logo-list";
+
+// Font
+@include font-face("kpn-metric", normal, 300, "./../packages/base/typography", "kpn-metric-light");
+@include font-face("kpn-metric", normal, 400, "./../packages/base/typography", "kpn-metric-normal");
+@include font-face("kpn-metric", normal, 700, "./../packages/base/typography", "kpn-metric-bold");
+@include font-face("kpn-ui-icons", normal, 400, "./../packages/base/ui-icon", "kpn-ui-icons");
+@include font-face("kpn-service-icons", normal, 400, "./../packages/base/service-icon", "kpn-service-icons");

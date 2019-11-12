@@ -1,0 +1,34 @@
+@import "breadcrumb.abstract";
+
+#{$breadcrumb} {
+  @include reset-ul;
+  color: color(grey, medium);
+  margin-bottom: space(3);
+
+  #{$breadcrumb}__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+      &::after {
+        content: $ui-chevron-right;
+        display: inline-block;
+        font: #{$ui-font-size-m}/1.1 $ui-font-family;
+        vertical-align: top;
+      }
+
+      #{$breadcrumb}__link:hover {
+        color: color(blue);
+        text-decoration: underline;
+      }
+    }
+
+    &:last-child #{$breadcrumb}__link {
+      color: color(text);
+      cursor: default;
+    }
+  }
+
+  #{$breadcrumb}__link {
+    @include reset-a;
+  }
+}

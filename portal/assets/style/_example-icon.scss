@@ -1,0 +1,28 @@
+.example-icon {
+  @include reset-ul;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: space(-2);
+
+  .example-icon__item {
+    @include box;
+    background-color: color(grey, white);
+    font-size: 26px;
+    margin-bottom: space(2);
+    margin-left: space(2);
+    padding: space();
+    text-align: center;
+    width: 168px;
+
+    .example-icon__name,
+    .example-icon__deprecated {
+      display: block;
+      font-size: 12px;
+      margin-top: space(0.5);
+    }
+
+    .example-icon__deprecated {
+      background-color: color(error, light);
+    }
+  }
+}

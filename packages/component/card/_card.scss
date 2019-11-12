@@ -1,0 +1,56 @@
+@import "card.abstract";
+
+#{$card} {
+  @include box;
+  background-color: color(grey, white);
+  margin-bottom: $card-margin-bottom;
+  position: relative;
+
+  &#{$card}--stretch {
+    height: calc(100% - #{$card-margin-bottom});
+  }
+
+  /**
+   * Layout elements
+   */
+  #{$card}__header {
+    padding: space(2) space(2) 0;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #{$card}__body {
+    @include trim-child-margin;
+    padding: space(2) space() space(2);
+    margin-left: space();
+    margin-right: space();
+
+    + #{$card}__body {
+      @include border-top;
+    }
+  }
+
+  #{$card}__footer {
+    @include border-top;
+    @include trim-child-margin;
+    padding: space(2) space(2) space(3);
+  }
+
+  /**
+   * Elements
+   */
+  #{$card}__title {
+    @include ellipsis;
+    @include heading;
+    font-size: $card-title-font-size;
+    margin-bottom: space();
+  }
+
+  #{$card}__list {
+    @include reset-ul;
+
+    > li:not(:last-child) {
+      margin-bottom: space(2);
+    }
+  }
+}

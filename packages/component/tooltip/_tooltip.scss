@@ -1,0 +1,52 @@
+@import "tooltip.abstract";
+
+#{$tooltip} {
+  position: relative;
+
+  &#{$tooltip}--active {
+    #{$tooltip}__trigger::before {
+      content: $ui-remove-diap;
+    }
+
+    #{$tooltip}__body {
+      $border-left: 4px;
+      @include border;
+      box-sizing: border-box;
+      display: block;
+      margin-bottom: space();
+      margin-top: space();
+      padding: space() space() space() (space() + $border-left);
+      position: relative;
+
+      &::before {
+        background-color: color(blue);
+        content: "";
+        position: absolute;
+        top: -1px;
+        bottom: -1px;
+        left: 0;
+        width: $border-left;
+      }
+    }
+  }
+
+  #{$tooltip}__trigger {
+    @include reset-button;
+    color: color(blue);
+    display: inline-block;
+    font: $ui-font-size-s $ui-font-family;
+    vertical-align: sub;
+
+    &:hover {
+      color: color(blue, dark);
+    }
+
+    &::before {
+      content: $ui-info-diap;
+    }
+  }
+
+  #{$tooltip}__body {
+    display: none;
+  }
+}

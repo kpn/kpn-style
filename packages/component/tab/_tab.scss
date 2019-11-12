@@ -1,0 +1,33 @@
+@import "tab.abstract";
+
+#{$tab} {
+  background-color: color(grey, white);
+
+  /**
+   * Elements
+   **/
+  #{$tab}__menu {
+    @include border-bottom;
+    @include reset-ul;
+    display: flex;
+    padding-left: space(2);
+    padding-right: space(2);
+  }
+
+  #{$tab}__item:not(:last-child) {
+    margin-right: space(2);
+  }
+
+  #{$tab}__link {
+    @include reset-a;
+    border-bottom: 2px solid transparent;
+    display: block;
+    line-height: 1;
+    padding: space(2) space();
+
+    &#{$tab}__link--active {
+      border-color: color(green);
+      font-weight: 700;
+    }
+  }
+}

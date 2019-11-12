@@ -1,0 +1,57 @@
+@import "accordion.abstract";
+
+#{$accordion} {
+  $padding-chevron: calc(#{$ui-font-size-m} + #{space()});
+  @include reset-ul;
+  margin-bottom: space(3);
+
+  #{$accordion}__item {
+    @include border-top;
+    cursor: pointer;
+    user-select: none;
+
+    &#{$accordion}__item--expanded {
+      #{$accordion}__title {
+        color: color(green);
+
+        &::after {
+          content: $ui-chevron-up;
+        }
+      }
+
+      #{$accordion}__content {
+        height: auto;
+        margin-bottom: space(1.75);
+        padding-right: $padding-chevron;
+      }
+    }
+  }
+
+  #{$accordion}__title {
+    @include heading;
+    font-size: $accordion-title-font-size;
+    margin: 0;
+    padding-bottom: space(1.75);
+    padding-top: space(1.75);
+    padding-right: $padding-chevron;
+    position: relative;
+
+    &::after {
+      content: $ui-chevron-down;
+      font: $ui-font;
+      position: absolute;
+      right: 0;
+      top: calc(50% - 0.5em);
+    }
+
+    &:hover {
+      color: color(blue);
+    }
+  }
+
+  #{$accordion}__content {
+    @include trim-child-margin;
+    height: 0;
+    overflow: hidden;
+  }
+}

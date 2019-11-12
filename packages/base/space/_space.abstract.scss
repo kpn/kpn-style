@@ -1,0 +1,6 @@
+// Space base for a.o. padding and margin
+$space-base: 8px !default;
+
+@function space($multiplier: 1) {
+  @return $space-base * $multiplier;
+}

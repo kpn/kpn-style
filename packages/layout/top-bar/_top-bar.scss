@@ -1,0 +1,150 @@
+@import "top-bar.abstract";
+
+#{$top-bar} {
+  @include container(x);
+  align-items: center;
+  background-color: color(grey, white);
+  box-sizing: border-box;
+  display: flex;
+  font-size: $top-bar-font-size;
+  height: $top-bar-height;
+
+  @include breakpoint(xs, m) {
+    @include shadow();
+  }
+
+  #{$top-bar}__logo {
+    display: block;
+    margin-right: space(2);
+
+    img {
+      display: block;
+      height: $top-bar-logo-height;
+      margin-top: -4px; // Icon and text in KPN logo is not centered. Needed this correction to align with the other elements in the header
+    }
+  }
+
+  #{$top-bar}__title {
+    color: color(green);
+    margin-right: space(3);
+    text-decoration: none;
+
+    @include breakpoint(xs, m) {
+      display: none;
+    }
+  }
+
+  /**
+   * Menu, item and link
+   *
+   * The item and link structure is the same as Mega menu to keep code consistent
+   **/
+  #{$top-bar}__menu {
+    @include reset-ul;
+    display: flex;
+    margin-left: auto;
+
+    #{$top-bar}__item {
+      position: relative; // For action menu and border-bottom
+      height: $top-bar-height;
+
+      &:not(:first-child) {
+        margin-left: space(0.5);
+      }
+
+      &#{$top-bar}__item--trigger {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        padding-left: space();
+        user-select: none;
+
+        &::before {
+          content: $ui-menu;
+          font: $ui-font;
+          vertical-align: sub;
+        }
+
+        @include breakpoint(m) {
+          display: none;
+        }
+      }
+    }
+
+    #{$top-bar}__link {
+      @include reset-a;
+      align-items: center;
+      display: flex;
+      height: inherit;
+      padding-left: space();
+      padding-right: space();
+      user-select: none;
+    }
+
+    // Style only for parent links in Top bar item and not child links in Action menu
+    #{$top-bar}__item > #{$top-bar}__link {
+      position: relative;
+
+      &:not(#{$top-bar}__link--collapsed):not(#{$top-bar}__link--expanded):hover,
+      &#{$top-bar}__link--active {
+        color: color(green);
+
+        // Border bottom
+        &::after {
+          background-color: color(green);
+          bottom: 0;
+          content: "";
+          height: 4px;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
+
+      &#{$top-bar}__link--collapsed::after,
+      &#{$top-bar}__link--expanded::after {
+        content: $ui-chevron-down;
+        font: $ui-font-size-s $ui-font-family;
+        padding-left: space();
+        vertical-align: text-bottom;
+      }
+
+      &#{$top-bar}__link--expanded::after {
+        content: $ui-chevron-up;
+      }
+
+      i {
+        margin-right: space(0.5);
+        vertical-align: sub;
+      }
+    }
+  }
+
+  #{$top-bar}__action-menu {
+    @include shadow;
+    @include reset-ul;
+    background-color: color(grey, white);
+    display: none;
+    right: space();
+    line-height: $line-height-m;
+    padding: space() space(2);
+    position: absolute;
+    top: $top-bar-height;
+    z-index: 1;
+
+    &#{$top-bar}__action-menu--visible {
+      display: block;
+    }
+
+    #{$top-bar}__link {
+      display: block;
+      padding-bottom: space(0.5);
+      padding-top: space(0.5);
+      white-space: nowrap;
+
+      &:hover {
+        color: color(blue);
+      }
+    }
+  }
+}

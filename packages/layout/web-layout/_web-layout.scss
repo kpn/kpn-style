@@ -1,0 +1,48 @@
+@import "web-layout.abstract";
+
+#{$web-body} {
+  background-color: color(grey, white);
+  margin: 0;
+}
+
+#{$web-layout} {
+  $fixed-index: 100;
+  overflow-x: hidden;
+
+  &#{$web-layout}--active-mega-menu {
+    @include breakpoint(xs, m) {
+      #{$web-layout}__mega-menu .mega-menu__primary {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  #{$web-layout}__mega-menu {
+    position: fixed;
+    width: 100%;
+    z-index: $fixed-index + 1;
+
+    @include breakpoint(xs, m) {
+      .mega-menu__primary {
+        height: 100vh;
+        top: 0;
+        left: -100%;
+        transition: transform 0.5s ease-in-out;
+        width: 100%;
+        z-index: 1; // Make sure primary menu is higher than secondary menu
+      }
+    }
+
+    + #{$web-layout}__main {
+      display: block; // Support for IE11 when class is used on <main> element
+
+      @include breakpoint(xs, m) {
+        padding-top: $mega-menu-height-s;
+      }
+
+      @include breakpoint(m) {
+        padding-top: $mega-menu-height;
+      }
+    }
+  }
+}

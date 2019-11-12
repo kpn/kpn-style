@@ -1,0 +1,51 @@
+@import "action-menu.abstract";
+
+#{$action-menu} {
+  display: inline-block;
+  position: relative;
+  text-align: left;
+  white-space: nowrap;
+
+  &#{$action-menu}--active #{$action-menu}__list {
+    display: block;
+  }
+
+  &#{$action-menu}--right #{$action-menu}__list {
+    right: auto;
+    left: 100%;
+  }
+
+  #{$action-menu}__trigger {
+    @include reset-a;
+    color: color(grey, silver);
+
+    &:hover {
+      color: color(blue);
+    }
+
+    &::before {
+      content: $ui-more;
+      font: $ui-font;
+    }
+  }
+
+  #{$action-menu}__list {
+    @include border;
+    @include reset-ul;
+    background-color: color(grey, white);
+    display: none;
+    padding-bottom: space(0.5);
+    padding-top: space(0.5);
+    position: absolute;
+    right: 100%;
+    top: 0;
+    z-index: 1;
+
+    #{$action-menu}__link {
+      @include link;
+      user-select: none;
+      display: block;
+      padding: space(0.25) space(2);
+    }
+  }
+}

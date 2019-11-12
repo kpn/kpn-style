@@ -1,0 +1,230 @@
+/**
+ * Code
+ */
+$code-font-family: ("Consolas", "Monaco", "Andale Mono", "Ubuntu Mono", "monospace");
+
+code {
+  font-family: $code-font-family;
+  background-color: color(blue, subtle);
+}
+
+/**
+ * Prism.js style overwrites/improvements
+ */
+pre[class*="language-"] {
+  background-color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+div.code-toolbar {
+  @include box;
+  background-color: color(grey, dark);
+  margin-bottom: space(4);
+  padding: space(2);
+
+  > .toolbar {
+    right: space(2);
+    top: space(1.5);
+  }
+
+  .toolbar-item a {
+    @extend .button, .button--small;
+    box-shadow: none;
+
+    &:hover {
+      color: color(grey, white);
+    }
+  }
+}
+
+/**
+ * Code example
+ */
+.code-example {
+  @include box;
+  background-color: color(grey, white);
+  padding: space(2);
+  position: relative; // Necessary for specific examples like Dialog
+
+  &.code-example--before-code {
+    margin-bottom: space();
+  }
+
+  &.code-example--after-code {
+    margin-top: space(-3);
+  }
+
+  /**
+   * Specific code examples
+   */
+  &.code-example--action-menu {
+    height: 130px;
+    padding-left: 130px;
+  }
+
+  &.code-example--container .container {
+    background-color: color(blue);
+    color: color(grey, white);
+  }
+
+  &.code-example--card .card {
+    @include breakpoint(s) {
+      max-width: 480px;
+    }
+  }
+
+  &.code-example--grid span {
+    background: color(blue);
+    display: block;
+    color: color(grey, white);
+    font-size: $font-size-s;
+    line-height: 40px;
+    margin-bottom: space();
+    text-align: center;
+  }
+
+  &.code-example--backdrop .backdrop {
+    position: absolute;
+  }
+
+  &.code-example--tooltip form {
+    max-width: 400px;
+  }
+
+  &.code-example--dialog {
+    p {
+      height: 400px;
+    }
+
+    .backdrop {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .dialog {
+      position: absolute;
+      z-index: 11;
+    }
+  }
+
+  &.code-example--modal {
+    overflow: hidden;
+
+    > p {
+      height: 400px;
+    }
+
+    .backdrop {
+      position: absolute;
+      z-index: 10;
+    }
+
+    .modal {
+      position: absolute;
+      z-index: 11;
+
+      @include breakpoint(xs, s) {
+        h1,
+        p:nth-child(3) {
+          display: none;
+        }
+      }
+
+      @include breakpoint(s) {
+        width: 80%;
+      }
+    }
+  }
+
+  &.code-example--mouseover p {
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  &.code-example--progress-spinner-text .progress-spinner {
+    margin-bottom: space(2.5);
+  }
+
+  &.code-example--progress-bar .progress-bar {
+    margin: space(2) 0;
+  }
+
+  &.code-example--progress-bar-text .progress-bar {
+    margin: space(2) 0 space(4);
+  }
+
+  &.code-example--tile {
+    background-color: color(grey, light);
+
+    .tile:not(.tile--stretch) {
+      max-width: 320px;
+    }
+  }
+
+  &.code-example--top-bar,
+  &.code-example--mega-menu,
+  &.code-example--mega-menu-sub-menu,
+  &.code-example--side-bar {
+    background-color: color(grey, light);
+  }
+
+  &.code-example--mega-menu-sub-menu .mega-menu__primary,
+  &.code-example--mega-menu-mobile .mega-menu__primary {
+    @include breakpoint(xs, m) {
+      display: none;
+    }
+  }
+
+  &.code-example--aspect-ratio {
+    div::after {
+      border: 8px solid;
+      border-radius: 50%;
+      color: color(grey, white);
+      content: $ui-play;
+      font: 96px/96px $ui-font-family;
+      left: calc(50% - 56px);
+      position: absolute;
+      top: calc(50% - 56px);
+    }
+
+    iframe {
+      border: none;
+      background: color(blue);
+    }
+  }
+
+  &.code-example--display-helpers {
+    div {
+      color: color(grey, white);
+      margin-bottom: space();
+      padding: 0 space();
+
+      &:nth-child(-n+3) {
+        background-color: color(red);
+      }
+
+      &:nth-child(n+4) {
+        background-color: color(green);
+      }
+    }
+  }
+}
+
+/**
+ * Code editor
+ */
+.code-editor {
+  @include box;
+  background-color: color(grey, dark);
+  box-sizing: border-box;
+  color: color(grey, subtle);
+  display: block;
+  font-family: $code-font-family;
+  font-size: $font-size-m;
+  margin-bottom: space(4);
+  outline: none;
+  padding: space(2);
+  resize: none;
+  width: 100%;
+}

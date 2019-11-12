@@ -1,0 +1,102 @@
+@import "notification.abstract";
+
+#{$notification} {
+  $notification-padding: space(1.75);
+  color: color(text);
+  margin-bottom: space();
+  position: relative;
+
+  &::before {
+    font: $ui-font;
+    left: space(1.5);
+    position: absolute;
+    top: $notification-padding;
+  }
+
+  /**
+   * Modifiers
+   */
+  &#{$notification}--informative {
+    &::before {
+      color: color(informative);
+      content: $ui-info;
+    }
+
+    #{$notification}__header {
+      background-color: color(informative, light);
+    }
+
+    #{$notification}__body {
+      border-color: color(informative, light);
+    }
+  }
+
+  &#{$notification}--error {
+    &::before {
+      color: color(error);
+      content: $ui-error;
+    }
+
+    #{$notification}__header {
+      background-color: color(error, light);
+    }
+
+    #{$notification}__body {
+      border-color: color(error, light);
+    }
+  }
+
+  &#{$notification}--caution {
+    &::before {
+      color: color(caution);
+      content: $ui-warning;
+    }
+
+    #{$notification}__header {
+      background-color: color(caution, light);
+    }
+
+    #{$notification}__body {
+      border-color: color(caution, light);
+    }
+  }
+
+  &#{$notification}--success {
+    &::before {
+      color: color(success);
+      content: $ui-check;
+    }
+
+    #{$notification}__header {
+      background-color: color(success, light);
+    }
+
+    #{$notification}__body {
+      border-color: color(success, light);
+    }
+  }
+
+  /**
+   * Elements
+   */
+  #{$notification}__header {
+    // Padding left and right is included with icon size
+    padding: $notification-padding calc(1em + #{space(3)});
+  }
+
+  #{$notification}__body {
+    @include trim-child-margin;
+    border: 2px solid;
+    border-top: none;
+    padding: $notification-padding;
+  }
+
+  #{$notification}__close::after {
+    content: $ui-close;
+    cursor: pointer;
+    font: $ui-font;
+    right: space(1.5);
+    position: absolute;
+    top: $notification-padding;
+  }
+}

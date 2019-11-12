@@ -1,0 +1,73 @@
+@import "banner.abstract";
+
+#{$banner} {
+  @include container;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-sizing: border-box;
+  font-size: $banner-font-size;
+  min-height: $banner-height;
+  overflow: hidden;
+  position: relative;
+
+  @include breakpoint(m) {
+    align-items: center;
+    display: flex;
+  }
+
+  // Green circle
+  &::before {
+    background: linear-gradient(rgba(color(blue), 0.8) 20%, rgba(color(green), 0.9) 40%, rgba(color(green, darkest), 0.8) 60%);
+    border-radius: 50%;
+    content: "";
+    height: $banner-circle;
+    top: calc(50% - #{$banner-circle} / 2);
+    transform: rotate(20deg);
+    left: -$banner-circle / 2;
+    position: absolute;
+    width: $banner-circle;
+
+    @include breakpoint(xs, m) {
+      left: calc(50% - #{$banner-circle} / 2);
+      top: -$banner-circle * 0.8;
+      transform: rotate(100deg);
+    }
+  }
+
+  #{$banner}__body {
+    position: relative;
+    width: $banner-circle / 2.75;
+    z-index: 1;
+
+    @include breakpoint(xs, m) {
+      padding-top: space(2);
+      text-align: center;
+      width: auto;
+    }
+  }
+
+  #{$banner}__title,
+  #{$banner}__sub-title {
+    @include heading;
+    color: color(grey, white);
+    line-height: 1;
+  }
+
+  #{$banner}__title {
+    font-size: 44px;
+
+    @include breakpoint(xs, s) {
+      font-size: 36px;
+    }
+  }
+
+  #{$banner}__sub-title {
+    font-size: 36px;
+    font-weight: 400;
+
+    @include breakpoint(xs, s) {
+      font-size: 28px;
+    }
+  }
+}

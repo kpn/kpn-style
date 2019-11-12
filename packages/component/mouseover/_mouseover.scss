@@ -1,0 +1,45 @@
+@import "mouseover.abstract";
+
+#{$mouseover} {
+  position: relative;
+
+  &:not(#{$mouseover}--no-hover):hover #{$mouseover}__body,
+  &#{$mouseover}--active #{$mouseover}__body {
+    opacity: 1;
+    transition: opacity 0s 1s;
+  }
+
+  #{$mouseover}__body {
+    @include breakpoint(xs, m) {
+      display: none;
+    }
+
+    @include breakpoint(m) {
+      $mouseover-arrow-size: 10px;
+      @include border-radius;
+      background-color: color(grey, dark);
+      bottom: calc(100% + #{space(0.5)} + #{$mouseover-arrow-size});
+      color: color(grey, white);
+      display: table;
+      left: 50%;
+      max-width: 320px;
+      opacity: 0;
+      padding: space(2) space();
+      position: absolute;
+      transform: translateX(-50%);
+
+      &::after {
+        border: solid transparent;
+        border-top-color: color(gray, dark);
+        border-width: $mouseover-arrow-size;
+        content: "";
+        height: 0;
+        left: calc(50% - #{$mouseover-arrow-size});
+        position: absolute;
+        top: 100%;
+        width: 0;
+        z-index: 1;
+      }
+    }
+  }
+}

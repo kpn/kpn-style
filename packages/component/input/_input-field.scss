@@ -1,0 +1,85 @@
+#{$input-field} {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: space(2);
+
+  /**
+   * Modifiers
+   **/
+  &#{$input-field}--error {
+    #{$input-field}__input {
+      &::after {
+        color: color(error);
+        content: $ui-error;
+      }
+
+      #{$input} {
+        border-color: color(error);
+        padding-right: $ui-font-size-m + space(2);
+      }
+
+      #{$label-for} {
+        color: color(error);
+        padding-right: $ui-font-size-m + space(2);
+      }
+    }
+
+    #{$input-field}__feedback {
+      color: color(error);
+      display: block;
+    }
+  }
+
+  /**
+   * Elements
+   **/
+  #{$label} {
+    width: 100%;
+  }
+
+  #{$input-field}__input {
+    flex-grow: 1;
+    position: relative;
+
+    &::after {
+      font: $ui-font;
+      position: absolute;
+      right: space();
+      top: calc(50% - 0.5em);
+    }
+
+    #{$input} {
+      margin-bottom: 0;
+      position: relative;
+    }
+
+    #{$label-for} {
+      margin-bottom: 0;
+    }
+  }
+
+  #{$input-field}__action-button {
+    @include reset-button;
+    border: 1px solid color(border);
+    background-color: color(grey, white);
+    font-size: $font-size-s;
+    padding-left: space();
+    padding-right: space();
+    margin-left: -1px;
+
+    &:hover {
+      background-color: color(grey, subtle);
+    }
+
+    &:focus {
+      border-color: color(blue);
+      z-index: 1;
+    }
+  }
+
+  #{$input-field}__feedback {
+    display: none;
+    margin-top: space();
+    width: 100%;
+  }
+}

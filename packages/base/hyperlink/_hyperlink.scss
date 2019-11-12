@@ -1,0 +1,38 @@
+@import "hyperlink.abstract";
+
+#{$a},
+.kpn-style a:not([class]) {
+  @include link;
+
+  &#{$a}--disabled {
+    color: color(grey, silver);
+    pointer-events: none;
+  }
+
+  &#{$a}--left::before,
+  &#{$a}--right::after {
+    display: inline-block;
+    font: $ui-font;
+    vertical-align: top;
+  }
+
+  &#{$a}--left::before {
+    content: $ui-chevron-left;
+  }
+
+  &#{$a}--right::after {
+    content: $ui-chevron-right;
+  }
+
+  i {
+    vertical-align: top;
+  }
+
+  i:first-child {
+    margin-right: space(0.5);
+  }
+
+  i:last-child {
+    margin-left: space(0.5);
+  }
+}

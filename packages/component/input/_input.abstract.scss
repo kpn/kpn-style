@@ -1,0 +1,33 @@
+
+$input: selector(input);
+$input-font-size: $font-size-m !default;
+$input-text-height: 40px !default;
+
+$select: selector(select);
+
+$textarea: selector(textarea);
+$textarea-min-height: 120px;
+
+$label: selector(label);
+$label-for: selector(label-for);
+
+$input-field: selector(input-field);
+
+@mixin input-text {
+  @include border;
+  background-color: color(grey, white);
+  box-sizing: border-box;
+  color: color(text);
+  display: block;
+  font-family: inherit;
+  font-size: $input-font-size;
+  margin-bottom: space(2);
+  outline: none;
+  padding-left: space();
+  padding-right: space();
+  width: 100%;
+
+  &:focus {
+    border-color: color(blue);
+  }
+}

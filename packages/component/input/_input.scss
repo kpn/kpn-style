@@ -1,0 +1,33 @@
+@import "./input.abstract";
+@import "./input-field";
+@import "./label";
+
+#{$input} {
+  &[type="date"],
+  &[type="email"],
+  &[type="number"],
+  &[type="password"],
+  &[type="tel"],
+  &[type="text"],
+  &[type="url"] {
+    @include input-text;
+    height: $input-text-height;
+  }
+
+  &[type="checkbox"],
+  &[type="radio"] {
+    font-size: inherit;
+  }
+}
+
+#{$select} {
+  @include input-text;
+  height: $input-text-height;
+}
+
+#{$textarea} {
+  @include input-text;
+  min-height: $textarea-min-height;
+  padding-bottom: space();
+  padding-top: space();
+}

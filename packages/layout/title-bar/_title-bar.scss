@@ -1,0 +1,20 @@
+@import "title-bar.abstract";
+
+#{$title-bar} {
+  @include container(x);
+  align-items: center;
+  background-color: color(green);
+  display: flex;
+  height: $title-bar-height;
+
+  @include breakpoint(m) {
+    @include shadow();
+  }
+
+  #{$title-bar}__title {
+    @include heading;
+    color: color(grey, white);
+    font-size: $title-bar-title-font-size;
+    margin-bottom: 0 !important;
+  }
+}

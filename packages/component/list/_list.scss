@@ -1,0 +1,90 @@
+@import "list.abstract";
+
+#{$ul},
+.kpn-style ul:not([class]) {
+  @include reset-ul;
+  margin-bottom: space(3);
+
+  > li {
+    margin-bottom: space();
+    padding-left: space(3);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      background-color: currentColor;
+      border-radius: 50%;
+      content: "";
+      height: 4px;
+      left: space();
+      position: absolute;
+      top: 0.63em; // Just visual optimized for 14px and 16 px font size
+      width: 4px;
+    }
+  }
+}
+
+#{$ol},
+.kpn-style ol:not([class]) {
+  @include reset-ol;
+  margin-bottom: space(3);
+  padding-left: space(4);
+
+  > li {
+    margin-bottom: space();
+    padding-left: space();
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#{$dl} {
+  @include reset-dl;
+  margin-bottom: space(3);
+
+  dt {
+    font-weight: 700;
+    margin-bottom: space(0.5);
+  }
+
+  dd:not(:last-child) {
+    margin-bottom: space(2);
+  }
+}
+
+#{$check-list} {
+  @include reset-ul;
+  margin-bottom: space(3);
+
+  &#{$check-list}--inverted {
+    color: color(grey, white);
+
+    > li::before {
+      color: inherit;
+    }
+  }
+
+  > li {
+    font-weight: 700;
+    margin-bottom: space();
+    padding-left: space(4);
+    position: relative;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &::before {
+      font: $ui-font;
+      content: $ui-check;
+      color: color(green);
+      left: 0;
+      position: absolute;
+    }
+  }
+}

@@ -1,0 +1,106 @@
+@import "progress.abstract";
+
+#{$progress-spinner} {
+  display: block;
+  position: relative;
+  min-height: $progress-spinner-size;
+
+  &#{$progress-spinner}--white::before {
+    border-color: color(grey, white);
+    border-top-color: color(green);
+  }
+
+  // Blocking background
+  &#{$progress-spinner}--blocking::after {
+    background-color: rgba(color(grey, subtle), 0.9);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  // Spinner circle
+  &::before {
+    animation: rotate 0.75s linear infinite;
+    border: 3px solid color(grey, light-silver);
+    border-radius: 50%;
+    border-top-color: color(green);
+    box-sizing: border-box;
+    content: "";
+    left: calc(50% - #{$progress-spinner-size} / 2);
+    position: absolute;
+    top: calc(50% - #{$progress-spinner-size} / 2);
+    height: $progress-spinner-size;
+    width: $progress-spinner-size;
+    z-index: 1;
+  }
+
+  // Text helper
+  #{$progress-spinner}__text {
+    left: 50%;
+    position: absolute;
+    top: calc(50% + #{$progress-spinner-size} / 2);
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;
+  }
+}
+
+#{$progress-bar} {
+  display: block;
+  min-height: $progress-bar-height;
+  position: relative;
+
+  // Blocking background
+  &#{$progress-bar}--blocking::after {
+    background-color: rgba(color(grey, subtle), 0.9);
+    bottom: 0;
+    content: "";
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+
+  // Meter
+  #{$progress-bar}__meter {
+    height: $progress-bar-height;
+    left: 50%;
+    max-width: $progress-bar-max-width;
+    position: absolute;
+    top: calc(50% - #{$progress-bar-height} / 2);
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 1;
+
+    // Bar and filled value
+    &::before,
+    #{$progress-bar}__value {
+      border-radius: $progress-bar-height / 2;
+      content: "";
+      height: 100%;
+      position: absolute;
+    }
+
+    // Bar
+    &::before {
+      background-color: color(grey, light-silver);
+      width: 100%;
+    }
+
+    #{$progress-bar}__value {
+      background-color: color(green);
+    }
+  }
+
+  #{$progress-bar}__text {
+    left: 50%;
+    position: absolute;
+    top: calc(50% + #{$progress-bar-height} + #{space(0.5)});
+    transform: translateX(-50%);
+    white-space: nowrap;
+    z-index: 1;
+  }
+}

@@ -1,0 +1,35 @@
+// Minimum width for specific device screen sizes
+$screen: (
+  xs: 0,
+  s: 768,
+  m: 992,
+  l: 1200,
+  unit: px
+) !default;
+
+@function screen($size, $strip-unit: false) {
+  @if map-has-key($screen, $size) {
+    @if ($strip-unit == true) {
+      @return map-get($screen, $size);
+    }
+    @else {
+      @return map-get($screen, $size) + map-get($screen, unit);
+    }
+  }
+  @else {
+    @warn "The requested screen size could not be found.";
+  }
+}
+
+@mixin breakpoint($min-width, $max-width: false) {
+  @if ($max-width != false) {
+    @media (min-width: screen($min-width)) and (max-width: screen($max-width, true) - 1px) {
+      @content;
+    }
+  }
+  @else {
+    @media (min-width: screen($min-width)) {
+      @content;
+    }
+  }
+}

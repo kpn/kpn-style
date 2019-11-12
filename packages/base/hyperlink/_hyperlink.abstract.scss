@@ -1,0 +1,11 @@
+$a: selector(a);
+
+@mixin link {
+  color: color(blue);
+  cursor: pointer;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

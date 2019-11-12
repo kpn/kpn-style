@@ -1,0 +1,22 @@
+.logo-list {
+  @include reset-ul;
+  padding: space(2) 0;
+  
+  .logo-list__item {
+    display: inline-block;
+    height: 48px;
+    margin-bottom: space(2);
+  
+    &:not(:last-child) {
+      margin-right: space(4);
+    }
+
+    @include breakpoint(s) {
+      height: 64px;
+    }
+  }
+  
+  img {
+    height: 100%;
+  }
+}

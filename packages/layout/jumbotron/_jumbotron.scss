@@ -1,0 +1,45 @@
+@import "jumbotron.abstract";
+
+#{$jumbotron} {
+  background-color: color(grey, dove);
+  color: color(grey, white);
+  font-size: $jumbotron-font-size;
+  margin-bottom: space();
+
+  @include breakpoint(s) {
+    align-items: center;
+    display: flex;
+  }
+
+  #{$jumbotron}__body {
+    @include trim-child-margin;
+    padding: space(4) space(6);
+    max-width: screen(s);
+
+    @include breakpoint(xs, s) {
+      padding: space(3) space(2);
+      text-align: center;
+
+      + #{$jumbotron}__body {
+        padding-top: 0;
+      }
+    }
+
+    @include breakpoint(s) {
+      + #{$jumbotron}__body {
+        padding-left: 0;
+      }
+    }
+  }
+
+  #{$jumbotron}__title {
+    @include heading;
+    color: inherit;
+    font-size: $jumbotron-title-font-size;
+  }
+
+  #{$p} {
+    color: inherit;
+    font-size: inherit;
+  }
+}

@@ -1,0 +1,75 @@
+@import "block.abstract";
+
+#{$block} {
+  $block-margin-bottom: space(3);
+  background-color: color(grey, subtle);
+  display: block;
+  font-size: $block-font-size;
+  margin-bottom: $block-margin-bottom;
+
+  &#{$block}--stretch {
+    height: calc(100% - #{$block-margin-bottom});
+  }
+
+  &#{$block}--green,
+  &#{$block}--blue {
+    color: color(grey, white);
+
+    #{$block}__title,
+    #{$p} {
+      color: color(grey, white);
+    }
+
+    #{$block}__link {
+      &:hover {
+        color: color(grey, black);
+      }
+
+      &::before {
+        background-color: color(grey, white);
+        color: color(green);
+      }
+    }
+  }
+
+  &#{$block}--green {
+    background-color: color(green);
+  }
+
+  &#{$block}--blue {
+    background-color: color(blue);
+  }
+
+  #{$block}__body {
+    @include trim-child-margin;
+    padding: space(4) space(2);
+    text-align: center;
+  }
+
+  #{$block}__title {
+    @include heading;
+    font-size: $block-title-font-size;
+    margin-bottom: space();
+  }
+
+  #{$block}__link {
+    @include reset-a;
+    display: block;
+    font-weight: 700;
+
+    &:hover {
+      color: color(blue);
+    }
+
+    &::before {
+      background-color: color(grey, dark);
+      border-radius: 50%;
+      color: color(grey, white);
+      content: $ui-chevron-right;
+      font: $font-size-m $ui-font-family;
+      margin-right: space();
+      position: relative;
+      top: 2px; // With vertical align it was not possible to align correctly
+    }
+  }
+}

@@ -1,0 +1,31 @@
+@import "container.abstract";
+
+#{$container} {
+  padding: space(3);
+
+  @include breakpoint(xs, m) {
+    padding: space(2);
+  }
+
+  &#{$container}--centered {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &#{$container}--limited {
+    max-width: screen(l);
+  }
+
+  &#{$container}--tall {
+    padding: space(5) space(3);
+
+    @include breakpoint(xs, m) {
+      padding: space(4) space(2);
+    }
+  }
+
+  &#{$container}--main {
+    @extend #{$container}--limited;
+    @extend #{$container}--tall;
+  }
+}

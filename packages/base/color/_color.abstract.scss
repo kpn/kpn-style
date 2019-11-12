@@ -1,0 +1,88 @@
+// Color names specified with a hex value
+$color-names: (
+  blue: (
+    subtle: #dbecf9,
+    light: #99ccff,
+    default: #0099ff,
+    dark: #0077cc,
+    darkest: #005599
+  ),
+  green: (
+    subtle: #f4fae3,
+    light: #ccdd77,
+    bright: #99cc00,
+    default: #009900,
+    dark: #007700,
+    darkest: #005500
+  ),
+  grey: (
+    white: #ffffff,
+    subtle: #f3f3f3,
+    light: #e3e3e3,
+    light-silver: #d3d3d3,
+    silver: #b3b3b3,
+    medium: #939393,
+    default: #737373,
+    dove: #535353,
+    dark: #333333,
+    black: #131313
+  ),
+  orange: (
+    subtle: #feeacc,
+    light: #ffbb55,
+    default: #ff9900,
+    dark: #ee7700
+  ),
+  red: (
+    default: #ff3333,
+    dark: #e52e2e
+  ),
+);
+
+// Color types specified with a hex value or a vaulue from the map $color-names
+$color-types: (
+  border: (
+    default: map-get(map-get($color-names, grey), light-silver)
+  ),
+  shadow: (
+    default: #000000
+  ),
+  text: (
+    default: map-get(map-get($color-names, grey), dark)
+  ),
+  informative: (
+    light: #c2e1f5,
+    default: map-get(map-get($color-names, blue), default)
+  ),
+  error: (
+    light: #f5cccc,
+    default: map-get(map-get($color-names, red), default)
+  ),
+  caution: (
+    light: #f5e1c2,
+    default: map-get(map-get($color-names, orange), default)
+  ),
+  success: (
+    light: #c2e1c2,
+    default: map-get(map-get($color-names, green), default)
+  )
+);
+
+// All color maps merged into one map
+$colors: map-merge($color-names, $color-types);
+
+/**
+ * Description: Get value from the map $colors. When no value is specified it will use the default color from a group
+ * Usage: color(group: string, shade: string *optional)
+ * Example:
+ *   background-color: color(green);
+ *   color: color(green, dark);
+ */
+@function color($group, $shade: default) {
+  @if map-has-key($colors, $group) {
+    @return map-get(map-get($colors, $group), $shade);
+  }
+  @else {
+    @warn "The requested color could not be found.";
+  }
+}

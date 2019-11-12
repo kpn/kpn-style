@@ -1,0 +1,13 @@
+.kpn-style-logo {
+  @include shadow(3);
+  border-radius: 20px;
+  width: 200px;
+
+  @include breakpoint(s) {
+    width: 240px;
+  }
+}
+
+.stylish-cat {
+  max-width: 280px;
+}

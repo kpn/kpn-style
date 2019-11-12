@@ -1,0 +1,217 @@
+@import "typography.abstract";
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  color: color(text);
+  font-family: $font-family-text;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+}
+
+#{$h1},
+.kpn-style h1:not([class]) {
+  @include heading;
+  color: color(green);
+  font-size: $h1-font-size-m;
+
+  &:not(#{$h1}--impassive) {
+    @include breakpoint(xs, s) {
+      font-size: $h1-font-size-xs;
+    }
+
+    @include breakpoint(s, m) {
+      font-size: $h1-font-size-s;
+    }
+  }
+
+  &#{$h1}--calm {
+    font-weight: 300;
+  }
+}
+
+#{$h2},
+.kpn-style h2:not([class]) {
+  @include heading;
+  font-size: $h2-font-size-m;
+
+  &:not(#{$h2}--impassive) {
+    @include breakpoint(xs, s) {
+      font-size: $h2-font-size-xs;
+    }
+
+    @include breakpoint(s, m) {
+      font-size: $h2-font-size-s;
+    }
+  }
+
+  &#{$h2}--strong {
+    color: color(green);
+  }
+
+  &#{$h2}--calm {
+    font-weight: 300;
+  }
+}
+
+#{$h3},
+.kpn-style h3:not([class]) {
+  @include heading;
+  font-size: $h3-font-size-m;
+
+  &:not(#{$h3}--impassive) {
+    @include breakpoint(xs, s) {
+      font-size: $h3-font-size-xs;
+    }
+
+    @include breakpoint(s, m) {
+      font-size: $h3-font-size-s;
+    }
+  }
+
+  &#{$h3}--strong {
+    color: color(green);
+  }
+
+  &#{$h3}--calm {
+    font-weight: 300;
+  }
+}
+
+#{$h4},
+.kpn-style h4:not([class]) {
+  @include heading;
+  font-family: $font-family-text;
+  font-size: $h4-font-size-m;
+
+  &:not(#{$h4}--impassive) {
+    @include breakpoint(xs, s) {
+      font-size: $h4-font-size-xs;
+    }
+
+    @include breakpoint(s, m) {
+      font-size: $h4-font-size-s;
+    }
+  }
+
+  &#{$h4}--strong {
+    color: color(green);
+  }
+
+  &#{$h4}--calm {
+    font-weight: 400;
+  }
+}
+
+#{$p},
+.kpn-style p:not([class]) {
+  @include text;
+
+  &#{$p}--small {
+    font-size: $font-size-s;
+    line-height: $line-height-s;
+  }
+
+  &#{$p}--large {
+    font-size: $font-size-l;
+    line-height: $line-height-l;
+  }
+}
+
+#{$hr},
+.kpn-style hr:not([class]) {
+  background-color: color(border);
+  border: none;
+  height: 1px;
+  margin-bottom: space(2);
+  margin-top: space(2);
+}
+
+#{$blockquote},
+.kpn-style blockquote:not([class]) {
+  font-size: 32px;
+  line-height: $line-height-s;
+  margin: 0 0 space(4);
+  padding: space(1) 1em 0;
+  position: relative;
+  quotes: "“" "”" "‘" "’";
+
+  @include breakpoint(xs, s) {
+    font-size: 18px;
+    quotes: none;
+    padding: space(0.5);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    font-size: 2em;
+    line-height: 1;
+  }
+
+  &::before {
+    content: "“";
+    left: 0;
+    top: 0;
+  }
+}
+
+/*! system-font.css v2.0.2 | CC0-1.0 License | github.com/jonathantneal/system-font-css */
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Segoe UI Light"), local("Ubuntu Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 300;
+  src: local(".SFNSText-LightItalic"), local(".HelveticaNeueDeskInterface-Italic"), local(".LucidaGrandeUI"), local("Segoe UI Light Italic"), local("Ubuntu Light Italic"), local("Roboto-LightItalic"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 400;
+  src: local(".SFNSText-Regular"), local(".HelveticaNeueDeskInterface-Regular"), local(".LucidaGrandeUI"), local("Segoe UI"), local("Ubuntu"), local("Roboto-Regular"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 400;
+  src: local(".SFNSText-Italic"), local(".HelveticaNeueDeskInterface-Italic"), local(".LucidaGrandeUI"), local("Segoe UI Italic"), local("Ubuntu Italic"), local("Roboto-Italic"), local("DroidSans"), local("Tahoma");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 500;
+  src: local(".SFNSText-Medium"), local(".HelveticaNeueDeskInterface-MediumP4"), local(".LucidaGrandeUI"), local("Segoe UI Semibold"), local("Ubuntu Medium"), local("Roboto-Medium"), local("DroidSans-Bold"), local("Tahoma Bold");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 500;
+  src: local(".SFNSText-MediumItalic"), local(".HelveticaNeueDeskInterface-MediumItalicP4"), local(".LucidaGrandeUI"), local("Segoe UI Semibold Italic"), local("Ubuntu Medium Italic"), local("Roboto-MediumItalic"), local("DroidSans-Bold"), local("Tahoma Bold");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: normal;
+  font-weight: 700;
+  src: local(".SFNSText-Bold"), local(".HelveticaNeueDeskInterface-Bold"), local(".LucidaGrandeUI"), local("Segoe UI Bold"), local("Ubuntu Bold"), local("Roboto-Bold"), local("DroidSans-Bold"), local("Tahoma Bold");
+}
+
+@font-face {
+  font-family: system-ui;
+  font-style: italic;
+  font-weight: 700;
+  src: local(".SFNSText-BoldItalic"), local(".HelveticaNeueDeskInterface-BoldItalic"), local(".LucidaGrandeUI"), local("Segoe UI Bold Italic"), local("Ubuntu Bold Italic"), local("Roboto-BoldItalic"), local("DroidSans-Bold"), local("Tahoma Bold");
+}

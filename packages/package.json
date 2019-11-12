@@ -1,0 +1,9 @@
+{
+  "name": "@kpn-style/bundle",
+  "description": "Bundle of all KPN Style packages",
+  "keywords": [],
+  "version": "1.15.0",
+  "author": "KPN",
+  "license": "MIT",
+  "main": "_bundle.scss"
+}

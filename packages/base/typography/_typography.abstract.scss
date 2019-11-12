@@ -1,0 +1,61 @@
+$font-family-heading: ("kpn-metric", "Arial", "Helvetica") !default;
+$font-family-text: ("system-ui", "Arial", "Helvetica") !default;
+
+$font-size-s: 13px !default;
+$font-size-m: 16px !default;
+$font-size-l: 20px !default;
+
+$line-height-s: 1.2 !default;
+$line-height-m: 1.5 !default;
+$line-height-l: 1.7 !default;
+
+$h1: selector(h1);
+$h1-font-size-xs: 32px !default;
+$h1-font-size-s: 36px !default;
+$h1-font-size-m: 44px !default;
+
+$h2: selector(h2);
+$h2-font-size-xs: 24px !default;
+$h2-font-size-s: 27px !default;
+$h2-font-size-m: 32px !default;
+
+$h3: selector(h3);
+$h3-font-size-xs: 20px !default;
+$h3-font-size-s: 21px !default;
+$h3-font-size-m: 24px !default;
+
+$h4: selector(h4);
+$h4-font-size-xs: 16px !default;
+$h4-font-size-s: 16px !default;
+$h4-font-size-m: 16px !default;
+
+$p: selector(p);
+$hr: selector(hr);
+$blockquote: selector(blockquote);
+
+@mixin heading {
+  color: color(text);
+  font-family: $font-family-heading;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: space();
+  margin-top: 0;
+}
+
+@mixin text {
+  font-family: $font-family-text;
+  font-size: $font-size-m;
+  line-height: $line-height-m;
+  margin-bottom: space(3);
+  margin-top: 0;
+}
+
+@mixin font-face($font-family, $font-style, $font-weight, $folder, $file) {
+  @font-face {
+    font-family: $font-family;
+    font-style: $font-style;
+    font-weight: $font-weight;
+    src: url("#{$folder}/#{$file}.eot");
+    src: url("#{$folder}/#{$file}.eot?#iefix") format("embedded-opentype"), url("#{$folder}/#{$file}.woff") format("woff"), url("#{$folder}/#{$file}.ttf") format("truetype"), url("#{$folder}/#{$file}.svg##{$font-family}") format("svg");
+  }
+}

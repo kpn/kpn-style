@@ -1,0 +1,54 @@
+@import "content.abstract";
+
+#{$content} {
+  @include box;
+  background-color: color(grey, white);
+  margin-bottom: $content-margin-bottom;
+  position: relative;
+
+  &#{$content}--stretch {
+    height: calc(100% - #{$content-margin-bottom});
+  }
+
+  /**
+   * Layout elements
+   */
+  #{$content}__header {
+    padding: space(2) space(2) 0;
+  }
+
+  #{$content}__body {
+    @include trim-child-margin;
+    padding: space(2) space() space(2);
+    margin-left: space();
+    margin-right: space();
+
+    + #{$content}__body {
+      @include border-top;
+    }
+  }
+
+  #{$content}__footer {
+    @include border-top;
+    @include trim-child-margin;
+    padding: space(2) space(2) space(3);
+  }
+
+  /**
+   * Elements
+   */
+  #{$content}__title {
+    @include ellipsis;
+    @include heading;
+    font-size: $content-title-font-size;
+    margin-bottom: space();
+  }
+
+  #{$content}__list {
+    @include reset-ul;
+
+    > li:not(:last-child) {
+      margin-bottom: space(2);
+    }
+  }
+}

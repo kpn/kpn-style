@@ -1,0 +1,169 @@
+@import "table.abstract";
+
+#{$table},
+.kpn-style table:not([class]) {
+  @include border-top;
+  @include reset-table;
+  margin-bottom: space(2);
+  width: 100%;
+
+  th,
+  td {
+    @include border-bottom;
+    padding: space(1.5) space();
+  }
+
+  th {
+    font-weight: 700;
+    text-align: left;
+  }
+
+  // Shrinked is incorrect and therefore deprecated
+  // https://www.merriam-webster.com/words-at-play/shrink-shrank-shrunk-shrinked
+  #{$table}__col-shrinked, #{$table}__col-shrank {
+    width: 1px;
+  }
+
+  #{$table}__row-selected {
+    background-color: color(blue, subtle);
+  }
+
+  #{$table}__row-pointer:hover {
+    background-color: color(blue, subtle);
+    cursor: pointer;
+  }
+
+  #{$table}__row-collapsed,
+  #{$table}__row-expanded {
+    &:hover {
+      background-color: color(blue, subtle);
+      cursor: pointer;
+
+      td:last-child::after {
+        border-radius: 50%;
+        background-color: color(blue);
+        color: color(grey, white);
+      }
+    }
+
+    td:last-child {
+      position: relative;
+      padding-right: calc(1em + #{space(3)});
+
+      &::after {
+        font: $ui-font;
+        position: absolute;
+        right: space();
+        top: calc(50% - 0.5em);
+      }
+    }
+  }
+
+  #{$table}__row-collapsed {
+    td:last-child::after {
+      content: $ui-chevron-down;
+    }
+
+    + #{$table}__row-content {
+      display: none;
+    }
+  }
+
+  #{$table}__row-expanded {
+    color: color(green);
+    font-weight: 700;
+
+    td:last-child::after {
+      content: $ui-chevron-up;
+    }
+  }
+
+  #{$table}__row-content {
+    td {
+      @include trim-child-margin;
+      padding-bottom: space(3);
+      padding-top: space(3);
+    }
+  }
+}
+
+/**
+ * Table toolbar
+ */
+#{$table-toolbar} {
+  margin-bottom: space(2);
+
+  @include breakpoint(m) {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  #{$table-toolbar}__data {
+    padding-left: space();
+
+    @include breakpoint(xs, m) {
+      margin-bottom: space();
+    }
+  }
+
+  #{$table-toolbar}__action {
+    @include breakpoint(m) {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    > * {
+      flex-grow: 1;
+
+      &:not(:last-child) {
+        @include breakpoint(xs,m) {
+          margin-bottom: space(2);
+        }
+
+        @include breakpoint(m) {
+          margin-bottom: 0;
+          margin-right: space(2);
+        }
+      }
+    }
+  }
+}
+
+/**
+ * Sort
+ */
+#{$sort} {
+  cursor: pointer;
+  display: inline-block;
+  padding-right: calc(1em + #{space(0.75)});
+  position: relative;
+  user-select: none;
+  white-space: nowrap;
+
+  &::before,
+  &::after {
+    color: color(grey, silver);
+    font: 1.25em/1 $ui-font-family;
+    position: absolute;
+    right: 0;
+  }
+
+  &::before {
+    content: $ui-caret-up;
+    top: -0.1em;
+  }
+
+  &::after {
+    bottom: -0.1em;
+    content: $ui-caret-down;
+  }
+
+  &#{$sort}--ascending::before {
+    color: color(text);
+  }
+
+  &#{$sort}--descending::after {
+    color: color(text);
+  }
+}

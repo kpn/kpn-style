@@ -1,0 +1,35 @@
+$container: selector(container);
+
+@mixin container($padding-axis: "both", $limit-width: null) {
+  @if $padding-axis == "both" {
+    padding: space(3);
+
+    @include breakpoint(xs, m) {
+      padding: space(2);
+    }
+  }
+
+  @if $padding-axis == "x" {
+    padding-left: space(3);
+    padding-right: space(3);
+
+    @include breakpoint(xs, m) {
+      padding-left: space(2);
+      padding-right: space(2);
+    }
+  }
+
+  @if $padding-axis == "y" {
+    padding-bottom: space(3);
+    padding-top: space(3);
+
+    @include breakpoint(xs, m) {
+      padding-bottom: space(2);
+      padding-top: space(2);
+    }
+  }
+
+  @if $limit-width {
+    max-width: screen($limit-width);
+  }
+}

@@ -1,0 +1,169 @@
+@import "side-bar.abstract";
+
+#{$side-bar} {
+  background-color: color(grey, subtle);
+  box-sizing: border-box;
+  font-size: $side-bar-font-size;
+  padding-bottom: space(4);
+  padding-top: space(4);
+  width: $side-bar-width;
+
+  @include breakpoint(xs, m) {
+    padding-bottom: 0;
+    padding-top: 0;
+    width: auto;
+  }
+
+  @include breakpoint(m) {
+    @include border-right;
+    background-color: color(grey, white);
+  }
+
+  /**
+   * Menu and link
+   */
+  #{$side-bar}__menu {
+    @include reset-ul;
+    background-color: color(grey, white);
+
+    #{$side-bar}__link {
+      @include reset-a;
+      display: block;
+      line-height: 48px;
+      padding-left: calc(#{$ui-font-size-m} + #{space(3)}) /* In this area is the link icon located */;
+      position: relative;
+      user-select: none;
+
+      @include breakpoint(xs, m) {
+        @include border-bottom;
+      }
+
+      &:hover,
+      &#{$side-bar}__link--active {
+        color: color(green);
+      }
+
+      &#{$side-bar}__link--active {
+        font-weight: 700;
+
+        @include breakpoint(m) {
+          // Border left
+          &::before {
+            content: "";
+            height: 100%;
+            left: 0;
+            position: absolute;
+            width: 4px;
+            background-color: currentColor;
+          }
+        }
+      }
+
+      &#{$side-bar}__link--collapsed::after,
+      &#{$side-bar}__link--expanded::after {
+        font: $ui-font;
+        position: absolute;
+        right: space(2);
+        top: calc(50% - 0.5em);
+      }
+
+      &#{$side-bar}__link--collapsed::after {
+        content: $ui-chevron-down;
+      }
+
+      &#{$side-bar}__link--expanded::after {
+        content: $ui-chevron-up;
+      }
+
+      > i {
+        line-height: inherit;
+        left: space(2);
+        position: absolute;
+      }
+    }
+  }
+
+  /**
+   * Sub menu and link
+   **/
+  #{$side-bar}__sub-menu {
+    @include reset-ul;
+    display: none;
+
+    &#{$side-bar}__sub-menu--visible {
+      display: block;
+    }
+
+    #{$side-bar}__link {
+      font-weight: 400;
+
+      @include breakpoint(xs, m) {
+        padding-left: space(8);
+      }
+
+      @include breakpoint(m) {
+        line-height: 32px;
+      }
+
+      &#{$side-bar}__link--active {
+        color: inherit;
+        font-weight: 700;
+
+        // Border left
+        &::before {
+          background-color: transparent /* Remove border because sub link has no border left */;
+        }
+      }
+    }
+  }
+
+  /**
+   * Action bar
+   **/
+  #{$side-bar}__action-bar {
+    align-items: center;
+    background-color: color(green);
+    display: flex;
+    height: $side-bar-action-bar-height;
+    margin-bottom: space(2);
+    padding-left: space(2);
+    padding-right: space(2);
+
+    @include breakpoint(m) {
+      display: none;
+    }
+
+    #{$side-bar}__link {
+      @include reset-a;
+      cursor: pointer;
+      color: color(grey, white);
+
+      &::after {
+        content: $ui-chevron-right;
+        font: $ui-font-size-s $ui-font-family;
+        vertical-align: sub;
+      }
+
+      i {
+        vertical-align: sub;
+        margin-right: space(0.5);
+      }
+    }
+
+    #{$side-bar}__close {
+      @include reset-button;
+      color: color(grey, white);
+      cursor: pointer;
+      flex-direction: column;
+      font-size: $font-size-s;
+      line-height: 1;
+      margin-left: auto;
+
+      &::before {
+        content: $ui-close;
+        font: $ui-font;
+        display: block;
+      }
+    }
+  }
+}

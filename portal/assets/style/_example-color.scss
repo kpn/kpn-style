@@ -1,0 +1,142 @@
+/**
+ * Color example
+ */
+.example-color {
+  @include box;
+  background-color: white;
+  margin-bottom: space(4);
+  max-width: 480px;
+
+  > div {
+    @include border-bottom;
+    display: flex;
+    justify-content: space-between;
+    line-height: space(4);
+    position: relative;
+    padding: space() space(2) space() calc(100px + #{space(2)});
+
+    &::before {
+      content: "";
+      @include border-right;
+      display: block;
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100px;
+    }
+
+    // Green
+    &.example-color__green-subtle::before {
+      background-color: color(green, subtle);
+    }
+
+    &.example-color__green-light::before {
+      background-color: color(green, light);
+    }
+
+    &.example-color__green-bright::before {
+      background-color: color(green, bright);
+    }
+
+    &.example-color__green-default::before {
+      background-color: color(green);
+    }
+
+    &.example-color__green-dark::before {
+      background-color: color(green, dark);
+    }
+
+    &.example-color__green-darkest::before {
+      background-color: color(green, darkest);
+    }
+
+    // Blue
+    &.example-color__blue-subtle::before {
+      background-color: color(blue, subtle);
+    }
+
+    &.example-color__blue-light::before {
+      background-color: color(blue, light);
+    }
+
+    &.example-color__blue-default::before {
+      background-color: color(blue);
+    }
+
+    &.example-color__blue-dark::before {
+      background-color: color(blue, dark);
+    }
+
+    &.example-color__blue-darkest::before {
+      background-color: color(blue, darkest);
+    }
+
+    // Orange
+    &.example-color__orange-subtle::before {
+      background-color: color(orange, subtle);
+    }
+
+    &.example-color__orange-light::before {
+      background-color: color(orange, light);
+    }
+
+    &.example-color__orange-default::before {
+      background-color: color(orange);
+    }
+
+    &.example-color__orange-dark::before {
+      background-color: color(orange, dark);
+    }
+
+    // Grey
+    &.example-color__grey-white::before {
+      background-color: color(grey, white);
+    }
+
+    &.example-color__grey-subtle::before {
+      background-color: color(grey, subtle);
+    }
+
+    &.example-color__grey-light::before {
+      background-color: color(grey, light);
+    }
+
+    &.example-color__grey-light-silver::before {
+      background-color: color(grey, light-silver);
+    }
+
+    &.example-color__grey-silver::before {
+      background-color: color(grey, silver);
+    }
+
+    &.example-color__grey-medium::before {
+      background-color: color(grey, medium);
+    }
+
+    &.example-color__grey-default::before {
+      background-color: color(grey);
+    }
+
+    &.example-color__grey-dove::before {
+      background-color: color(grey, dove);
+    }
+
+    &.example-color__grey-dark::before {
+      background-color: color(grey, dark);
+    }
+
+    &.example-color__grey-black::before {
+      background-color: color(grey, black);
+    }
+
+    // Red
+    &.example-color__red-default::before {
+      background-color: color(red);
+    }
+
+    &.example-color__red-dark::before {
+      background-color: color(red, dark);
+    }
+  }
+}

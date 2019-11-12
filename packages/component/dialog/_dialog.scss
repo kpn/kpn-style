@@ -1,0 +1,58 @@
+@import "dialog.abstract";
+
+#{$dialog} {
+  @include border-radius;
+  @include shadow(3);
+  background-color: color(grey, white);
+  display: none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  z-index: 300;
+
+  &#{$dialog}--active {
+    display: block;
+  }
+
+  @include breakpoint(xs, s) {
+    left: space(2);
+    right: space(2);
+    transform: translateY(-50%);
+  }
+
+  @include breakpoint(s) {
+    transform: translate(-50%, -50%);
+    width: 40vw;
+  }
+
+  #{$dialog}__header {
+    display: flex;
+    justify-content: space-between;
+    padding: space() space() space(2) space(2);
+  }
+
+  #{$dialog}__close {
+    @include reset-button;
+    align-self: flex-start;
+
+    &::before {
+      content: $ui-close;
+      font: $ui-font;
+    }
+  }
+
+  #{$dialog}__title {
+    @include ellipsis;
+    font-weight: 700;
+    margin-top: space(3);
+  }
+
+  #{$dialog}__body {
+    padding-left: space(2);
+    padding-right: space(2);
+  }
+
+  #{$dialog}__footer {
+    padding: space(6) space(2) 0;
+  }
+}

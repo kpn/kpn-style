@@ -1,0 +1,36 @@
+@import "tile.abstract";
+
+#{$tile} {
+  @include box;
+  background-color: color(grey, white);
+  display: block;
+  font-size: $tile-font-size;
+  margin-bottom: $tile-margin-bottom;
+
+  &#{$tile}--stretch {
+    height: calc(100% - #{$tile-margin-bottom});
+  }
+
+  #{$tile}__body {
+    @include trim-child-margin;
+    padding: space(4) space(2);
+    text-align: center;
+  }
+
+  #{$tile}__icon {
+    margin-bottom: space(2);
+    color: color(green);
+    font-size: $tile-icon-font-size;
+  }
+
+  #{$tile}__title {
+    @include ellipsis;
+    @include heading;
+    font-size: $tile-title-font-size;
+    margin-bottom: space();
+  }
+
+  #{$p} {
+    font-size: inherit;
+  }
+}

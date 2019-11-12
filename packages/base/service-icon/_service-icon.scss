@@ -1,0 +1,650 @@
+@import "service-icon.abstract";
+
+[class^="si-"],
+[class*=" si-"] {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: $si-font-family;
+  font-size: $si-font-size;
+  font-style: normal;
+  font-weight: 400;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+  text-transform: none;
+}
+
+.si-247::before {
+  content: "\e900";
+}
+.si-add::before {
+  content: "\e901";
+}
+.si-alles-in-een::before { // @deprecated
+  content: "\e902";
+}
+.si-app-netflix::before { // @deprecated
+  content: "\e903";
+}
+.si-bike::before {
+  content: "\e904";
+}
+.si-browser::before {
+  content: "\e905";
+}
+.si-business-serie-l::before,
+.si-business-large::before { // Renamed to .si-business-large
+  content: "\e906";
+}
+.si-business-serie-m::before,
+.si-business-medium::before { // Renamed to .si-business-medium
+  content: "\e907";
+}
+.si-business-serie-s::before,
+.si-business-small::before { // Renamed to .si-business-small
+  content: "\e908";
+}
+.si-business-serie-xl::before,
+.si-business-extra-large::before { // Renamed to .si-business-extra-large
+  content: "\e909";
+}
+.si-businessman::before { // @deprecated
+  content: "\e90a";
+}
+.si-calendar::before {
+  content: "\e90b";
+}
+.si-callcenter-agent::before {
+  content: "\e90c";
+}
+.si-chat::before { // N.B. icon changed
+  content: "\e90d";
+}
+.si-checkbox::before,
+.si-check::before { // Renamed to .si-check
+  content: "\e90e";
+}
+.si-cloud::before {
+  content: "\e90f";
+}
+.si-device-locked::before,
+.si-mobile-locked::before { // Renamed to .si-mobile-locked
+  content: "\e910";
+}
+.si-devolo::before {
+  content: "\e911";
+}
+.si-digitenne::before { // N.B. icon changed
+  content: "\e912";
+}
+.si-document::before {
+  content: "\e913";
+}
+.si-dustbin::before,
+.si-delete::before { // Renamed to .si-delete
+  content: "\e914";
+}
+.si-edit::before {
+  content: "\e915";
+}
+.si-education::before,
+.si-graduation-cap::before { // Renamed to .si-graduation-cap
+  content: "\e916";
+}
+.si-email::before,
+.si-mail::before { // Renamed to .si-mail
+  content: "\e917";
+}
+.si-envelop::before {
+  content: "\e918";
+}
+.si-error::before {
+  content: "\e919";
+}
+.si-ethernet::before,
+.si-cable::before { // Renamed to .si-cable
+  content: "\e91a";
+}
+.si-euro::before {
+  content: "\e91b";
+}
+.si-experiabox::before { // @deprecated, replaced by experiabox with version numbers (8 t/m 10a)
+  content: "\e91c";
+}
+.si-fixed-phone::before,
+.si-phone::before { // Renamed to .si-phone
+  content: "\e91d";
+}
+.si-food::before {
+  content: "\e91e";
+}
+.si-forum::before { // @deprecated
+  content: "\e91f";
+}
+.si-gaming::before,
+.si-game::before { // Renamed to .si-game
+  content: "\e920";
+}
+.si-giftbox::before,
+.si-gift::before { // Renamed to .si-gift
+  content: "\e921";
+}
+.si-glass::before,
+.si-drink::before { // Renamed to .si-drink
+  content: "\e922";
+}
+.si-globe::before {
+  content: "\e923";
+}
+.si-graph::before,
+.si-graph-up::before { // Renamed to .si-graph-up
+  content: "\e924";
+}
+.si-hd-quality::before,
+.si-hd::before { // Renamed to .si-hd
+  content: "\e925";
+}
+.si-health::before {
+  content: "\e926";
+}
+.si-heart::before {
+  content: "\e927";
+}
+.si-history::before {
+  content: "\e928";
+}
+.si-home::before {
+  content: "\e929";
+}
+.si-info::before {
+  content: "\e92a";
+}
+.si-internet::before {
+  content: "\e92b";
+}
+.si-key::before {
+  content: "\e92c";
+}
+.si-laptop::before {
+  content: "\e92d";
+}
+.si-lightbulb::before,
+.si-bulb::before { // Renamed to .si-bulb, N.B. icon changed
+  content: "\e92e";
+}
+.si-location::before,
+.si-marker::before { // Renamed to .si-marker
+  content: "\e92f";
+}
+.si-locked::before,
+.si-lock::before { // Renamed to .si-lock
+  content: "\e930";
+}
+.si-lost::before,
+.si-question::before { // Renamed to .si-question
+  content: "\e931";
+}
+.si-low-battery::before,
+.si-battery::before { // Renamed to .si-battery
+  content: "\e932";
+}
+.si-manual::before {
+  content: "\e933";
+}
+.si-mapview::before {
+  content: "\e934";
+}
+.si-mechanic::before {
+  content: "\e935";
+}
+.si-mobiel::before,
+.si-mobile::before { // Renamed to .si-mobile
+  content: "\e936";
+}
+.si-mobile-deviceset::before,
+.si-deviceset-mobile::before { // Renamed to .si-deviceset-mobile
+  content: "\e937";
+}
+.si-mobile-incomming-call::before { // @deprecated
+  content: "\e938";
+}
+.si-mobile-multiple::before {
+  content: "\e939";
+}
+.si-mobile-switch-off::before {
+  content: "\e93a";
+}
+.si-modular::before,
+.si-grid::before { // Renamed to .si-grid
+  content: "\e93b";
+}
+.si-montage::before,
+.si-assemble::before { // Renamed to .si-assemble
+  content: "\e93c";
+}
+.si-multiple-apps::before { // N.B. icon changed
+  content: "\e93d";
+}
+.si-music::before,
+.si-audio::before { // Renamed to .si-audio
+  content: "\e93e";
+}
+.si-navigation::before {
+  content: "\e93f";
+}
+.si-network::before,
+.si-mast::before { // Renamed to .si-mast
+  content: "\e940";
+}
+.si-no-wifi::before,
+.si-wifi-disabled::before { // Renamed to .si-wifi-disabled
+  content: "\e941";
+}
+.si-number-0::before {
+  content: "\e942";
+}
+.si-number-1::before {
+  content: "\e943";
+}
+.si-number-2::before {
+  content: "\e944";
+}
+.si-number-3::before {
+  content: "\e945";
+}
+.si-number-4::before {
+  content: "\e946";
+}
+.si-number-5::before {
+  content: "\e947";
+}
+.si-number-6::before {
+  content: "\e948";
+}
+.si-number-7::before {
+  content: "\e949";
+}
+.si-number-8::before {
+  content: "\e94a";
+}
+.si-number-9::before {
+  content: "\e94b";
+}
+.si-pauze::before,
+.si-pause::before { // Renamed to .si-pause
+  content: "\e94c";
+}
+.si-person::before {
+  content: "\e94d";
+}
+.si-pinpoint-small::before,
+.si-marker-small::before { // Renamed to .si-marker-small
+  content: "\e94e";
+}
+.si-play-button::before { // Renamed to .si-play-button (removed old to resolve conflicts)
+  content: "\e94f";
+}
+.si-questionmark::before,
+.si-help::before { // Renamed to .si-help
+  content: "\e950";
+}
+.si-radio::before {
+  content: "\e951";
+}
+.si-replay-tv::before,
+.si-playback::before { // Renamed to .si-playback
+  content: "\e952";
+}
+.si-robot::before {
+  content: "\e953";
+}
+.si-search::before {
+  content: "\e954";
+}
+.si-security::before,
+.si-secure::before { // Renamed to .si-secure
+  content: "\e955";
+}
+.si-send::before {
+  content: "\e956";
+}
+.si-settings-gear::before,
+.si-settings::before { // Renamed to .si-settings
+  content: "\e957";
+}
+.si-share::before { // @todo: Conflicts with si-network / si-mast (this should be si-network)
+  content: "\e958";
+}
+.si-shop::before {
+  content: "\e959";
+}
+.si-shoppingcard::before,
+.si-shoppingbasket::before { // Renamed to .si-shoppingbasket
+  content: "\e95a";
+}
+.si-sim-card::before,
+.si-simcard::before { // Renamed to .si-simcard
+  content: "\e95b";
+}
+.si-smartlife::before,
+.si-smarthome::before { // Renamed to .si-smarthome
+  content: "\e95c";
+}
+.si-smiley-wink::before { // @deprecated
+  content: "\e95d";
+}
+.si-speed::before {
+  content: "\e95e";
+}
+.si-sports::before,
+.si-baseball::before { // Renamed to .si-baseball
+  content: "\e95f";
+}
+.si-suitcase::before {
+  content: "\e960";
+}
+.si-sun::before { // N.B. icon changed
+  content: "\e961";
+}
+.si-tablet-deviceset::before,
+.si-deviceset-tablet::before { // Renamed to .si-deviceset-tablet
+  content: "\e962";
+}
+.si-tablet::before {
+  content: "\e963";
+}
+.si-thief::before {
+  content: "\e964";
+}
+.si-thumbs-down::before {
+  content: "\e965";
+}
+.si-thumbs-up::before {
+  content: "\e966";
+}
+.si-tickets::before,
+.si-ticket::before { // Renamed to .si-ticket
+  content: "\e967";
+}
+.si-touch-id::before,
+.si-fingerprint::before { // Renamed to .si-fingerprint
+  content: "\e968";
+}
+.si-transport::before,
+.si-truck::before { // Renamed to .si-truck
+  content: "\e969";
+}
+.si-tv-remote::before,
+.si-remote::before { // Renamed to .si-remote, N.B. icon changed
+  content: "\e96a";
+}
+.si-tv::before { // N.B. icon changed
+  content: "\e96b";
+}
+.si-warning::before {
+  content: "\e96c";
+}
+.si-wifi-extender::before {
+  content: "\e96d";
+}
+.si-wifi::before {
+  content: "\e96e";
+}
+
+// @todo: Update 16-10-2019, maybe change order later?
+.si-alarm::before {
+  content: "\e96f";
+}
+.si-message::before {
+  content: "\e970";
+}
+.si-binders::before {
+  content: "\e971";
+}
+.si-camera::before {
+  content: "\e972";
+}
+.si-car::before {
+  content: "\e973";
+}
+.si-chess::before {
+  content: "\e974";
+}
+.si-circle::before {
+  content: "\e975";
+}
+.si-clipboard::before {
+  content: "\e976";
+}
+.si-clock::before {
+  content: "\e977";
+}
+.si-consultant::before {
+  content: "\e978";
+}
+.si-contract-end::before {
+  content: "\e979";
+}
+.si-contract-renew::before {
+  content: "\e97a";
+}
+.si-contract-transfer::before {
+  content: "\e97b";
+}
+.si-database::before {
+  content: "\e97c";
+}
+.si-design::before {
+  content: "\e97d";
+}
+.si-dialpad::before {
+  content: "\e97e";
+}
+.si-digitalisation::before {
+  content: "\e97f";
+}
+.si-download::before {
+  content: "\e980";
+}
+.si-emoticon-angry::before {
+  content: "\e981";
+}
+.si-emoticon-grimacing::before {
+  content: "\e982";
+}
+.si-emoticon-helpless::before {
+  content: "\e983";
+}
+.si-emoticon-neutral::before {
+  content: "\e984";
+}
+.si-emoticon-sad::before {
+  content: "\e985";
+}
+.si-emoticon-smile::before {
+  content: "\e986";
+}
+.si-emoticon-surprised::before {
+  content: "\e987";
+}
+.si-emoticon-tongue::before {
+  content: "\e988";
+}
+.si-emoticon-wink::before {
+  content: "\e989";
+}
+.si-environment::before {
+  content: "\e98a";
+}
+.si-experiabox8::before {
+  content: "\e98b";
+}
+.si-experiabox9::before {
+  content: "\e98c";
+}
+.si-experiabox10::before {
+  content: "\e98d";
+}
+.si-experiabox10a::before {
+  content: "\e98e";
+}
+.si-file-csv::before {
+  content: "\e98f";
+}
+.si-file-doc::before {
+  content: "\e990";
+}
+.si-file-exe::before {
+  content: "\e991";
+}
+.si-file-pdf::before {
+  content: "\e992";
+}
+.si-file-zip::before {
+  content: "\e993";
+}
+.si-fullscreen::before {
+  content: "\e994";
+}
+.si-government::before {
+  content: "\e995";
+}
+.si-graph-down::before {
+  content: "\e996";
+}
+.si-handshake::before {
+  content: "\e997";
+}
+.si-hourglass::before {
+  content: "\e999";
+}
+.si-identity-card::before {
+  content: "\e99a";
+}
+.si-industry::before {
+  content: "\e99b";
+}
+.si-invoice::before {
+  content: "\e99c";
+}
+.si-ip-adress::before {
+  content: "\e99d";
+}
+.si-mobile-apps::before {
+  content: "\e99f";
+}
+.si-mobile-damage-water::before {
+  content: "\e9a0";
+}
+.si-mobile-damage::before {
+  content: "\e9a1";
+}
+.si-mobile-phone::before {
+  content: "\e9a2";
+}
+.si-mobile-screensize::before {
+  content: "\e9a3";
+}
+.si-mobile-screentype::before {
+  content: "\e9a4";
+}
+.si-mobile-smile::before {
+  content: "\e9a5";
+}
+.si-one-day-back::before {
+  content: "\e998";
+}
+.si-password::before {
+  content: "\e99e";
+}
+.si-payment::before {
+  content: "\e9a6";
+}
+.si-photo::before {
+  content: "\e9a7";
+}
+.si-play::before {
+  content: "\e9a8";
+}
+.si-preferences::before {
+  content: "\e9a9";
+}
+.si-productcombi-internet-phone::before {
+  content: "\e9aa";
+}
+.si-productcombi-internet-tv-phone::before {
+  content: "\e9ab";
+}
+.si-productcombi-internet-tv::before {
+  content: "\e9ac";
+}
+.si-promise::before {
+  content: "\e9ad";
+}
+.si-reward::before {
+  content: "\e9ae";
+}
+.si-sensor::before {
+  content: "\e9af";
+}
+.si-simcard-activate::before {
+  content: "\e9b0";
+}
+.si-simcard-add::before {
+  content: "\e9b1";
+}
+.si-simcard-esim-activate::before {
+  content: "\e9b2";
+}
+.si-simcard-esim-add::before {
+  content: "\e9b3";
+}
+.si-simcard-esim-pukcode::before {
+  content: "\e9b4";
+}
+.si-simcard-esim-unlock::before {
+  content: "\e9b5";
+}
+.si-simcard-esim::before {
+  content: "\e9b6";
+}
+.si-simcard-pukcode::before {
+  content: "\e9b7";
+}
+.si-simcard-unlock::before {
+  content: "\e9b8";
+}
+.si-soccer::before {
+  content: "\e9b9";
+}
+.si-square::before {
+  content: "\e9ba";
+}
+.si-star::before {
+  content: "\e9bb";
+}
+.si-triangle::before {
+  content: "\e9bc";
+}
+.si-tv-error::before {
+  content: "\e9bd";
+}
+.si-tv-record::before {
+  content: "\e9be";
+}
+.si-unicorn::before {
+  content: "\e9bf";
+}
+.si-upload::before {
+  content: "\e9c0";
+}
+.si-voicemail::before {
+  content: "\e9c1";
+}
+.si-wifi-extender-wireless::before {
+  content: "\e9c2";
+}
+.si-wifi-love::before {
+  content: "\e9c3";
+}

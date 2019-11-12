@@ -1,0 +1,264 @@
+@import "mega-menu.abstract";
+
+#{$mega-menu} {
+  @include container(x);
+  @include shadow;
+  align-items: center;
+  background-color: color(grey, white);
+  box-sizing: border-box;
+  display: flex;
+  font-size: $mega-menu-font-size;
+  position: relative; // For sub menu
+
+  #{$mega-menu}__logo {
+    display: block;
+    margin-right: space(4);
+
+    img {
+      display: block;
+      height: $mega-menu-logo-height;
+      margin-top: -10px; // Icon and text in KPN logo is not centered. Needed this correction to align with the other elements in the header
+
+      @include breakpoint(xs, m) {
+        height: $mega-menu-logo-height-s;
+        margin-top: 0;
+      }
+    }
+  }
+
+  /**
+   * Menu, item and link
+   *
+   * The item and link structure is the same as Top bar to keep code consistent
+   **/
+  #{$mega-menu}__primary {
+    @include breakpoint(xs, m) {
+      background-color: color(grey, subtle);
+      box-sizing: border-box;
+      position: absolute; // Move to Web layout?
+
+      // Styles for mobile Mega menu (of course only when it is inside .mega-menu__primary)
+      #{$mega-menu}__menu {
+        background-color: color(grey, white);
+        display: block;
+        height: auto;
+
+        #{$mega-menu}__item {
+          height: auto;
+        }
+
+        #{$mega-menu}__link {
+          @include border-bottom;
+          display: block;
+          line-height: 48px;
+          padding-left: space(3);
+          padding-right: 0;
+          position: relative;
+          user-select: none;
+
+          &:hover,
+          &#{$mega-menu}__link--active {
+            &::after {
+              content: none; // Removes border
+            }
+          }
+
+          &#{$mega-menu}__link--active {
+            font-weight: 700;
+          }
+        }
+      }
+    }
+  }
+
+  #{$mega-menu}__secondary {
+    margin-left: auto;
+  }
+
+  #{$mega-menu}__menu {
+    @include reset-ul;
+    display: flex;
+
+    #{$mega-menu}__item {
+      height: $mega-menu-height;
+
+      @include breakpoint(xs, m) {
+        height: $mega-menu-height-s;
+      }
+
+      &:not(:first-child) {
+        margin-left: space(0.5);
+
+        @include breakpoint(m) {
+          margin-left: space(2.5);
+        }
+      }
+
+      // Make sub menu visible
+      &:hover #{$mega-menu}__sub-menu {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      &#{$mega-menu}__item--trigger {
+        align-items: center;
+        cursor: pointer;
+        display: flex;
+        padding-left: space();
+        user-select: none;
+
+        &::before {
+          content: $ui-menu;
+          font: $ui-font;
+          vertical-align: sub;
+        }
+
+        @include breakpoint(m) {
+          display: none;
+        }
+      }
+    }
+
+    #{$mega-menu}__link {
+      @include reset-a;
+      align-items: center;
+      display: flex;
+      height: inherit;
+      line-height: $line-height-s;
+      padding-left: space();
+      padding-right: space();
+      position: relative; // For border-bottom and when mobile for collapseable
+      user-select: none;
+
+      &:hover,
+      &#{$mega-menu}__link--active {
+        color: color(green);
+
+        // Border bottom
+        &::after {
+          background-color: color(green);
+          bottom: 0;
+          content: "";
+          height: 4px;
+          left: 0;
+          position: absolute;
+          width: 100%;
+        }
+      }
+
+      i {
+        margin-right: space();
+        vertical-align: sub;
+      }
+    }
+  }
+
+  /**
+   * Sub menu and link
+   **/
+  #{$mega-menu}__sub-menu {
+    @include border-bottom;
+    @include border-top;
+    @include container;
+    background-color: color(grey, white);
+    box-sizing: border-box;
+    display: flex;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: $mega-menu-height;
+    transition: opacity 0s 0.5s, visibility 0s 0.5s;
+    visibility: hidden;
+    width: 100%;
+    z-index: 1;
+
+    // Sub menu active only for testing purpose
+    &#{$mega-menu}__sub-menu--active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #{$mega-menu}__group {
+      @include reset-ul;
+
+      &:not(:last-child) {
+        margin-right: space(6);
+      }
+    }
+
+    #{$mega-menu}__link {
+      font-weight: 400;
+      height: auto;
+
+      &:hover {
+        color: color(blue);
+        &::after {
+          content: none;
+        }
+      }
+
+      @include breakpoint(xs, m) {
+        padding-left: space(8);
+      }
+
+      @include breakpoint(m) {
+        line-height: 32px;
+      }
+
+      &#{$mega-menu}__link--active {
+        color: inherit;
+        font-weight: 700;
+      }
+    }
+  }
+
+  /**
+   * Action bar
+   **/
+  #{$mega-menu}__action-bar {
+    align-items: center;
+    background-color: color(green);
+    display: flex;
+    height: $mega-menu-action-bar-height;
+    margin-bottom: space(2);
+    padding-left: space(2);
+    padding-right: space(2);
+
+    @include breakpoint(m) {
+      display: none;
+    }
+
+    #{$mega-menu}__link {
+      @include reset-a;
+      cursor: pointer;
+      color: color(grey, white);
+
+      &::after {
+        content: $ui-chevron-right;
+        font: $ui-font-size-s $ui-font-family;
+        vertical-align: sub;
+      }
+
+      i {
+        vertical-align: sub;
+        margin-right: space(0.5);
+      }
+    }
+
+    #{$mega-menu}__close {
+      @include reset-button;
+      color: color(grey, white);
+      cursor: pointer;
+      flex-direction: column;
+      font-size: $font-size-s;
+      line-height: 1;
+      margin-left: auto;
+
+      &::before {
+        content: $ui-close;
+        font: $ui-font;
+        display: block;
+      }
+    }
+  }
+}
