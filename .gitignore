@@ -12,7 +12,7 @@ node_modules/
 src/**/*.css
 
 # production
-build/
+docs/
 
 # misc
 .DS_Store
