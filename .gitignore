@@ -5,6 +5,10 @@ package-lock.json
 # dependencies
 node_modules/
 
+# scripts
+assets/
+fonts/
+
 # testing
 /coverage
 
