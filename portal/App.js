@@ -24,56 +24,56 @@ import ChangelogMd from './../CHANGELOG.md';
 import LiveEditor from './LiveEditor';
 
 // Base
-import AnimationMd from './../packages/base/animation/ANIMATION.md';
-import ColorMd from './../packages/base/color/COLOR.md';
-import CommonMd from './../packages/base/common/COMMON.md';
-import ContainerMd from './../packages/base/container/CONTAINER.md';
-import HyperlinkMd from './../packages/base/hyperlink/HYPERLINK.md';
-import MediaMd from './../packages/base/media/MEDIA.md';
-import ScreenMd from './../packages/base/screen/SCREEN.md';
-import ServiceIconMd from './../packages/base/service-icon/SERVICE-ICON.md';
-import SpaceMd from './../packages/base/space/SPACE.md';
-import TypographyMd from './../packages/base/typography/TYPOGRAPHY.md';
-import UiIconMd from './../packages/base/ui-icon/UI-ICON.md';
+import AnimationMd from './../packages/kpn-style/scss/base/animation/ANIMATION.md';
+import ColorMd from './../packages/kpn-style/scss/base/color/COLOR.md';
+import CommonMd from './../packages/kpn-style/scss/base/common/COMMON.md';
+import ContainerMd from './../packages/kpn-style/scss/base/container/CONTAINER.md';
+import HyperlinkMd from './../packages/kpn-style/scss/base/hyperlink/HYPERLINK.md';
+import MediaMd from './../packages/kpn-style/scss/base/media/MEDIA.md';
+import ScreenMd from './../packages/kpn-style/scss/base/screen/SCREEN.md';
+import ServiceIconMd from './../packages/kpn-style/scss/base/service-icon/SERVICE-ICON.md';
+import SpaceMd from './../packages/kpn-style/scss/base/space/SPACE.md';
+import TypographyMd from './../packages/kpn-style/scss/base/typography/TYPOGRAPHY.md';
+import UiIconMd from './../packages/kpn-style/scss/base/ui-icon/UI-ICON.md';
 
 // Component
-import AccordionMd from './../packages/component/accordion/ACCORDION.md';
-import ActionMenuMd from './../packages/component/action-menu/ACTION-MENU.md';
-import BlockMd from './../packages/component/block/BLOCK.md';
-import BreadcrumbMd from './../packages/component/breadcrumb/BREADCRUMB.md';
-import ButtonMd from './../packages/component/button/BUTTON.md';
-import CardMd from './../packages/component/card/CARD.md';
-import ContentMd from './../packages/component/content/CONTENT.md';
-import DialogMd from './../packages/component/dialog/DIALOG.md';
-import InputMd from './../packages/component/input/INPUT.md';
-import ListMd from './../packages/component/list/LIST.md';
-import NotificationMd from './../packages/component/notification/NOTIFICATION.md';
-import ModalMd from './../packages/component/modal/MODAL.md';
-import MouseoverMd from './../packages/component/mouseover/MOUSEOVER.md';
-import PaginationMd from './../packages/component/pagination/PAGINATION.md';
-import ProgressMd from './../packages/component/progress/PROGRESS.md';
-import SliderMd from './../packages/component/slider/SLIDER.md';
-import TabMd from './../packages/component/tab/TAB.md';
-import TableMd from './../packages/component/table/TABLE.md';
-import TileMd from './../packages/component/tile/TILE.md';
-import Tooltip from './../packages/component/tooltip/TOOLTIP.md';
+import AccordionMd from './../packages/kpn-style/scss/component/accordion/ACCORDION.md';
+import ActionMenuMd from './../packages/kpn-style/scss/component/action-menu/ACTION-MENU.md';
+import BlockMd from './../packages/kpn-style/scss/component/block/BLOCK.md';
+import BreadcrumbMd from './../packages/kpn-style/scss/component/breadcrumb/BREADCRUMB.md';
+import ButtonMd from './../packages/kpn-style/scss/component/button/BUTTON.md';
+import CardMd from './../packages/kpn-style/scss/component/card/CARD.md';
+import ContentMd from './../packages/kpn-style/scss/component/content/CONTENT.md';
+import DialogMd from './../packages/kpn-style/scss/component/dialog/DIALOG.md';
+import InputMd from './../packages/kpn-style/scss/component/input/INPUT.md';
+import ListMd from './../packages/kpn-style/scss/component/list/LIST.md';
+import NotificationMd from './../packages/kpn-style/scss/component/notification/NOTIFICATION.md';
+import ModalMd from './../packages/kpn-style/scss/component/modal/MODAL.md';
+import MouseoverMd from './../packages/kpn-style/scss/component/mouseover/MOUSEOVER.md';
+import PaginationMd from './../packages/kpn-style/scss/component/pagination/PAGINATION.md';
+import ProgressMd from './../packages/kpn-style/scss/component/progress/PROGRESS.md';
+import SliderMd from './../packages/kpn-style/scss/component/slider/SLIDER.md';
+import TabMd from './../packages/kpn-style/scss/component/tab/TAB.md';
+import TableMd from './../packages/kpn-style/scss/component/table/TABLE.md';
+import TileMd from './../packages/kpn-style/scss/component/tile/TILE.md';
+import Tooltip from './../packages/kpn-style/scss/component/tooltip/TOOLTIP.md';
 
 // Layout
-import AppLayoutMd from './../packages/layout/app-layout/APP-LAYOUT.md';
-import BackdropMd from './../packages/layout/backdrop/BACKDROP.md';
-import BannerMd from './../packages/layout/banner/BANNER.md';
-import FooterMd from './../packages/layout/footer/FOOTER.md';
-import GridMd from './../packages/layout/grid/GRID.md';
-import JumbotronMd from './../packages/layout/jumbotron/JUMBOTRON.md';
-import MegaMenuMd from './../packages/layout/mega-menu/MEGA-MENU.md';
-import PitchMd from './../packages/layout/pitch/PITCH.md';
-import SideBarMd from './../packages/layout/side-bar/SIDE-BAR.md';
-import TitleBarMd from './../packages/layout/title-bar/TITLE-BAR.md';
-import TopBarMd from './../packages/layout/top-bar/TOP-BAR.md';
-import WebLayoutMd from './../packages/layout/web-layout/WEB-LAYOUT.md';
+import AppLayoutMd from './../packages/kpn-style/scss/layout/app-layout/APP-LAYOUT.md';
+import BackdropMd from './../packages/kpn-style/scss/layout/backdrop/BACKDROP.md';
+import BannerMd from './../packages/kpn-style/scss/layout/banner/BANNER.md';
+import FooterMd from './../packages/kpn-style/scss/layout/footer/FOOTER.md';
+import GridMd from './../packages/kpn-style/scss/layout/grid/GRID.md';
+import JumbotronMd from './../packages/kpn-style/scss/layout/jumbotron/JUMBOTRON.md';
+import MegaMenuMd from './../packages/kpn-style/scss/layout/mega-menu/MEGA-MENU.md';
+import PitchMd from './../packages/kpn-style/scss/layout/pitch/PITCH.md';
+import SideBarMd from './../packages/kpn-style/scss/layout/side-bar/SIDE-BAR.md';
+import TitleBarMd from './../packages/kpn-style/scss/layout/title-bar/TITLE-BAR.md';
+import TopBarMd from './../packages/kpn-style/scss/layout/top-bar/TOP-BAR.md';
+import WebLayoutMd from './../packages/kpn-style/scss/layout/web-layout/WEB-LAYOUT.md';
 
 // Theme
-import BusinessMarketMd from './../packages/theme/business-market/BUSINESS-MARKET.md';
+import BusinessMarketMd from './../packages/kpn-style/scss/theme/business-market/BUSINESS-MARKET.md';
 
 // App context
 const AppContext = React.createContext({

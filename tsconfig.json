@@ -24,7 +24,7 @@
   },
   "include": [
     "portal/**/*",
-    "packages/**/*"
+    "packages/kpn-styles/**/*"
   ],
   "exclude": [
       "node_modules",

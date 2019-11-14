@@ -1,4 +1,4 @@
-import bundlePackageJson from './../../packages/package.json'
+import bundlePackageJson from './../../packages/kpn-style/package.json'
 
 const ReplaceKpnStyleBundleVersion = (content) => {
   return content.replace(/{{kpnStyleBundleVersion}}/gi, bundlePackageJson.version)

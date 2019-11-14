@@ -1,8 +1,7 @@
-import React from "react";
-import { NavLink } from 'react-router-dom';
-
-import bundlePackageJson from './../packages/package.json'
 import Content from './components/Content';
+import { NavLink } from 'react-router-dom';
+import React from "react";
+import bundlePackageJson from './../packages/kpn-style/package.json'
 import logoKpnStyle from './assets/image/logo-kpn-style.png';
 
 const Start = () => (
