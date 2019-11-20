@@ -4,7 +4,7 @@ node_js:
 script:
   - echo "Skipping tests"
   - npm run build
-  - echo "style.kpn.com" >> CNAME
+  - echo "style.kpn.com" >> ./docs/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
