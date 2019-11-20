@@ -20,6 +20,12 @@ The packages are available on npm. In the example below we use the KPN Style Bun
 npm install --save @kpn-style/bundle
 ```
 
+Or, if you are using Yarn:
+
+```
+yarn add @kpn-style/bundle
+```
+
 ### Sass
 Import the package into your own main Sass file.
 
