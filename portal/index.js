@@ -10,7 +10,7 @@ import App from './App';
 import './index.scss';
 
 ReactDOM.render((
-  <Router> 
+  <Router basename={'/kpn-style'}>
     <App />
   </Router>
 ), document.getElementById('kpn-style-portal'));
