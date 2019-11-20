@@ -1,10 +1,13 @@
 language: node_js
 node_js:
   - "12.13.0"
+script:
+  - echo "Skipping tests"
+  - npm run build
 deploy:
   provider: pages
   skip_cleanup: true
-  github_token: GITHUBTOKEN
+  github_token: $GITHUBTOKEN
   keep_history: false
   local_dir: docs
   target_branch: gh-pages

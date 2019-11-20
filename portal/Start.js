@@ -5,7 +5,6 @@ import bundlePackageJson from './../packages/package.json'
 import Content from './components/Content';
 import logoKpnStyle from './assets/image/logo-kpn-style.png';
 
-
 const Start = () => (
   <Content title="Start" wrapInContainer={false}>
     <div className="jumbotron">
