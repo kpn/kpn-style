@@ -6,7 +6,7 @@
     "type": "git",
     "url": "https://github.com/kpn/kpn-style.git"
   },
-  "homepage": "https://style.kpn.com",
+  "homepage": "https://kpn.github.io/kpn-style",
   "private": false,
   "author": "KPN",
   "license": "MIT",
