@@ -16,7 +16,7 @@ const Start = () => (
           Build consistent KPN websites and applications
         </p>
         <p className="p">
-          KPN Style is a front-end library for developers.
+          KPN Style is a front-end library for developers working within the Business Market.
         </p>
         <div className="button-group button-group--respond">
           <NavLink className="button button--4" to="/getting-started/quick-start">Get started</NavLink>
@@ -73,13 +73,13 @@ const Start = () => (
 
     <section className="pitch pitch--limited pitch--green">
       <div className="pitch__body">
-        <h2 className="pitch__title text-align">Improve our <strong>brand experience</strong></h2>
+        <h2 className="pitch__title text-align">Improve our <strong>business brand experience</strong></h2>
         <div className="row">
           <div className="col col--m-6">
             <p className="p">
               KPN's mission is to make life more free, fun, and easy by connecting.
               That's why KPN works on the digital highway of the future.
-              Therefore, our dialogue with customers must be personal and relevant.
+              Therefore, our dialogue with users must be personal and relevant.
             </p>
 
             <p className="p">
@@ -117,6 +117,7 @@ const Start = () => (
 
           <div className="col col--m-6">
             <ul className="check-list">
+              <li>For everyone working within the Business Market.</li>
               <li>Save up to 50% in front-end development time.</li>
               <li>Not dependent on frameworks such as Angular, Vue, or React.</li>
               <li>Optimized for mobile and tablet.</li>
@@ -129,12 +130,12 @@ const Start = () => (
 
     <section className="pitch pitch--limited">
       <div className="pitch__body">
-        <h2 className="pitch__title"><strong>Everyone</strong> can use it</h2>
+        <h2 className="pitch__title"><strong>Anyone</strong> can use it</h2>
         <div className="row">
           <div className="col col--m-8">
             <p className="p">
               You can compare the components with Lego-like building blocks.
-              This portal consist an overview of all the components. Here you can find documentation and real life examples.
+              This portal contains an overview of all the components. Here you can find documentation and real life examples.
             </p>
             <p className="p">
               We put our components in npm packages.
