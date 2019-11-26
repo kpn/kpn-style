@@ -8,11 +8,10 @@
     }
 
     @include breakpoint(l) {
-      + .jumbotron__data::before  {
+      + .jumbotron__data::before {
         content: " | ";
       }
     }
-
 
     &.jumbotron__data--secondary {
       color: color(grey, silver);
