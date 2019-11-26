@@ -137,8 +137,8 @@ The sorting option is also reusable outside the table. Therefore the `sort` (blo
 ```
 
 ### Advanced table
-The three dots at the right of the table are part of the [action menu component](/component/action-menu).
-The rows per page list below the table is part of the [pagination component](/component/pagination).
+The three dots at the right of the table are part of the [action menu component](/#/component/action-menu).
+The rows per page list below the table is part of the [pagination component](/#/component/pagination).
 
 ```html*example
 <div class="scroll-x">

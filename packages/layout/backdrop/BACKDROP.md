@@ -6,7 +6,7 @@ Source file: `packages/component/backdrop/_backdrop.scss`.
 ---
 
 ## Styles
-The backdrop is useful in situations where [dialogs](/component/dialog) are used. It is recommended to place the backdrop element before the closing tag of the `body`.
+The backdrop is useful in situations where [dialogs](/#/component/dialog) are used. It is recommended to place the backdrop element before the closing tag of the `body`.
 
 ### Example
 This is an static example of the backdrop. The `position` property has been overridden for demo purposes.

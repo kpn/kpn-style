@@ -6,7 +6,7 @@ Source file: `packages/component/action-menu/_action-menu.scss`.
 ---
 
 ## Styles
-You can use the action menu inside the [card component](/component/card) and [table component](/component/table).
+You can use the action menu inside the [card component](/#/component/card) and [table component](/#/component/table).
 
 ### Inactive action menu
 ```html*example

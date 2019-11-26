@@ -29,7 +29,7 @@ Source file: `packages/component/progress/_progress.scss`.
 ```
 
 ### Button with progress spinner
-Also see the [button](/component/button) page for explanation on implementing a button with a progress spinner.
+Also see the [button](/#/component/button) page for explanation on implementing a button with a progress spinner.
 
 #### Blocking progress spinner
 ```html*example

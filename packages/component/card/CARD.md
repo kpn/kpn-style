@@ -34,7 +34,7 @@ $card-title-font-size: value;
 ```
 
 ### Advanced card
-The three dots in the card header are part of the [action menu](/component/action-menu).
+The three dots in the card header are part of the [action menu](/#/component/action-menu).
 
 ```html*example="card"
 <div class="card">

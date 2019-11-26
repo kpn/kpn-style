@@ -26,7 +26,7 @@ The service icon font needs to be loaded in order for the icons to work.
 @include font-face("kpn-service-icons", normal, 400, "../node_modules/@kpn-style/bundle/base/service-icons", "kpn-service-icons");
 ```
 
-Read more about the font-face mixin on the [typography](/base/typography) page.
+Read more about the font-face mixin on the [typography](/#/base/typography) page.
 
 ---
 
