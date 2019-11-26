@@ -1,0 +1,21 @@
+.jumbotron {
+  .jumbotron__data {
+    font-size: $font-size-m;
+    white-space: nowrap;
+
+    @include breakpoint(xs, l) {
+      display: block;
+    }    
+
+    @include breakpoint(l) {
+      + .jumbotron__data::before  {
+        content: " | ";
+      }
+    }
+
+
+    &.jumbotron__data--secondary {
+      color: color(grey, silver);  
+    }    
+  }
+}
