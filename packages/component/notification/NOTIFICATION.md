@@ -1,7 +1,7 @@
 # Notification
 Notifications are being used to show important information to the user in a conspicuous way. This can have varying goals, for instance to inform or to warn to user.
 
-Source file: `packages/component/notification/_notification.scss`.
+Source file: [packages/component/notification/_notification.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/notification/_notification.scss)
 
 ---
 

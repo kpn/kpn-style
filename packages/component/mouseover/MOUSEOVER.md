@@ -1,7 +1,7 @@
 # Mouseover
 A mouseover (or rather, the popover that it spawns) gives some short information if a term or other element is unclear. This is different from a tooltip, since this is shorter and simpler, and does not show or rely on an `i`-icon.
 
-Source file: `packages/component/mouseover/_mouseover.scss`.
+Source file: [packages/component/mouseover/_mouseover.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/mouseover/_mouseover.scss)
 
 ---
 

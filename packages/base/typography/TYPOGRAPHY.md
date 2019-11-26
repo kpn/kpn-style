@@ -1,7 +1,7 @@
 # Typography
 Typography styles define the size, spacing, and shape of text.
 
-Source file: `packages/base/typography/_typography.scss`.
+Source file: [packages/base/typography/_typography.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/typography/_typography.scss)
 
 ---
 

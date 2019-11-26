@@ -1,7 +1,7 @@
 # Modal
 Modals give the possibility to show information as a layer over the current content in a way that is blocking: users cannot continue without taking an action with the modal (which might include closing it).
 
-Source file: `packages/component/modal/_modal.scss`.
+Source file: [packages/component/modal/_modal.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/modal/_modal.scss)
 
 ---
 

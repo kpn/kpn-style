@@ -1,7 +1,7 @@
 # UI icon
 Icon font for the KPN UI icons.
 
-Source file: `packages/base/ui-icon/_ui-icon.scss`.
+Source file: [packages/base/ui-icon/_ui-icon.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/ui-icon/_ui-icon.scss)
 
 ---
 

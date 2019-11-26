@@ -1,7 +1,7 @@
 # Backdrop
 Add a fullscreen and fixed backdrop.
 
-Source file: `packages/component/backdrop/_backdrop.scss`.
+Source file: [packages/component/backdrop/_backdrop.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/backdrop/_backdrop.scss)
 
 ---
 

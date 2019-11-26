@@ -1,7 +1,7 @@
 # Action menu
 Compact context menu.
 
-Source file: `packages/component/action-menu/_action-menu.scss`.
+Source file: [packages/component/action-menu/_action-menu.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/action-menu/_action-menu.scss)
 
 ---
 

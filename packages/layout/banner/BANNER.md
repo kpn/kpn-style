@@ -1,7 +1,7 @@
 # Banner
 Block with text, custom background image, and KPN blue/green circle overlay.
 
-Source file: `packages/layout/banner/_banner.scss`.
+Source file: [packages/layout/banner/_banner.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/banner/_banner.scss)
 
 ---
 

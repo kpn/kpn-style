@@ -7,7 +7,7 @@
 
 Icon font of the KPN Service icons.
 
-Source file: `packages/base/service-icon/_service-icon.scss`.
+Source file: [packages/base/service-icon/_service-icon.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/service-icon/_service-icon.scss)
 
 ---
 
