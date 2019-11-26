@@ -13,7 +13,6 @@ process.on('unhandledRejection', err => {
 // Ensure environment variables are read.
 require('../config/env');
 
-
 const fs = require('fs');
 const chalk = require('chalk');
 const webpack = require('webpack');
@@ -78,7 +77,7 @@ checkBrowsers(paths.appPath, isInteractive)
     const appName = require(paths.appPackageJson).name;
     const urls = prepareUrls(protocol, HOST, port);
     // Create a webpack compiler that is configured with custom messages.
-    const compiler = createCompiler(webpack, config, appName, urls, useYarn);
+    const compiler = createCompiler({webpack, config, appName, urls, useYarn});
     // Load proxy config
     const proxySetting = require(paths.appPackageJson).proxy;
     const proxyConfig = prepareProxy(proxySetting, paths.appPublic);
