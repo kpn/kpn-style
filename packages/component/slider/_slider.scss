@@ -7,7 +7,7 @@
 
   &:not(#{$slider}--disabled):hover {
     cursor: pointer;
-    
+
     #{$slider}__thumb {
       background-color: color(blue, dark);
     }
@@ -23,7 +23,7 @@
       background-color: color(grey, silver);
     }
   }
-  
+
   #{$slider}__track {
     align-items: center;
     margin-bottom: space(2);
@@ -37,7 +37,7 @@
       content: "";
       height: 2px;
       position: absolute;
-      width: 100%;      
+      width: 100%;
     }
   }
 
@@ -56,7 +56,7 @@
     position: absolute;
     width: $slider-thumb-size;
     z-index: 1;
-  }  
+  }
 
   #{$slider}__scale {
     @include reset-ul;
@@ -67,5 +67,5 @@
       flex-basis: 100%;
       text-align: center;
     }
-  }   
+  }
 }
