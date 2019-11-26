@@ -1,10 +1,9 @@
 language: node_js
 node_js:
-  - "12.13.0"
+  - "12.13.1"
 script:
   - echo "Skipping tests"
   - npm run build
-  - echo "style.kpn.com" >> ./docs/CNAME
 deploy:
   provider: pages
   skip_cleanup: true
@@ -12,6 +11,7 @@ deploy:
   keep_history: false
   local_dir: docs
   target_branch: gh-pages
+  fqdn: style.kpn.com
   email: frontend@kpn.com
   verbose: true
   on:
