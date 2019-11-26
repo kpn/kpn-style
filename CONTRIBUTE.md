@@ -1,6 +1,8 @@
 # Contribute
 You can see KPN Style as an open source project inside KPN. Anyone can contribute to KPN Style.
 
+Find us on GitHub: [https://github.com/kpn/kpn-style](https://github.com/kpn/kpn-style)
+
 ---
 
 ## Development environment

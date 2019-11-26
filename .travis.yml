@@ -1,8 +1,10 @@
 language: node_js
 node_js:
-  - "12.13.0"
+  - "12.13.1"
 script:
   - echo "Skipping tests"
+  - npm run lint
+  - npm run stylelint
   - npm run build
 deploy:
   provider: pages
@@ -11,6 +13,7 @@ deploy:
   keep_history: false
   local_dir: docs
   target_branch: gh-pages
+  fqdn: style.kpn.com
   email: frontend@kpn.com
   verbose: true
   on:
