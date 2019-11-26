@@ -3,6 +3,8 @@ node_js:
   - "12.13.1"
 script:
   - echo "Skipping tests"
+  - npm run lint
+  - npm run stylelint
   - npm run build
 deploy:
   provider: pages
