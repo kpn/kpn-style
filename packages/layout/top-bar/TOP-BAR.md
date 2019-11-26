@@ -1,7 +1,7 @@
 # Top bar
 Bar for logo, title and menu.
 
-The top bar is intended for applications. It must not be combined with the [mega menu](/layout/mega-menu) that is intended for websites. Use [app layout](/layout/app-layout) to give your application the right structure.
+The top bar is intended for applications. It must not be combined with the [mega menu](/layout/mega-menu) which is intended for websites. Use [app layout](/layout/app-layout) to give your application the right structure.
 
 Source file: `packages/layout/top-bar/_top-bar.scss`.
 
