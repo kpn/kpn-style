@@ -1,7 +1,7 @@
 # List
 Create generic ordered and unordered lists, as well as some specific styling variants.
 
-Source file: `packages/component/list/_list.scss`.
+Source file: [packages/component/list/_list.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/list/_list.scss)
 
 ---
 

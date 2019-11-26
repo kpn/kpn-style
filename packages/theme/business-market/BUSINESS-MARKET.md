@@ -1,7 +1,7 @@
 # Business Market
 Because of the information density within the Business Market (BM), we build around a default of 14px, instead of 16px for Consumer Market (CM).
 
-Source file: `packages/theme/business-market/_business-market.scss`.
+Source file: [packages/theme/business-market/_business-market.scss](https://github.com/kpn/kpn-style/blob/master/packages/theme/business-market/_business-market.scss)
 
 ---
 

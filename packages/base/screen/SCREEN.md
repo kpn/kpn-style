@@ -1,7 +1,7 @@
 # Screen
 Responsive utility with a mobile-first mindset.
 
-Source file: `packages/base/screen/_screen.scss`.
+Source file: [packages/base/screen/_screen.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/screen/_screen.scss)
 
 By default there are four screen sizes available within KPN Style:
 
