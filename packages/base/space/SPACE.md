@@ -1,7 +1,7 @@
 # Space
 Default spacing inside and between elements. Most commonly used for padding and margin. Nearly all of the designs that UX Lab provides are based on spaces that are multiples of 8 pixels.
 
-Source file: `packages/base/space/_space.scss`.
+Source file: [packages/base/space/_space.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/space/_space.scss)
 
 ---
 

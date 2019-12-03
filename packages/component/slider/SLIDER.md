@@ -1,7 +1,7 @@
 # Slider
 Sliders let users select from a range of values by moving the slider thumb.
 
-Source file: `packages/component/slider/_slider.scss`.
+Source file: [packages/component/slider/_slider.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/slider/_slider.scss)
 
 ---
 

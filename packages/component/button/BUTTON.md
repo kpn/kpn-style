@@ -1,7 +1,7 @@
 # Button
 Create any type of clickable button with ease. Inside a button you can put a short text (call to action) and a [UI icon](/base/ui-icon).
 
-Source file: `packages/component/button/_button.scss`.
+Source file: [packages/component/button/_button.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/button/_button.scss)
 
 ---
 

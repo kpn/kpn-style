@@ -1,7 +1,7 @@
 # Container
 Consistent and responsive padding for sections.
 
-Source file: `packages/base/container/_container.scss`.
+Source file: [packages/base/container/_container.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/container/_container.scss)
 
 ---
 

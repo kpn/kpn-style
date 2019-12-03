@@ -1,7 +1,7 @@
 # Tooltip
 Tooltips are made of two parts: specific, expansive information about one topic (related to a nearby element), and an `i`-icon that triggers this information.
 
-Source file: `packages/component/tooltip/_tooltip.scss`.
+Source file: [packages/component/tooltip/_tooltip.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/tooltip/_tooltip.scss)
 
 ---
 

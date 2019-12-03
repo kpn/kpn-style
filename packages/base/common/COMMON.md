@@ -1,7 +1,7 @@
 # Common
 Common variables, functions, mixins and styles (helper classes). Many of these are not meant for daily usage, but rather for situations where one might want to customize KPN style, run into an edge case, or work on KPN style itself.
 
-Source file: `packages/base/common/_common.scss`.
+Source file: [packages/base/common/_common.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/common/_common.scss)
 
 ---
 

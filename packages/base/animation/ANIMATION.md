@@ -1,7 +1,7 @@
 # Animation
 Shared animations involve harmonizing element movements to enhance persistency.
 
-Source file: `packages/base/animation/_space.scss`.
+Source file: [packages/base/animation/_animation.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/animation/_animation.scss)
 
 ---
 

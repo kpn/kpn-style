@@ -1,7 +1,7 @@
 # Tab
 Tabs are used on a page to split and categorize information that belongs to a page that would otherwise get impractically big.
 
-Source file: `packages/component/tab/_tab.scss`.
+Source file: [packages/component/tab/_tab.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/tab/_tab.scss)
 
 ---
 

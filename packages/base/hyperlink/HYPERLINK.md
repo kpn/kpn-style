@@ -1,7 +1,7 @@
 # Hyperlink
 Hyperlinks help the user to navigate through the website or app.
 
-Source file: `packages/base/hyperlink/_hyperlink.scss`.
+Source file: [packages/base/hyperlink/_hyperlink.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/hyperlink/_hyperlink.scss)
 
 ---
 
