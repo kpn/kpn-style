@@ -1,7 +1,7 @@
 # Side bar
 Collapsable navigation with icons and text.
 
-Source file: `packages/layout/side-bar/_side-bar.scss`.
+Source file: [packages/layout/side-bar/_side-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/side-bar/_side-bar.scss)
 
 ---
 

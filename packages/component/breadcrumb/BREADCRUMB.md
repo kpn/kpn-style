@@ -1,7 +1,7 @@
 # Breadcrumb
 Breadcrumbs are a good way to display your current location in a given application. This is usually done when you have hierarchical layers of content. Each crumb has to have a dedicated page, you can't apply filters or selections in your breadcrumbs.
 
-Source file: `packages/component/breadcrumb/_breadcrumb.scss`.
+Source file: [packages/component/breadcrumb/_breadcrumb.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/breadcrumb/_breadcrumb.scss)
 
 ---
 

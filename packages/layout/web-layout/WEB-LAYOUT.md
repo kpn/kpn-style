@@ -3,7 +3,7 @@ Give structural layout to your website. The web layout classes will help you to 
 
 For applications, there is the [app layout](/#/layout/app-layout).
 
-Source file: `packages/layout/web-layout/_web-layout.scss`.
+Source file: [packages/layout/web-layout/_web-layout.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/web-layout/_web-layout.scss)
 
 ---
 

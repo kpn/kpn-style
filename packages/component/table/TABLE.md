@@ -1,7 +1,7 @@
 # Table
 Data tables display information in a way that’s easy to visually scan, so that users can look for patterns and insights. 
 
-Source file: `packages/component/table/_table.scss`.
+Source file: [packages/component/table/_table.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/table/_table.scss)
 
 ---
 

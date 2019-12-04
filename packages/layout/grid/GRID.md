@@ -1,7 +1,7 @@
 # Grid
 Mobile-first 12 column grid system.
 
-Source file: `packages/layout/grid/_grid.scss`.
+Source file: [packages/layout/grid/_grid.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/grid/_grid.scss)
 
 ---
 

@@ -1,6 +1,6 @@
 # Footer
 
-Source file: `packages/layout/footer/_footer.scss`.
+Source file: [packages/layout/footer/_footer.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/footer/_footer.scss)
 
 ---
 

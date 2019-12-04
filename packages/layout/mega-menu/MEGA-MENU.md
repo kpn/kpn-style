@@ -1,7 +1,7 @@
 # Mega menu
 Menu for logo and items.
 
-Source file: `packages/layout/mega-menu/_mega-menu.scss`.
+Source file: [packages/layout/mega-menu/_mega-menu.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/mega-menu/_mega-menu.scss)
 
 ---
 

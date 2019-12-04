@@ -1,7 +1,7 @@
 # Jumbotron
 Big board for calling attention to specific content.
 
-Source file: `packages/layout/jumbotron/_jumbotron.scss`.
+Source file: [packages/layout/jumbotron/_jumbotron.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/jumbotron/_jumbotron.scss)
 
 ---
 

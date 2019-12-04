@@ -1,7 +1,7 @@
 # Top bar
 Bar for logo, title and menu.
 
-Source file: `packages/layout/top-bar/_top-bar.scss`.
+Source file: [packages/layout/top-bar/_top-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/top-bar/_top-bar.scss)
 
 ---
 

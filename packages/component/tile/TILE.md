@@ -1,7 +1,7 @@
 # Tile
 Tiles are surfaces that display content and actions on a single topic. They should be easy to visually scan for relevant and actionable information. 
 
-Source file: `packages/component/tile/_tile.scss`.
+Source file: [packages/component/tile/_tile.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/tile/_tile.scss)
 
 ---
 

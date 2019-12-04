@@ -1,7 +1,7 @@
 # Input
 Text fields allow users to input, edit, and select text. Text fields typically reside in forms but can appear in other places, like dialog boxes and search.
 
-Source file: `packages/component/input/_input.scss`.
+Source file: [packages/component/input/_input.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/input/_input.scss)
 
 ---
 

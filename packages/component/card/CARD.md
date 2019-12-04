@@ -1,7 +1,7 @@
 # Card
 Cards are surfaces that display content and actions on a single topic. They should be easy to scan for relevant and actionable information.
 
-Source file: `packages/component/card/_card.scss`.
+Source file: [packages/component/card/_card.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/card/_card.scss)
 
 ---
 

@@ -1,7 +1,7 @@
 # Pagination
 When you have so much content that it would be impractical to show it all at once, one of the solutions is to paginate the content. That is, to break the content into separate and distinct pages.
 
-Source file: `packages/component/pagination/_pagination.scss`.
+Source file: [packages/component/pagination/_pagination.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/pagination/_pagination.scss)
 
 ---
 

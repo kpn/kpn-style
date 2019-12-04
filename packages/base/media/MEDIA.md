@@ -1,7 +1,7 @@
 # Media
 Style for media elements like images and videos.
 
-Source file: `packages/base/media/_media.scss`.
+Source file: [packages/base/media/_media.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/media/_media.scss)
 
 ---
 

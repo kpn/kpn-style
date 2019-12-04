@@ -1,7 +1,7 @@
 # Dialog
 Dialogs inform users about a specific task and may contain critical information, require decisions, or warn the user.
 
-Source file: `packages/component/dialog/_dialog.scss`.
+Source file: [packages/component/dialog/_dialog.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/dialog/_dialog.scss)
 
 ---
 

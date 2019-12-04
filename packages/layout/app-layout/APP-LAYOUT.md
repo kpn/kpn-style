@@ -3,7 +3,7 @@ Give a structural layout to your application. The app layout classes will helps 
 
 For websites there is the [web layout](/#/layout/web-layout).
 
-Source file: `packages/layout/app-layout/_app-layout.scss`.
+Source file: [packages/layout/app-layout/_app-layout.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/app-layout/_app-layout.scss)
 
 ---
 
