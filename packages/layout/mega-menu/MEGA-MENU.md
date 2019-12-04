@@ -1,6 +1,8 @@
 # Mega menu
 Menu for logo and items.
 
+The mega menu is intended for websites. It must not be combined with the [top bar](/layout/top-bar) and [side bar](/layout/side-bar) which are intended for applications. Use [web layout](/layout/web-layout) to give your website the right structure.
+
 Source file: [packages/layout/mega-menu/_mega-menu.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/mega-menu/_mega-menu.scss)
 
 ---

@@ -1,5 +1,7 @@
 # Side bar
-Collapsable navigation with icons and text.
+Collapsable navigation with icons and text. 
+
+The side bar is intended for applications. It must not be combined with the [mega menu](/layout/mega-menu) which is intended for websites. Use [app layout](/layout/app-layout) to give your application the right structure.
 
 Source file: [packages/layout/side-bar/_side-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/side-bar/_side-bar.scss)
 
