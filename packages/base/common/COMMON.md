@@ -153,7 +153,7 @@ Responsive display helpers serve to show or hide elements based on the screen wi
 
 
 ### Margin and padding
-For margin and padding there are helper classes from space 0 till space 4. [Read more about spaces here](/base/space). They are available for all sides and `top`, `right`, `bottom` and `left`. Only for margin there is also the class `margin-auto` that has the property `margin-left` and `margin-right` with `auto`.
+For margin and padding there are helper classes from space 0 till space 4. [Read more about spaces here](/#/base/space). They are available for all sides and `top`, `right`, `bottom` and `left`. Only for margin there is also the class `margin-auto` that has the property `margin-left` and `margin-right` with `auto`.
 
 * `margin-auto`
 * `margin-0`

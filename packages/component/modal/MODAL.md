@@ -6,7 +6,7 @@ Source file: [packages/component/modal/_modal.scss](https://github.com/kpn/kpn-s
 ---
 
 ## Styles
-See [dialog](/component/dialog) to inform users about a specific task. _Dialog is preferred over modal when possible, as it is more specific._ Use the [backdrop](/layout/backdrop) for a background layer below the modal.
+See [dialog](/#/component/dialog) to inform users about a specific task. _Dialog is preferred over modal when possible, as it is more specific._ Use the [backdrop](/#/layout/backdrop) for a background layer below the modal.
 
 ### Example
 This is a static example of the modal. The `position` property has been overridden for demo purposes.

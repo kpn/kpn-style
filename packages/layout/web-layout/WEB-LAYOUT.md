@@ -1,14 +1,14 @@
 # Web layout
-Give structural layout to your website. The web layout classes will help you to position layout parts like the [mega menu](/layout/mega-menu) and the `main` element.
+Give structural layout to your website. The web layout classes will help you to position layout parts like the [mega menu](/#/layout/mega-menu) and the `main` element.
 
-For applications, there is the [app layout](/layout/app-layout).
+For applications, there is the [app layout](/#/layout/app-layout).
 
 Source file: [packages/layout/web-layout/_web-layout.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/web-layout/_web-layout.scss)
 
 ---
 
 ## Styles
-The class `web-body` is responsible for the white background and margin reset. The other classes are responsible for the positioning of layout parts. Think of the fixed position of the [mega menu](/layout/mega-menu) as an example.
+The class `web-body` is responsible for the white background and margin reset. The other classes are responsible for the positioning of layout parts. Think of the fixed position of the [mega menu](/#/layout/mega-menu) as an example.
 
 ### Overview of layout classes
 * `web-body` 
@@ -33,7 +33,7 @@ The class `web-body` is responsible for the white background and margin reset. T
 ```
 
 ### Activate mega menu
-When using the 'primary menu' of the [mega menu](/layout/mega-menu), you can open (activate) the [mega menu](/layout/mega-menu) with the class `web-layout--active-mega-menu`. 
+When using the 'primary menu' of the [mega menu](/#/layout/mega-menu), you can open (activate) the [mega menu](/#/layout/mega-menu) with the class `web-layout--active-mega-menu`. 
 
 ```html
 <body class="web-body">

@@ -1,14 +1,14 @@
 # App layout
-Give a structural layout to your application. The app layout classes will helps you to position layout parts like the [top bar](/layout/top-bar) and [side bar](/layout/side-bar). This layout will also help you with the scroll behavior. 
+Give a structural layout to your application. The app layout classes will helps you to position layout parts like the [top bar](/#/layout/top-bar) and [side bar](/#/layout/side-bar). This layout will also help you with the scroll behavior. 
 
-For websites there is the [web layout](/layout/web-layout).
+For websites there is the [web layout](/#/layout/web-layout).
 
 Source file: [packages/layout/app-layout/_app-layout.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/app-layout/_app-layout.scss)
 
 ---
 
 ## Styles
-The class `app-body` is responsible for the grey background and margin reset. The other classes are responsible for the position of layout parts. Think of the fixed position of the [top bar](/layout/top-bar) as an example.
+The class `app-body` is responsible for the grey background and margin reset. The other classes are responsible for the position of layout parts. Think of the fixed position of the [top bar](/#/layout/top-bar) as an example.
 
 ### Overview of layout classes
 * `app-body` 
@@ -73,7 +73,7 @@ App layout will automatically detect a side bar to make sure everything looks fi
 ```
 
 ### Activate Side bar
-When using the [side bar](/layout/side-bar), you can open (activate) the side bar with the class `app-layout--active-side-bar`. 
+When using the [side bar](/#/layout/side-bar), you can open (activate) the side bar with the class `app-layout--active-side-bar`. 
 
 ```html
 <body class="app-body">

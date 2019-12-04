@@ -77,7 +77,7 @@ $side-bar-font-size: value;
 ```
 
 ### Mobile Side bar
-We recommend to use the trigger (hamburger/menu icon) from the [top bar](/layout/top-bar) to activate the mobile side bar. The [app layout](/layout/app-layout) will handle the positioning of the side bar when it is open (active) or closed.
+We recommend to use the trigger (hamburger/menu icon) from the [top bar](/#/layout/top-bar) to activate the mobile side bar. The [app layout](/#/layout/app-layout) will handle the positioning of the side bar when it is open (active) or closed.
 
 The mobile side bar will show (only on small screens) a green action bar with room for a link and a button to close the side bar. 
 

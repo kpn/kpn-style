@@ -1,7 +1,7 @@
 {
   "name": "kpn-style-portal",
-  "description": "Central location for reusable style packages",
-  "version": "1.15.0",
+  "description": "Portal with documentation and examples for KPN Style, which is used within the Business Market.",
+  "version": "1.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/kpn/kpn-style.git"

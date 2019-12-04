@@ -72,7 +72,7 @@ In the example below the corresponding formula is:
 -100 / ((5 - 1) * 2) = -12.5
 ```
 
-Use the [text helper classes](/base/common) to highlight the included ticks.
+Use the [text helper classes](/#/base/common) to highlight the included ticks.
 
 ```html*example="slider"
 <div class="slider">

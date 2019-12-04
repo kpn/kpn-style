@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 
+import portalPackageJson from '../package.json'
 import bundlePackageJson from './../packages/package.json'
 import Content from './components/Content';
 import logoKpnStyle from './assets/image/logo-kpn-style.png';
@@ -23,8 +24,9 @@ const Start = () => (
           <NavLink className="button button--4 button--secondary" to="/live-editor">Try now</NavLink>
         </div>
         <p className="p">
-          <small>Current bundle version: <strong>{bundlePackageJson.version}</strong></small>
-        </p>
+          <span className="jumbotron__data">Current bundle version: <strong>{bundlePackageJson.version}</strong></span>
+          <span className="jumbotron__data jumbotron__data--secondary">Current portal version: <strong>{portalPackageJson.version}</strong></span>
+        </p>        
       </div>
     </div>
 

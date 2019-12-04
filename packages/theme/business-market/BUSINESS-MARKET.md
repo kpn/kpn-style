@@ -6,7 +6,7 @@ Source file: [packages/theme/business-market/_business-market.scss](https://gith
 ---
 
 ## Usage
-Because this theme contains customizable variables you need to import this **manually** before other style packages, preferably in the main SCSS file of your project; avoid importing the business market theme multiple times. [Read more about imports here](/getting-started/quick-start).
+Because this theme contains customizable variables you need to import this **manually** before other style packages, preferably in the main SCSS file of your project; avoid importing the business market theme multiple times. [Read more about imports here](/#/getting-started/quick-start).
 
 ```scss
 @import "~@kpn-style/bundle/business-market/business-market";

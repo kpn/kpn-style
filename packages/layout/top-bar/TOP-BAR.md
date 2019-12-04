@@ -45,7 +45,7 @@ $top-bar-height: value;
 ```
 
 ### Top bar with trigger
-Use the (menu) trigger to activate a menu like the mobile [side bar](/layout/side-bar). The trigger is only shown on small screens.
+Use the (menu) trigger to activate a menu like the mobile [side bar](/#/layout/side-bar). The trigger is only shown on small screens.
 
 ```html*example="top-bar"
 <nav class="top-bar">
@@ -102,7 +102,7 @@ Use the (menu) trigger to activate a menu like the mobile [side bar](/layout/sid
 ```
 
 ### Hide items
-Use the [display helper classes](/base/common) to hide items.
+Use the [display helper classes](/#/base/common) to hide items.
 
 ```html*example="top-bar"
 <nav class="top-bar">
