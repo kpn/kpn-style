@@ -14,7 +14,7 @@ import Start from './Start';
 
 // Getting started
 import QuickStartMd from './../README.md';
-import ContributeMd from './../CONTRIBUTE.md';
+import ContributingMd from './../CONTRIBUTING.md';
 import CodingConventionsMd from './../CODING-CONVENTIONS.md';
 
 // Changelog
@@ -120,7 +120,7 @@ class App extends React.Component {
 
               <SideBarSubMenu title="Getting started" icon="manual">
                 <SideBarLink title="Quick start" to="/getting-started/quick-start" />
-                <SideBarLink title="Contribute" to="/getting-started/contribute" />
+                <SideBarLink title="Contributing" to="/getting-started/contributing" />
                 <SideBarLink title="Coding conventions" to="/getting-started/coding-conventions" />
                 <SideBarLink title="Changelog" to="/changelog" />
               </SideBarSubMenu>
@@ -190,7 +190,7 @@ class App extends React.Component {
             {/* Getting started */}
             <Route exact path="/getting-started" render={() => <Redirect to="/doc/getting-started/quick-start" />} />
             <Route path='/getting-started/quick-start' render={(props) => <MarkDownLoader file={QuickStartMd} title="Getting started" {...props} />} />
-            <Route path='/getting-started/contribute' render={(props) => <MarkDownLoader file={ContributeMd} title="Getting started" {...props} />} />
+            <Route path='/getting-started/contributing' render={(props) => <MarkDownLoader file={ContributingMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/coding-conventions' render={(props) => <MarkDownLoader file={CodingConventionsMd} title="Getting started" {...props} />} />
 
             {/* Changelog */}
