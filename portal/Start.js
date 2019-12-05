@@ -26,7 +26,7 @@ const Start = () => (
         <p className="p">
           <span className="jumbotron__data">Current bundle version: <strong>{bundlePackageJson.version}</strong></span>
           <span className="jumbotron__data jumbotron__data--secondary">Current portal version: <strong>{portalPackageJson.version}</strong></span>
-        </p>        
+        </p>
       </div>
     </div>
 
@@ -66,7 +66,7 @@ const Start = () => (
                 Stronger together
               </h2>
               <p className="p">Make your contribution.</p>
-              <NavLink className="button button--secondary" to="/getting-started/contribute">Read more</NavLink>
+              <NavLink className="button button--secondary" to="/getting-started/contributing">Read more</NavLink>
             </div>
           </div>
         </div>
@@ -164,7 +164,7 @@ const Start = () => (
               Everyone is invited to help build and improve KPN style. Feel free to create a pull request or work on one of our open issues on GitHub.
             </p>
             <div className="button-group button-group--respond">
-              <NavLink className="button button--3 button--secondary" to="/getting-started/contribute">How to contribute</NavLink>
+              <NavLink className="button button--3 button--secondary" to="/getting-started/contributing">How to contribute</NavLink>
             </div>
           </div>
 
