@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 
 class Content extends React.Component {
   componentDidMount() {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.pageview(window.location.hash);
   }
 
   render() {
