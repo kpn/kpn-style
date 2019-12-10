@@ -122,7 +122,7 @@ class App extends React.Component {
                 <SideBarLink title="Quick start" to="/getting-started/quick-start" />
                 <SideBarLink title="Contributing" to="/getting-started/contributing" />
                 <SideBarLink title="Coding conventions" to="/getting-started/coding-conventions" />
-                <SideBarLink title="Changelog" to="/changelog" />
+                <SideBarLink title="Changelog" to="/getting-started/changelog" />
               </SideBarSubMenu>
 
               <SideBarSubMenu title="Base" icon="circle">
@@ -192,9 +192,7 @@ class App extends React.Component {
             <Route path='/getting-started/quick-start' render={(props) => <MarkDownLoader file={QuickStartMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/contributing' render={(props) => <MarkDownLoader file={ContributingMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/coding-conventions' render={(props) => <MarkDownLoader file={CodingConventionsMd} title="Getting started" {...props} />} />
-
-            {/* Changelog */}
-            <Route path='/changelog' render={(props) => <MarkDownLoader file={ChangelogMd} title="Changelog" {...props} />} />
+            <Route path='/getting-started/changelog' render={(props) => <MarkDownLoader file={ChangelogMd} title="Getting started" {...props} />} />
 
             {/* Live editor */}
             <Route path="/live-editor" component={LiveEditor} />
