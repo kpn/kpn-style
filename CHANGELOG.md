@@ -1,4 +1,4 @@
-# What's new?
+# Changelog
 All notable changes to KPN Style will be documented in this file.
 
 ## v1.15.0 - 12 November 2019
