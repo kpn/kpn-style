@@ -7,6 +7,16 @@ Source file: [packages/layout/app-layout/_app-layout.scss](https://github.com/kp
 
 ---
 
+#### Table of contents
+  * [Styles](#Styles)
+    * [Overview of layout classes ](#Overview-of-layout-classes)
+    * [Chained classes  ](#Chained-classes)
+    * [Parent and child ](#Parent-and-child)
+    * [Side bar detection ](#Side-bar-detection)
+    * [Activate side bar ](#Activate-Side-bar)
+
+---
+
 ## Styles
 The class `app-body` is responsible for the grey background and margin reset. The other classes are responsible for the position of layout parts. Think of the fixed position of the [top bar](/#/layout/top-bar) as an example.
 
@@ -20,7 +30,7 @@ The class `app-body` is responsible for the grey background and margin reset. Th
 * `app-layout__main`
 * `app-layout__title-bar`
 
-### Chained classes 
+### Chained classes
 ```html
 <body class="app-body">
 

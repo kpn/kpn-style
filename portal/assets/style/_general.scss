@@ -11,3 +11,19 @@
 .stylish-cat {
   max-width: 280px;
 }
+
+.navigation {
+  height: $top-bar-height + $title-bar-height;
+  display: block;
+  margin-top: -($top-bar-height + $title-bar-height);
+}
+
+h1, h2, h3 {
+  $header-height: $top-bar-height + $title-bar-height + space(3);
+  &::before {
+    display: block;
+    height: $header-height;
+    margin-top: -$header-height;
+    content: "";
+  }
+}
