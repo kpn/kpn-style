@@ -40,7 +40,7 @@ const Start = () => (
                 What's new?
               </h2>
               <p className="p">Latest changes to KPN Style</p>
-              <NavLink className="button button--secondary" to="/changelog">Go to changelog</NavLink>
+              <NavLink className="button button--secondary" to="/getting-started/changelog">Go to changelog</NavLink>
             </div>
           </div>
         </div>
