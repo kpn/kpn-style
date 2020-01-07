@@ -14,7 +14,7 @@ import Start from './Start';
 
 // Getting started
 import QuickStartMd from './../README.md';
-import ContributeMd from './../CONTRIBUTE.md';
+import ContributingMd from './../CONTRIBUTING.md';
 import CodingConventionsMd from './../CODING-CONVENTIONS.md';
 
 // Changelog
@@ -120,9 +120,9 @@ class App extends React.Component {
 
               <SideBarSubMenu title="Getting started" icon="manual">
                 <SideBarLink title="Quick start" to="/getting-started/quick-start" />
-                <SideBarLink title="Contribute" to="/getting-started/contribute" />
+                <SideBarLink title="Contributing" to="/getting-started/contributing" />
                 <SideBarLink title="Coding conventions" to="/getting-started/coding-conventions" />
-                <SideBarLink title="Changelog" to="/changelog" />
+                <SideBarLink title="Changelog" to="/getting-started/changelog" />
               </SideBarSubMenu>
 
               <SideBarSubMenu title="Base" icon="circle">
@@ -188,13 +188,11 @@ class App extends React.Component {
             <Route exact path="/" component={Start} />
 
             {/* Getting started */}
-            <Route exact path="/getting-started" render={() => <Redirect to="/doc/getting-started/quick-start" />} />
+            <Route exact path="/getting-started" render={() => <Redirect to="/getting-started/quick-start" />} />
             <Route path='/getting-started/quick-start' render={(props) => <MarkDownLoader file={QuickStartMd} title="Getting started" {...props} />} />
-            <Route path='/getting-started/contribute' render={(props) => <MarkDownLoader file={ContributeMd} title="Getting started" {...props} />} />
+            <Route path='/getting-started/contributing' render={(props) => <MarkDownLoader file={ContributingMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/coding-conventions' render={(props) => <MarkDownLoader file={CodingConventionsMd} title="Getting started" {...props} />} />
-
-            {/* Changelog */}
-            <Route path='/changelog' render={(props) => <MarkDownLoader file={ChangelogMd} title="Changelog" {...props} />} />
+            <Route path='/getting-started/changelog' render={(props) => <MarkDownLoader file={ChangelogMd} title="Getting started" {...props} />} />
 
             {/* Live editor */}
             <Route path="/live-editor" component={LiveEditor} />

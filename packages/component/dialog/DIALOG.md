@@ -1,12 +1,12 @@
 # Dialog
 Dialogs inform users about a specific task and may contain critical information, require decisions, or warn the user.
 
-Source file: `packages/component/dialog/_dialog.scss`.
+Source file: [packages/component/dialog/_dialog.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/dialog/_dialog.scss)
 
 ---
 
 ## Styles
-Use the [backdrop](/layout/backdrop) for a background layer below the dialog. See [modal](/component/modal) for more freedom when using content.
+Use the [backdrop](/#/layout/backdrop) for a background layer below the dialog. See [modal](/#/component/modal) for more freedom when using content.
 
 ### Example
 This is a static example of the dialog. The `position` property has been overridden for demo purposes.

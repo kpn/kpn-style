@@ -1,7 +1,7 @@
 # Title bar
 Give your application a title bar.
 
-Source file: `packages/layout/title-bar/_title-bar.scss`.
+Source file: [packages/layout/title-bar/_title-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/title-bar/_title-bar.scss)
 
 ---
 

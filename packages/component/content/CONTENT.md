@@ -1,7 +1,7 @@
 # Content
 Generic content block.
 
-Source file: `packages/component/content/_content.scss`.
+Source file: [packages/component/content/_content.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/content/_content.scss)
 
 ---
 

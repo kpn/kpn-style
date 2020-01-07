@@ -1,7 +1,7 @@
 # Pitch
 Block to pitch a topic. You can put multiple pitches below each other.
 
-Source file: `packages/layout/pitch/_pitch.scss`.
+Source file: [packages/layout/pitch/_pitch.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/pitch/_pitch.scss)
 
 ---
 

@@ -1,7 +1,7 @@
 # UI icon
 Icon font for the KPN UI icons.
 
-Source file: `packages/base/ui-icon/_ui-icon.scss`.
+Source file: [packages/base/ui-icon/_ui-icon.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/ui-icon/_ui-icon.scss)
 
 ---
 
@@ -19,7 +19,7 @@ The UI icon font needs to be loaded in order for the icons to work.
 @include font-face('kpn-ui-icons', normal, 400, '../node_modules/@kpn-style/bundle/base/ui-icon', 'kpn-ui-icons');
 ```
 
-Read more about the font-face mixin on the [typography](/base/typography) page.
+Read more about the font-face mixin on the [typography](/#/base/typography) page.
 
 ---
 

@@ -1,7 +1,7 @@
 # Progress
 Progress indicators are mainly used to show the user that the application is busy and that waiting is required. The motion of the indicator implies that the application has not completely crashed and is, in fact, busy. Some progress indicators we supply do not show the amount of progress (progress spinner), some do (progress bar).
 
-Source file: `packages/component/progress/_progress.scss`.
+Source file: [packages/component/progress/_progress.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/progress/_progress.scss)
 
 ---
 
@@ -29,7 +29,7 @@ Source file: `packages/component/progress/_progress.scss`.
 ```
 
 ### Button with progress spinner
-Also see the [button](/component/button) page for explanation on implementing a button with a progress spinner.
+Also see the [button](/#/component/button) page for explanation on implementing a button with a progress spinner.
 
 #### Blocking progress spinner
 ```html*example

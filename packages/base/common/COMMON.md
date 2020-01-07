@@ -1,7 +1,7 @@
 # Common
 Common variables, functions, mixins and styles (helper classes). Many of these are not meant for daily usage, but rather for situations where one might want to customize KPN style, run into an edge case, or work on KPN style itself.
 
-Source file: `packages/base/common/_common.scss`.
+Source file: [packages/base/common/_common.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/common/_common.scss)
 
 ---
 
@@ -153,7 +153,7 @@ Responsive display helpers serve to show or hide elements based on the screen wi
 
 
 ### Margin and padding
-For margin and padding there are helper classes from space 0 till space 4. [Read more about spaces here](/base/space). They are available for all sides and `top`, `right`, `bottom` and `left`. Only for margin there is also the class `margin-auto` that has the property `margin-left` and `margin-right` with `auto`.
+For margin and padding there are helper classes from space 0 till space 4. [Read more about spaces here](/#/base/space). They are available for all sides and `top`, `right`, `bottom` and `left`. Only for margin there is also the class `margin-auto` that has the property `margin-left` and `margin-right` with `auto`.
 
 * `margin-auto`
 * `margin-0`

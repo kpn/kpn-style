@@ -1,7 +1,7 @@
 # Color
 Beyond our logo, color is the most recognizable aspect of our brand identity.
 
-Source file: `packages/base/color/_color.scss`.
+Source file: [packages/base/color/_color.scss](https://github.com/kpn/kpn-style/blob/master/packages/base/color/_color.scss)
 
 ---
 

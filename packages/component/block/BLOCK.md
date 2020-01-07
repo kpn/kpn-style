@@ -1,7 +1,7 @@
 # Block
 Clear and simple block that attracts attention.
 
-Source file: `packages/component/block/_block.scss`.
+Source file: [packages/component/block/_block.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/block/_block.scss)
 
 ---
 

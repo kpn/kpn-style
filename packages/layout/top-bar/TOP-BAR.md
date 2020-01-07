@@ -1,7 +1,9 @@
 # Top bar
 Bar for logo, title and menu.
 
-Source file: `packages/layout/top-bar/_top-bar.scss`.
+The top bar is intended for applications. It must not be combined with the [mega menu](/layout/mega-menu) which is intended for websites. Use [app layout](/layout/app-layout) to give your application the right structure.
+
+Source file: [packages/layout/top-bar/_top-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/top-bar/_top-bar.scss)
 
 ---
 
@@ -45,7 +47,7 @@ $top-bar-height: value;
 ```
 
 ### Top bar with trigger
-Use the (menu) trigger to activate a menu like the mobile [side bar](/layout/side-bar). The trigger is only shown on small screens.
+Use the (menu) trigger to activate a menu like the mobile [side bar](/#/layout/side-bar). The trigger is only shown on small screens.
 
 ```html*example="top-bar"
 <nav class="top-bar">
@@ -102,7 +104,7 @@ Use the (menu) trigger to activate a menu like the mobile [side bar](/layout/sid
 ```
 
 ### Hide items
-Use the [display helper classes](/base/common) to hide items.
+Use the [display helper classes](/#/base/common) to hide items.
 
 ```html*example="top-bar"
 <nav class="top-bar">

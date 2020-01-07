@@ -1,4 +1,4 @@
-# KPN Style
+# Quick start
 We created KPN Style to act as a central location for reusable (style) packages. Anyone working on a KPN product is encouraged to stay familiar with KPN Style and help ensure that it is kept up-to-date. We also supply a portal with documentation on the use of KPN Style. 
 
 [![Build Status](https://travis-ci.org/kpn/kpn-style.svg?branch=master)](https://travis-ci.org/kpn/kpn-style)

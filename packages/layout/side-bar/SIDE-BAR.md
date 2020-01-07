@@ -1,7 +1,9 @@
 # Side bar
-Collapsable navigation with icons and text.
+Collapsable navigation with icons and text. 
 
-Source file: `packages/layout/side-bar/_side-bar.scss`.
+The side bar is intended for applications. It must not be combined with the [mega menu](/layout/mega-menu) which is intended for websites. Use [app layout](/layout/app-layout) to give your application the right structure.
+
+Source file: [packages/layout/side-bar/_side-bar.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/side-bar/_side-bar.scss)
 
 ---
 
@@ -77,7 +79,7 @@ $side-bar-font-size: value;
 ```
 
 ### Mobile Side bar
-We recommend to use the trigger (hamburger/menu icon) from the [top bar](/layout/top-bar) to activate the mobile side bar. The [app layout](/layout/app-layout) will handle the positioning of the side bar when it is open (active) or closed.
+We recommend to use the trigger (hamburger/menu icon) from the [top bar](/#/layout/top-bar) to activate the mobile side bar. The [app layout](/#/layout/app-layout) will handle the positioning of the side bar when it is open (active) or closed.
 
 The mobile side bar will show (only on small screens) a green action bar with room for a link and a button to close the side bar. 
 

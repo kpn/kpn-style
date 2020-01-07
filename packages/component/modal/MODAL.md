@@ -1,12 +1,12 @@
 # Modal
 Modals give the possibility to show information as a layer over the current content in a way that is blocking: users cannot continue without taking an action with the modal (which might include closing it).
 
-Source file: `packages/component/modal/_modal.scss`.
+Source file: [packages/component/modal/_modal.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/modal/_modal.scss)
 
 ---
 
 ## Styles
-See [dialog](/component/dialog) to inform users about a specific task. _Dialog is preferred over modal when possible, as it is more specific._ Use the [backdrop](/layout/backdrop) for a background layer below the modal.
+See [dialog](/#/component/dialog) to inform users about a specific task. _Dialog is preferred over modal when possible, as it is more specific._ Use the [backdrop](/#/layout/backdrop) for a background layer below the modal.
 
 ### Example
 This is a static example of the modal. The `position` property has been overridden for demo purposes.

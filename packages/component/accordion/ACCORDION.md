@@ -1,7 +1,7 @@
 # Accordion
 The accordion component is used to display content in a compact way. The user has control over which items are expanded. The accordion is also known as expansion panel or collapsible panel.
 
-Source file: `packages/component/accordion/_accordion.scss`.
+Source file: [packages/component/accordion/_accordion.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/accordion/_accordion.scss)
 
 ---
 

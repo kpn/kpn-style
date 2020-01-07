@@ -1,7 +1,9 @@
 # Mega menu
 Menu for logo and items.
 
-Source file: `packages/layout/mega-menu/_mega-menu.scss`.
+The mega menu is intended for websites. It must not be combined with the [top bar](/layout/top-bar) and [side bar](/layout/side-bar) which are intended for applications. Use [web layout](/layout/web-layout) to give your website the right structure.
+
+Source file: [packages/layout/mega-menu/_mega-menu.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/mega-menu/_mega-menu.scss)
 
 ---
 
@@ -117,7 +119,7 @@ Hover over the second item ('Group title') to show the sub items (except on `xs`
 ```
 
 ### Hide items
-Use the hide [display helper classes](/base/common) to hide items.
+Use the hide [display helper classes](/#/base/common) to hide items.
 
 ```html*example="mega-menu"
 <nav class="mega-menu">
@@ -135,13 +137,13 @@ Use the hide [display helper classes](/base/common) to hide items.
 ```
 
 ### Mobile mega menu
-Use the trigger (hamburger/menu icon) to activate the (primary) menu. The [web layout](/layout/web-layout) will handle the positioning of the menu when it is open (active) or closed.
+Use the trigger (hamburger/menu icon) to activate the (primary) menu. The [web layout](/#/layout/web-layout) will handle the positioning of the menu when it is open (active) or closed.
 
 The mobile mega menu will show a green action bar with room for a link and a button to close the menu *.
 
 Note: The mobile submenu with groups is not yet supported.
 
-\* Only on small / `xs` screens in combination with [web layout](/layout/web-layout)
+\* Only on small / `xs` screens in combination with [web layout](/#/layout/web-layout)
 
 ```html*example="mega-menu-mobile"
 <nav class="mega-menu">

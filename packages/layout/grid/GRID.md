@@ -1,7 +1,7 @@
 # Grid
 Mobile-first 12 column grid system.
 
-Source file: `packages/layout/grid/_grid.scss`.
+Source file: [packages/layout/grid/_grid.scss](https://github.com/kpn/kpn-style/blob/master/packages/layout/grid/_grid.scss)
 
 ---
 
@@ -41,7 +41,7 @@ Source file: `packages/layout/grid/_grid.scss`.
 ### Responsive columns
 Resize your screen to see the (mobile-first) behavior of the columns. For example, the style from class `col--m-4` will be applied when the screen will match the minimum width of a medium screen format. 
 
-Under the hood, this grid is using [breakpoint](/base/screen) mixins like `@include breakpoint(m)`.
+Under the hood, this grid is using [breakpoint](/#/base/screen) mixins like `@include breakpoint(m)`.
 
 ```html*example="grid"
 <div class="row">
