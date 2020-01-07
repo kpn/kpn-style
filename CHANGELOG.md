@@ -2,11 +2,7 @@
 All notable changes to KPN Style will be documented in this file.
 
 ## v1.16.0 - 7 January 2020
-<<<<<<< HEAD
 - [Table](/component/table) Table cell content will now be vertical aligned at the top.
-=======
-- [Table](/component/table) Table cell content will now be vertical aligned at the top
->>>>>>> 20f7f65b7278b032fe103b798309e525f706910a
 - [UI icon](/base/ui-icon) Icon sizes are changed to follow KPN designs. `ui--small` to 18px, `ui--large` to 36px.
 - Some visual and functional portal changes and fixes.
 
