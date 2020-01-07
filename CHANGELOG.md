@@ -1,6 +1,11 @@
 # Changelog
 All notable changes to KPN Style will be documented in this file.
 
+## v1.16.0 - 7 January 2020
+- [Table](/component/table) Table cell content will now be vertical aligned at the top
+- [UI icon](/base/ui-icon) Icon sizes are changed to follow KPN designs. `ui--small` to 18px, `ui--large` to 36px.
+- Some visual and functional portal changes and fixes.
+
 ## v1.15.0 - 12 November 2019
 - [Slider](/component/slider) (input range) component has been added.
 - Eliminated vertical text alignment differences between MacOS and Windows for the breadcrumb component.
