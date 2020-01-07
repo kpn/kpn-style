@@ -18,6 +18,10 @@
     text-align: left;
   }
 
+  td {
+    vertical-align: top;
+  }
+
   // Shrinked is incorrect and therefore deprecated
   // https://www.merriam-webster.com/words-at-play/shrink-shrank-shrunk-shrinked
   #{$table}__col-shrinked, #{$table}__col-shrank {

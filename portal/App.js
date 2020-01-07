@@ -188,7 +188,7 @@ class App extends React.Component {
             <Route exact path="/" component={Start} />
 
             {/* Getting started */}
-            <Route exact path="/getting-started" render={() => <Redirect to="/doc/getting-started/quick-start" />} />
+            <Route exact path="/getting-started" render={() => <Redirect to="/getting-started/quick-start" />} />
             <Route path='/getting-started/quick-start' render={(props) => <MarkDownLoader file={QuickStartMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/contributing' render={(props) => <MarkDownLoader file={ContributingMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/coding-conventions' render={(props) => <MarkDownLoader file={CodingConventionsMd} title="Getting started" {...props} />} />
