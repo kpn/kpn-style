@@ -3,7 +3,12 @@ const kpnIconParser = require('./icons/index');
 
 kpnIconParser({
   src: './assets/service-icons.zip',
-  dist: './fonts'
+  dist: './fonts',
+  fontName: 'kpn-service-icons',
+  className: 'si',
+  shouldRemoveFromName: 'service-',
+  shouldPrefixClassName: true,
+  website: {}
 }).then(() => {
   console.log(`${chalk.green('SUCCESS')} The icon pack is successfully build!`);
 });

@@ -2,6 +2,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
 const cheerio = require('cheerio');
+const copy = require('copy-template-dir');
 const unzipper = require('unzipper');
 const svg2ttf = require('svg2ttf');
 const ttf2eot = require('ttf2eot');
@@ -50,9 +51,12 @@ exports.checkSource = async (OPTIONS) => {
         .on('entry', (entry) => {
           if (entry.type === 'File' && entry.path.indexOf('/') === -1) {
             let newFileName = entry.path;
-            if (OPTIONS.shouldRename) {
-              const fileNameRegex = new RegExp(OPTIONS.shouldRename, 'i');
-              newFileName = entry.path.replace(fileNameRegex, OPTIONS.className);
+            if (OPTIONS.shouldRemoveFromName) {
+              const fileNameRegex = new RegExp(OPTIONS.shouldRemoveFromName, 'i');
+              newFileName = entry.path.replace(fileNameRegex, '');
+            }
+            if (OPTIONS.shouldPrefixClassName) {
+              newFileName = `${OPTIONS.className}-${newFileName}`;
             }
             entry.pipe(fs.createWriteStream(path.join(newSourceFolder, newFileName)));
           }
@@ -209,5 +213,17 @@ exports.createSvgSymbol = OPTIONS => {
       console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('Svg Symbol')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
       resolve(data);
     });
+  });
+};
+
+exports.copyTemplate = (inDir, outDir, vars) => {
+  return new Promise((resolve, reject) => {
+    copy(inDir, outDir, vars, (err, createdFiles) => {
+      if (err) {
+        reject(err);
+      }
+      createdFiles.forEach(createdFile => console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.extname(createdFile).replace(/\./g, '').toUpperCase())} style successfully created: ${chalk.yellow(createdFile)}`));
+      resolve(createdFiles);
+    })
   });
 };
