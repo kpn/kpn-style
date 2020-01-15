@@ -42,6 +42,8 @@ exports.checkSource = async (OPTIONS) => {
   try {
     const source = fs.lstatSync(OPTIONS.src);
     if (source.isFile() && path.extname(OPTIONS.src) === '.zip') {
+      log(`${chalk.keyword('orange')('PROGRESS')} Source is a ZIP-file, start unpacking and processing...`);
+
       const newSourceFolder = OPTIONS.src.replace(/\.[^/.]+$/, '');
 
       await fs.emptyDir(newSourceFolder);
@@ -69,23 +71,25 @@ exports.checkSource = async (OPTIONS) => {
         .then(
           () => {
             OPTIONS.src = newSourceFolder;
-            console.log(`${chalk.green('SUCCESS')} Source file successfully processed: ${chalk.yellow(OPTIONS.src)}`);
+            log(`${chalk.green('SUCCESS')} Source file successfully unpacked and processed: ${chalk.yellow(OPTIONS.src)}\n`, true);
           },
           (e) => {
-            console.log(`${chalk.red('ERROR')} Something went wrong while unzipping source file: ${chalk.yellow(OPTIONS.src)}`);
+            log(`${chalk.red('ERROR')} Something went wrong while unzipping source file: ${chalk.yellow(OPTIONS.src)}\n`, true);
           }
         );
 
     } else {
       // @todo: check this later if this should be renamed
-      console.log(`${chalk.green('SUCCESS')} Source is already a directory: ${chalk.yellow(OPTIONS.src)}`);
+      log(`${chalk.green('SUCCESS')} Source is already a directory: ${chalk.yellow(OPTIONS.src)}\n`, true);
     }
   } catch(error) {
-    console.log(`${chalk.red('ERROR')} Something went wrong while processing source: ${chalk.yellow(OPTIONS.src)}`);
+    log(`${chalk.red('ERROR')} Something went wrong while processing source: ${chalk.yellow(OPTIONS.src)}\n`, true);
   }
 }
 
 exports.createSVG = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('SVG')} font...`);
+
   UnicodeObj = {};
   return new Promise((resolve, reject) => {
     const fontStream = new SVGIcons2SVGFont({
@@ -109,12 +113,12 @@ exports.createSVG = OPTIONS => {
 
     fontStream.pipe(fs.createWriteStream(DIST_PATH))
       .on('finish', () => {
-        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('SVG')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+        log(`${chalk.green('SUCCESS')} ${chalk.blueBright('SVG')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
         resolve(UnicodeObj);
       })
       .on('error', (err) => {
         if (err) {
-          console.log(`${chalk.red('ERROR')} ${chalk.blueBright('SVG')} font not created: ${chalk.yellow(DIST_PATH)}`);
+          log(`${chalk.red('ERROR')} ${chalk.blueBright('SVG')} font not created: ${chalk.yellow(DIST_PATH)}\n`, true);
           reject(err);
         }
       });
@@ -129,6 +133,8 @@ exports.createSVG = OPTIONS => {
 };
 
 exports.createTTF = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('TTF')} font...`);
+
   return new Promise((resolve, reject) => {
     const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.ttf`);
     let ttf = svg2ttf(fs.readFileSync(path.join(OPTIONS.dist, `${OPTIONS.fontName}.svg`), 'utf8'), {});
@@ -138,13 +144,15 @@ exports.createTTF = OPTIONS => {
       if (err) {
         return reject(err);
       }
-      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('TTF')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      log(`${chalk.green('SUCCESS')} ${chalk.blueBright('TTF')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
       resolve(data);
     });
   });
 };
 
 exports.createEOT = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('EOT')} font...`);
+
   return new Promise((resolve, reject) => {
     const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.eot`);
     const eot = Buffer.from(ttf2eot(this.ttf).buffer);
@@ -153,13 +161,15 @@ exports.createEOT = OPTIONS => {
       if (err) {
         return reject(err);
       }
-      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('EOT')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      log(`${chalk.green('SUCCESS')} ${chalk.blueBright('EOT')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
       resolve(data);
     });
   });
 };
 
 exports.createWOFF = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('WOFF')} font...`);
+
   return new Promise((resolve, reject) => {
     const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.woff`);
     const woff = Buffer.from(ttf2woff(this.ttf).buffer);
@@ -168,13 +178,15 @@ exports.createWOFF = OPTIONS => {
       if (err) {
         return reject(err);
       }
-      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('WOFF')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      log(`${chalk.green('SUCCESS')} ${chalk.blueBright('WOFF')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
       resolve(data);
     });
   });
 };
 
 exports.createWOFF2 = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('WOFF2')} font...`);
+
   return new Promise((resolve, reject) => {
     const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.woff2`);
     const woff2 = Buffer.from(ttf2woff2(this.ttf).buffer);
@@ -183,16 +195,17 @@ exports.createWOFF2 = OPTIONS => {
       if (err) {
         return reject(err);
       }
-      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('WOFF2')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      log(`${chalk.green('SUCCESS')} ${chalk.blueBright('WOFF2')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
       resolve(data);
     });
   });
 };
 
 exports.createSvgSymbol = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('SVG Symbol')} font...`);
+
   const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.symbol.svg`);
   const $ = cheerio.load('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="display:none;"></svg>');
-
 
   return new Promise((resolve, reject) => {
     this.filterSvgFiles(OPTIONS.src).forEach(svgPath => {
@@ -211,7 +224,7 @@ exports.createSvgSymbol = OPTIONS => {
       if (err) {
         return reject(err);
       }
-      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('Svg Symbol')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      log(`${chalk.green('SUCCESS')} ${chalk.blueBright('SVG Symbol')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
       resolve(data);
     });
   });
@@ -223,7 +236,7 @@ exports.copyTemplate = (inDir, outDir, vars) => {
       if (err) {
         reject(err);
       }
-      createdFiles.forEach(createdFile => console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.extname(createdFile).replace(/\./g, '').toUpperCase())} style successfully created: ${chalk.yellow(createdFile)}`));
+      createdFiles.forEach(createdFile => log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.extname(createdFile).replace(/\./g, '').toUpperCase())} style successfully created: ${chalk.yellow(createdFile)}\n`));
       resolve(createdFiles);
     })
   });
@@ -238,4 +251,16 @@ exports.createHTML = ({ outPath, data = {}, options = {} }) => {
       resolve(str);
     });
   });
+};
+
+var log = exports.log = (string, clearLine = false) => {
+  if (process.stdout) {
+    if (clearLine) {
+      process.stdout.clearLine();
+      process.stdout.cursorTo(0);
+    }
+    process.stdout.write(string);
+  } else {
+    log(string);
+  }
 };

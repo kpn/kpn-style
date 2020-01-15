@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const minify = require('html-minifier').minify;
 const generate = require('./generate');
 
-const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol, createHTML, copyTemplate } = require('./utils');
+const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol, createHTML, copyTemplate, log } = require('./utils');
 
 module.exports = async function create(options) {
   if (!options) options = {};
@@ -18,6 +18,8 @@ module.exports = async function create(options) {
   let symbolHtml = [];
 
   const pageName = ['font-class', 'unicode', 'symbol'];
+
+  log(`${chalk.keyword('orange')('START')} Building Icon set from: ${chalk.yellow(options.src)}\n`);
 
   return checkSource(options)
     .then(() => createSVG(options))
@@ -58,6 +60,8 @@ module.exports = async function create(options) {
     })
     .then(() => {
       if (options.website) {
+        log(`${chalk.keyword('orange')('PROGRESS')} Building html...`);
+
         const indexName = pageName.includes(options.website.index) ? pageName.indexOf(options.website.index) : 0;
         pageName.forEach((name, index) => {
           const _path = path.join(options.dist, indexName === index ? 'index.html' : `${name}.html`);
@@ -106,11 +110,13 @@ module.exports = async function create(options) {
           fontClassPath,
           minify(str, { collapseWhitespace: true, minifyCSS: true })
         );
-        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(fontClassPath).base)} html successfully created ${chalk.yellow(fontClassPath)}`);
+        log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(fontClassPath).base)} html successfully created ${chalk.yellow(fontClassPath)}\n`, true);
       }
     })
     .then(str => {
       if (options.website) {
+        log(`${chalk.keyword('orange')('PROGRESS')} Building html...`);
+
         this.tempData._IconHtml = unicodeHtml.join('');
         this.tempData._type = 'unicode';
         return createHTML({
@@ -125,11 +131,13 @@ module.exports = async function create(options) {
           unicodePath,
           minify(str, { collapseWhitespace: true, minifyCSS: true })
         );
-        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(unicodePath).base)} html successfully created ${chalk.yellow(unicodePath)}`);
+        log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(unicodePath).base)} html successfully created ${chalk.yellow(unicodePath)}\n`, true);
       }
     })
     .then(str => {
       if (options.website) {
+        log(`${chalk.keyword('orange')('PROGRESS')} Building html...`);
+
         this.tempData._IconHtml = symbolHtml.join('');
         this.tempData._type = 'symbol';
         return createHTML({
@@ -144,13 +152,16 @@ module.exports = async function create(options) {
           symbolPath,
           minify(str, { collapseWhitespace: true, minifyCSS: true })
         )
-        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(symbolPath).base)} html successfully created ${chalk.yellow(symbolPath)}`)
+        log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(symbolPath).base)} html successfully created ${chalk.yellow(symbolPath)}\n`, true)
       }
     })
     .then(async () => {
       if (options.outSVGPath) {
+        log(`${chalk.keyword('orange')('PROGRESS')} Building json...`);
+
         const outPath = await generate.generateIconsSource(options);
-        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(outPath).base)} json successfully created ${chalk.yellow(outPath)}`);
+
+        log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(outPath).base)} json successfully created ${chalk.yellow(outPath)}\n`, true);
       }
       return options;
     });
