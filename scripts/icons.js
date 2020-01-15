@@ -1,5 +1,6 @@
 const chalk = require('chalk');
 const kpnIconParser = require('./icons/index');
+const pkg = require('../packages/package.json');
 
 kpnIconParser({
   src: './assets/service-icons.zip',
@@ -8,7 +9,10 @@ kpnIconParser({
   className: 'si',
   shouldRemoveFromName: 'service-',
   shouldPrefixClassName: true,
-  website: {}
+  outSVGPath: true,
+  website: {
+    version: pkg.version
+  }
 }).then(() => {
   console.log(`${chalk.green('SUCCESS')} The icon pack is successfully build!`);
 });

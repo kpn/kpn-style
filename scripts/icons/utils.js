@@ -3,6 +3,7 @@ const path = require('path');
 const chalk = require('chalk');
 const cheerio = require('cheerio');
 const copy = require('copy-template-dir');
+const ejs = require('ejs');
 const unzipper = require('unzipper');
 const svg2ttf = require('svg2ttf');
 const ttf2eot = require('ttf2eot');
@@ -206,7 +207,7 @@ exports.createSvgSymbol = OPTIONS => {
       $('svg').append(symbolNode);
     });
 
-    fs.writeFile(DIST_PATH, $.html("svg"), (err, data) => {
+    fs.writeFile(DIST_PATH, $.html('svg'), (err, data) => {
       if (err) {
         return reject(err);
       }
@@ -225,5 +226,16 @@ exports.copyTemplate = (inDir, outDir, vars) => {
       createdFiles.forEach(createdFile => console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.extname(createdFile).replace(/\./g, '').toUpperCase())} style successfully created: ${chalk.yellow(createdFile)}`));
       resolve(createdFiles);
     })
+  });
+};
+
+exports.createHTML = ({ outPath, data = {}, options = {} }) => {
+  return new Promise((resolve, reject) => {
+    ejs.renderFile(outPath, data, options, (err, str) => {
+      if (err) {
+        reject(err);
+      }
+      resolve(str);
+    });
   });
 };

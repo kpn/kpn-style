@@ -1,4 +1,8 @@
+const fs = require('fs-extra');
 const path = require('path');
+const chalk = require('chalk');
+const minify = require('html-minifier').minify;
+const generate = require('./generate');
 
 const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol, createHTML, copyTemplate } = require('./utils');
 
@@ -12,6 +16,8 @@ module.exports = async function create(options) {
   let cssIconHtml = [];
   let unicodeHtml = [];
   let symbolHtml = [];
+
+  const pageName = ['font-class', 'unicode', 'symbol'];
 
   return checkSource(options)
     .then(() => createSVG(options))
@@ -49,5 +55,103 @@ module.exports = async function create(options) {
           prefix: options.className || options.fontName
         });
       }
+    })
+    .then(() => {
+      if (options.website) {
+        const indexName = pageName.includes(options.website.index) ? pageName.indexOf(options.website.index) : 0;
+        pageName.forEach((name, index) => {
+          const _path = path.join(options.dist, indexName === index ? 'index.html' : `${name}.html`);
+          if (name === 'font-class') fontClassPath = _path;
+          if (name === 'unicode') unicodePath = _path;
+          if (name === 'symbol') symbolPath = _path;
+        });
+        options.website.template = options.website.template || path.join(__dirname, 'views', 'index.ejs');
+
+        this.tempData = {
+          meta: null,
+          links: null,
+          corners: null,
+          description: null,
+          ...options.website,
+          prefix: options.className || options.fontName,
+          _fontname: options.fontName,
+          _type: 'font-class',
+          _logo: options.website.logo,
+          _link: `${options.fontName}.css`,
+          _IconHtml: cssIconHtml.join(''),
+          _title: options.website.title || options.fontName
+        };
+
+        if (options.website.logo && fs.pathExistsSync(options.website.logo) && path.extname(options.website.logo) === '.svg') {
+          this.tempData._logo = fs.readFileSync(options.website.logo);
+        } else {
+          this.tempData._logo = false;
+        }
+
+        if (options.website.favicon && fs.pathExistsSync(options.website.favicon)) {
+          this.tempData.favicon = base64Img.base64Sync(options.website.favicon);
+        } else {
+          this.tempData.favicon = false;
+        }
+
+        return createHTML({
+          outPath: options.website.template,
+          data: this.tempData
+        });
+      }
+    })
+    .then(str => {
+      if (options.website) {
+        fs.outputFileSync(
+          fontClassPath,
+          minify(str, { collapseWhitespace: true, minifyCSS: true })
+        );
+        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(fontClassPath).base)} html successfully created ${chalk.yellow(fontClassPath)}`);
+      }
+    })
+    .then(str => {
+      if (options.website) {
+        this.tempData._IconHtml = unicodeHtml.join('');
+        this.tempData._type = 'unicode';
+        return createHTML({
+          outPath: options.website.template,
+          data: this.tempData
+        });
+      }
+    })
+    .then(str => {
+      if (options.website) {
+        fs.outputFileSync(
+          unicodePath,
+          minify(str, { collapseWhitespace: true, minifyCSS: true })
+        );
+        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(unicodePath).base)} html successfully created ${chalk.yellow(unicodePath)}`);
+      }
+    })
+    .then(str => {
+      if (options.website) {
+        this.tempData._IconHtml = symbolHtml.join('');
+        this.tempData._type = 'symbol';
+        return createHTML({
+          outPath: options.website.template,
+          data: this.tempData
+        });
+      }
+    })
+    .then(str => {
+      if (options.website) {
+        fs.outputFileSync(
+          symbolPath,
+          minify(str, { collapseWhitespace: true, minifyCSS: true })
+        )
+        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(symbolPath).base)} html successfully created ${chalk.yellow(symbolPath)}`)
+      }
+    })
+    .then(async () => {
+      if (options.outSVGPath) {
+        const outPath = await generate.generateIconsSource(options);
+        console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright(path.parse(outPath).base)} json successfully created ${chalk.yellow(outPath)}`);
+      }
+      return options;
     });
 }
