@@ -1,6 +1,6 @@
 const path = require('path');
 
-const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2 } = require('./utils');
+const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol } = require('./utils');
 
 module.exports = async function create(options) {
   if (!options) options = {};
@@ -16,5 +16,6 @@ module.exports = async function create(options) {
     .then(() => createTTF(options))
     .then(() => createEOT(options))
     .then(() => createWOFF(options))
-    .then(() => createWOFF2(options));
+    .then(() => createWOFF2(options))
+    .then(() => createSvgSymbol(options));
 }

@@ -1,6 +1,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const chalk = require('chalk');
+const cheerio = require('cheerio');
 const unzipper = require('unzipper');
 const svg2ttf = require('svg2ttf');
 const ttf2eot = require('ttf2eot');
@@ -178,6 +179,34 @@ exports.createWOFF2 = OPTIONS => {
         return reject(err);
       }
       console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('WOFF2')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
+      resolve(data);
+    });
+  });
+};
+
+exports.createSvgSymbol = OPTIONS => {
+  const DIST_PATH = path.join(OPTIONS.dist, `${OPTIONS.fontName}.symbol.svg`);
+  const $ = cheerio.load('<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="display:none;"></svg>');
+
+
+  return new Promise((resolve, reject) => {
+    this.filterSvgFiles(OPTIONS.src).forEach(svgPath => {
+      const fileName = path.basename(svgPath, path.extname(svgPath));
+      const file = fs.readFileSync(svgPath, 'utf8');
+      const svgNode = $(file);
+
+      symbolNode = $('<symbol></symbol>');
+      symbolNode.attr('viewBox', svgNode.attr('viewBox'));
+      symbolNode.attr('id', `${OPTIONS.clssaNamePrefix}-${fileName}`);
+      symbolNode.append(svgNode.contents());
+      $('svg').append(symbolNode);
+    });
+
+    fs.writeFile(DIST_PATH, $.html("svg"), (err, data) => {
+      if (err) {
+        return reject(err);
+      }
+      console.log(`${chalk.green('SUCCESS')} ${chalk.blueBright('Svg Symbol')} font successfully created: ${chalk.yellow(DIST_PATH)}`);
       resolve(data);
     });
   });
