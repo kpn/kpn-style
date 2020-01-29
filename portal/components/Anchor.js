@@ -26,10 +26,8 @@ class Heading extends React.Component {
     let headerLevel;
     const hashes = window.location.hash.split('#');
     const headerName = this.props.children[0].props.value;
-
     const headerId = `${hashes[1]}#${headerName.replace(/\s/g ,'-')}`;
     
-
     switch (this.props.level) {
       case 1:
          headerLevel = <h1>{headerName}</h1>;
@@ -49,7 +47,6 @@ class Heading extends React.Component {
       </React.Fragment>
     );
   };
-
 };
 
 export { Anchor, Heading };
