@@ -9,6 +9,10 @@ import { TopBar, TopBarMenu } from './components/TopBar';
 /**
  * Pages
  */
+import { Button } from './../packages/component/button/data.js';
+
+
+
 // Start
 import Start from './Start';
 
@@ -41,7 +45,6 @@ import AccordionMd from './../packages/component/accordion/ACCORDION.md';
 import ActionMenuMd from './../packages/component/action-menu/ACTION-MENU.md';
 import BlockMd from './../packages/component/block/BLOCK.md';
 import BreadcrumbMd from './../packages/component/breadcrumb/BREADCRUMB.md';
-import ButtonMd from './../packages/component/button/BUTTON.md';
 import CardMd from './../packages/component/card/CARD.md';
 import ContentMd from './../packages/component/content/CONTENT.md';
 import DialogMd from './../packages/component/dialog/DIALOG.md';
@@ -106,6 +109,20 @@ class App extends React.Component {
     });
   }
 
+  getSideBarLink(data) {
+    return <SideBarLink title={data.title} to={data.path} />
+  }
+
+  getRoutes(data) {
+    return (
+      <>
+        {data.path ? <Route exact path={data.path} render={() => <Redirect to={data.docs[0].path} />} /> : ''}
+        {data.docs.map((doc, index) =>
+          (<Route key={index} exact path={doc.path} render={(props) => <MarkDownLoader file={doc.content} title={doc.title} data={data} {...props} />} />))}
+      </>
+    );
+  }
+
   render() {
     return(
       <AppContext.Provider value={{setSideBarActive: this.setSideBarActive, setSideBarInActive: this.setSideBarInActive}}>
@@ -144,7 +161,7 @@ class App extends React.Component {
                 <SideBarLink title="Action menu" to="/component/action-menu" />
                 <SideBarLink title="Block" to="/component/block" />
                 <SideBarLink title="Breadcrumb" to="/component/breadcrumb" />
-                <SideBarLink title="Button" to="/component/button" />
+                {this.getSideBarLink(Button)}
                 <SideBarLink title="Card" to="/component/card" />
                 <SideBarLink title="Content" to="/component/content" />
                 <SideBarLink title="Dialog" to="/component/dialog" />
@@ -188,7 +205,6 @@ class App extends React.Component {
             <Route exact path="/" component={Start} />
 
             {/* Getting started */}
-            <Route exact path="/getting-started" render={() => <Redirect to="/getting-started/quick-start" />} />
             <Route path='/getting-started/quick-start' render={(props) => <MarkDownLoader file={QuickStartMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/contributing' render={(props) => <MarkDownLoader file={ContributingMd} title="Getting started" {...props} />} />
             <Route path='/getting-started/coding-conventions' render={(props) => <MarkDownLoader file={CodingConventionsMd} title="Getting started" {...props} />} />
@@ -198,7 +214,6 @@ class App extends React.Component {
             <Route path="/live-editor" component={LiveEditor} />
 
             {/* Base */}
-            <Route exact path="/base" render={() => <Redirect to="/base/animation" />} />
             <Route path='/base/animation' render={(props) => <MarkDownLoader file={AnimationMd} title="Base" {...props} />} />
             <Route path='/base/color' render={(props) => <MarkDownLoader file={ColorMd} title="Base" {...props} />} />
             <Route path='/base/common' render={(props) => <MarkDownLoader file={CommonMd} title="Base" {...props} />} />
@@ -212,12 +227,11 @@ class App extends React.Component {
             <Route path='/base/ui-icon' render={(props) => <MarkDownLoader file={UiIconMd} title="Base" {...props} />} />
 
             {/* Component */}
-            <Route exact path="/component" render={() => <Redirect to="/component/accordion" />} />
             <Route path='/component/accordion' render={(props) => <MarkDownLoader file={AccordionMd} title="Component" {...props} />} />
             <Route path='/component/action-menu' render={(props) => <MarkDownLoader file={ActionMenuMd} title="Component" {...props} />} />
             <Route path='/component/block' render={(props) => <MarkDownLoader file={BlockMd} title="Component" {...props} />} />
             <Route path='/component/breadcrumb' render={(props) => <MarkDownLoader file={BreadcrumbMd} title="Component" {...props} />} />
-            <Route path='/component/button' render={(props) => <MarkDownLoader file={ButtonMd} title="Component" {...props} />} />
+            {this.getRoutes(Button)}
             <Route path='/component/card' render={(props) => <MarkDownLoader file={CardMd} title="Component" {...props} />} />
             <Route path='/component/content' render={(props) => <MarkDownLoader file={ContentMd} title="Component" {...props} />} />
             <Route path='/component/dialog' render={(props) => <MarkDownLoader file={DialogMd} title="Component" {...props} />} />
@@ -235,7 +249,6 @@ class App extends React.Component {
             <Route path='/component/tooltip' render={(props) => <MarkDownLoader file={Tooltip} title="Component" {...props} />} />
 
             {/* Layout */}
-            <Route exact path="/layout" render={() => <Redirect to="/layout/app-layout" />} />
             <Route path='/layout/app-layout' render={(props) => <MarkDownLoader file={AppLayoutMd} title="Layout" {...props} />} />
             <Route path='/layout/backdrop' render={(props) => <MarkDownLoader file={BackdropMd} title="Layout" {...props} />} />
             <Route path='/layout/banner' render={(props) => <MarkDownLoader file={BannerMd} title="Layout" {...props} />} />
@@ -250,7 +263,6 @@ class App extends React.Component {
             <Route path='/layout/web-layout' render={(props) => <MarkDownLoader file={WebLayoutMd} title="Layout" {...props} />} />
 
             {/* Theme */}
-            <Route exact path="/theme" render={() => <Redirect to="/theme/business-market" />} />
             <Route path='/theme/business-market' render={(props) => <MarkDownLoader file={BusinessMarketMd} title="Theme" {...props} />} />
           </Main>
         </div>

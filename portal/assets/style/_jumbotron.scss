@@ -17,4 +17,11 @@
       color: color(grey, silver);
     }
   }
+
+  + .tab {
+    .tab__menu {
+      padding-left: space(6);
+      padding-right: space(6);
+    }
+  }
 }
