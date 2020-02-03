@@ -87,16 +87,42 @@ exports.checkSource = async (OPTIONS) => {
   }
 }
 
+exports.cleanSourceFiles = OPTIONS => {
+  log(`${chalk.keyword('orange')('PROGRESS')} Start checking on dirty Meta data in icons...`);
+
+  return new Promise((resolve, reject) => {
+    this.filterSvgFiles(OPTIONS.src).forEach(svgPath => {
+      // const file = fs.readFileSync(svgPath, 'utf8');
+      // const svgNode = $(file);
+
+      // symbolNode = $('<symbol></symbol>');
+      // symbolNode.attr('viewBox', svgNode.attr('viewBox'));
+      // symbolNode.append(svgNode.contents());
+      // $('svg').append(symbolNode);
+      resolve();
+    });
+
+    // fs.writeFile(DIST_PATH, $.html('svg'), (err, data) => {
+    //   if (err) {
+    //     return reject(err);
+    //   }
+    //   log(`${chalk.green('SUCCESS')} ${chalk.blueBright('SVG Symbol')} font successfully created: ${chalk.yellow(DIST_PATH)}\n`, true);
+    //   resolve(data);
+    // });
+  });
+}
+
 exports.createSVG = OPTIONS => {
   log(`${chalk.keyword('orange')('PROGRESS')} Start creating ${chalk.blueBright('SVG')} font...`);
 
   UnicodeObj = {};
   return new Promise((resolve, reject) => {
     const fontStream = new SVGIcons2SVGFont({
-      fontName: OPTIONS.fontName,
-      fontHeight: 1024,
       ascent: 960,
-      descent: -64
+      descent: -64,
+      fontHeight: 1024,
+      fontName: OPTIONS.fontName,
+      normalize: true
     });
 
     function writeFontStream(svgPath) {

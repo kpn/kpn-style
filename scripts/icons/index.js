@@ -4,7 +4,7 @@ const chalk = require('chalk');
 const minify = require('html-minifier').minify;
 const generate = require('./generate');
 
-const { checkSource, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol, createHTML, copyTemplate, log } = require('./utils');
+const { checkSource, cleanSourceFiles, createSVG, createTTF, createEOT, createWOFF, createWOFF2, createSvgSymbol, createHTML, copyTemplate, log } = require('./utils');
 
 module.exports = async function create(options) {
   if (!options) options = {};
@@ -22,6 +22,7 @@ module.exports = async function create(options) {
   log(`${chalk.keyword('orange')('START')} Building Icon set from: ${chalk.yellow(options.src)}\n`);
 
   return checkSource(options)
+    // .then(() => cleanSourceFiles(options))
     .then(() => createSVG(options))
     .then((UnicodeObject) => {
       Object.keys(UnicodeObject).forEach(name => {
@@ -72,10 +73,6 @@ module.exports = async function create(options) {
         options.website.template = options.website.template || path.join(__dirname, 'views', 'index.ejs');
 
         this.tempData = {
-          meta: null,
-          links: null,
-          corners: null,
-          description: null,
           ...options.website,
           prefix: options.className || options.fontName,
           _fontname: options.fontName,

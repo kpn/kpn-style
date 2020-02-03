@@ -24,19 +24,7 @@ kpnIconParser({
  *   - `si-euro` different icon
  *   - `si-soccer` fails on bottom
  *   - `si-square` not visible
- * - Check color schema
- * - Add icons to projercts MD file
- * - Add Sass/Scss file(s)
- * - Update demo page
- * - Parameterize script
- * - Bump version, update package.json if necessary
- * - Create Zip from bundle
- * - Add/update logging
- * - Create mapping for renamed icons
- * - Handle deprecated icons
- * - Maybe e-mail/Slack to UX Lab with result (only on master)
- *
- * // svgo = https://github.com/svg/svgo/
- * // icon-font-generator = https://www.npmjs.com/package/icon-font-generator
- * // svgtofont = https://github.com/jaywcjlove/svgtofont
+ *   - wifi extender inverted
+ *   - remove meta data
+ *   - unpack zip to specific named directory
  */
