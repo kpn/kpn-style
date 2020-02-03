@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
 import CodeBlock from './CodeBlock';
@@ -11,43 +12,61 @@ class MarkDownLoader extends React.Component {
     this.state = { markdown: '' }
   }
 
-  componentDidMount() {
-    console.log(this.props.file);
-    fetch(this.props.file)
-      .then(response => {
-        return response.text()
-      })
-      .then(text => {
-        this.setState({ markdown: ReplaceKpnStyleBundleVersion(text) });
-      });
+  isMarkDownfile(source) {
+    const mdFileRegex = /\.md$/;
+    return mdFileRegex.test(source);
+  }
 
+  getMarkdownContent(source) {
+    if(this.isMarkDownfile(source)) {
+      fetch(source)
+        .then(response => {
+          return response.text()
+        })
+        .then(text => {
+          this.setState({ markdown: ReplaceKpnStyleBundleVersion(text) });
+        });
+    } else {
+      this.setState({ markdown: ReplaceKpnStyleBundleVersion(source) });
+    }
+  }
+
+  componentDidMount() {
+    this.getMarkdownContent(this.props.content);
   }
 
   render() {
     return (
-      <Content title='Lorem ipsum'>
-        {this.props.data.docs.length > 1 &&
-        <>
-          <div className="jumbotron">
-            <div className="jumbotron__body">
-              <div className="jumbotron__title">Button</div>
-              <p className="p">Source files: <a href="https://github.com/kpn/kpn-style/blob/master/packages/component/button" className="a">packages/component/button</a></p>
+      <Content title={this.props.data?.category || this.props.title}>
+        {this.props.data && Array.isArray(this.props.data.content) &&
+          <>
+            <div className="jumbotron">
+              <div className="jumbotron__body">
+                <div className="jumbotron__title">Button</div>
+              </div>
             </div>
-          </div>
 
-          <nav className="tab">
-            <ul className="tab__menu">
-              <li className="tab__item"><a href="#" className="tab__link tab__link--active">Usage</a></li>
-              <li className="tab__item"><a href="#" className="tab__link">Style</a></li>
-              <li className="tab__item"><a href="#" className="tab__link">Web Component</a></li>
-            </ul>
-          </nav>
-        </>
+            <nav className="tab">
+              <ul className="tab__menu">
+                {
+                  this.props.data.content.map((content) =>
+                    <>
+                      {!content.unlisted &&
+                        <li className="tab__item">
+                          <NavLink
+                            activeClassName="tab__link--active"
+                            className="tab__link"
+                            to={content.path}>
+                            {content.title}
+                          </NavLink>
+                        </li>
+                      }
+                    </>
+                )}
+              </ul>
+            </nav>
+          </>
         }
-
-
-
-
 
         <div className="container">
           <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock}} source={this.state.markdown} escapeHtml={false} />
