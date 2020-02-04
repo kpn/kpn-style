@@ -1,5 +1,31 @@
 @import "common.abstract";
 
+
+.display-inline {
+  display: inline !important;
+}
+
+.display-inline-block {
+  display: inline-block !important;
+}
+
+.display-flex {
+  display: flex !important;
+}
+
+.display-table {
+  display: table !important;
+}
+
+.display-block,
+.shown {
+  display: block !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
 .shown-xs,
 .shown-s,
 .shown-m,
@@ -77,14 +103,6 @@
 
 .text-underline {
   text-decoration: underline !important;
-}
-
-.shown {
-  display: block !important;
-}
-
-.hidden {
-  display: none !important;
 }
 
 .margin-auto {

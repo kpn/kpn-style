@@ -114,6 +114,13 @@ button {
 Helper classes with common styles.
 
 ### Display
+* `display-inline`
+* `display-inline-block`
+* `display-block`
+* `display-flex`
+* `display-table`
+
+### Shown and hidden
 Responsive display helpers serve to show or hide elements based on the screen width.
 
 * `shown`
@@ -126,6 +133,7 @@ Responsive display helpers serve to show or hide elements based on the screen wi
 * `hidden-s`
 * `hidden-m`
 * `hidden-l`
+
 ```html*example="display-helpers"
 <div class="hidden">I'm always hidden.</div>
 <div class="hidden-xs">I'm hidden on extra small screens.</div>
