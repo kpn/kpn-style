@@ -5,7 +5,9 @@ import CodeEditor from './components/CodeEditor';
 
 const LiveEditor = () => (
   <Content pageTitle="Live editor" title="Live editor">
-    <CodeEditor />
+    <div className="container">
+      <CodeEditor />
+    </div>
   </Content>
 );
 

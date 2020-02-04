@@ -4,7 +4,6 @@
   background-color: color(grey, dove);
   color: color(grey, white);
   font-size: $jumbotron-font-size;
-  margin-bottom: space();
 
   @include breakpoint(s) {
     align-items: center;
@@ -38,8 +37,18 @@
     font-size: $jumbotron-title-font-size;
   }
 
+  #{$jumbotron}__subtitle {
+    @include heading;
+    color: inherit;
+    font-size: $jumbotron-subtitle-font-size;
+  }
+
   #{$p} {
     color: inherit;
     font-size: inherit;
+  }
+
+  #{$a} {
+    color: inherit;
   }
 }

@@ -7,13 +7,13 @@ import Content from './components/Content';
 import logoKpnStyle from './assets/image/logo-kpn-style.png';
 
 const Start = () => (
-  <Content title="Start" wrapInContainer={false}>
+  <Content title="Start">
     <div className="jumbotron">
       <div className="jumbotron__body">
         <img alt="Logo KPN Style" className="kpn-style-logo" src={logoKpnStyle} />
       </div>
       <div className="jumbotron__body">
-        <p className="jumbotron__title">
+        <p className="jumbotron__subtitle">
           Build consistent KPN websites and applications
         </p>
         <p className="p">

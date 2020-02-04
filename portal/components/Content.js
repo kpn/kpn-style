@@ -15,14 +15,10 @@ class Content extends React.Component {
           <div className="title-bar__title">{this.props.title}</div>
         </div>
 
-        {this.props.wrapInContainer ? (<div className="container container--limited">{this.props.children}</div>) : (this.props.children)}
+        {this.props.children}
       </React.Fragment>
     );
   }
 }
-
-Content.defaultProps = {
-  wrapInContainer: true
-};
 
 export default Content;

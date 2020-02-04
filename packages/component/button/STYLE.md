@@ -1,4 +1,4 @@
-# Button
+# Style
 Create any type of clickable button with ease. Inside a button you can put a short text (call to action) and a [UI icon](/#/base/ui-icon).
 
 Source file: [packages/component/button/_button.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/button/_button.scss)
@@ -74,6 +74,11 @@ On the 12 column grid there is a maximum width of 4/12 you should use for button
 ```
 
 There are three different button sizes available.
+<div class="notification notification--caution margin-bottom-2">
+  <div class="notification__header">
+    Button sizes small and large are deprecated and will be removed in an upcoming major version release of KPN Style. Please avoid using differing button sizes, or override the CSS in your own project.
+  </div>
+</div>
 
 ```html*example
 <div class="button-group">

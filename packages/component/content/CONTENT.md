@@ -1,5 +1,10 @@
 # Content
 Generic content block.
+<div class="notification notification--caution margin-bottom-2">
+  <div class="notification__header">
+    This component is deprecated. It will be removed in an upcoming major version release of KPN Style. Please switch to card component instead.
+  </div>
+</div>
 
 Source file: [packages/component/content/_content.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/content/_content.scss)
 
