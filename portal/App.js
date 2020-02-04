@@ -26,9 +26,6 @@ import ChangelogMd from './../CHANGELOG.md';
 // Live editor
 import LiveEditor from './LiveEditor';
 
-// Accessibility
-import Accessibility from './Accessibility';
-
 // Base
 import AnimationMd from './../packages/base/animation/ANIMATION.md';
 import ColorMd from './../packages/base/color/COLOR.md';
