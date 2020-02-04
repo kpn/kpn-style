@@ -60,7 +60,6 @@
     "postcss-preset-env": "^6.7.0",
     "postcss-safe-parser": "^4.0.1",
     "react-app-polyfill": "^1.0.6",
-    "react-axe": "^3.3.0",
     "react-dev-utils": "^10.1.0",
     "resolve": "^1.15.0",
     "sass-loader": "^8.0.2",
@@ -79,6 +78,7 @@
   "dependencies": {
     "html-to-react": "^1.4.2",
     "react": "^16.12.0",
+    "react-axe": "^3.3.0",
     "react-dom": "^16.12.0",
     "react-ga": "^2.7.0",
     "react-helmet": "^5.2.1",
