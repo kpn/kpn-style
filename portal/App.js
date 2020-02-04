@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Redirect, Route } from 'react-router-dom';
-
 import axe from 'react-axe';
+import { Redirect, Route } from 'react-router-dom';
 
 import Main from './components/Main';
 import MarkDownLoader from './components/MarkDownLoader';
