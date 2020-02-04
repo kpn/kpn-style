@@ -28,7 +28,7 @@ class MarkDownLoader extends React.Component {
         <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock}} source={this.state.markdown} escapeHtml={false} />
       </Content>
     )
-  }  
+  }
 }
 
 export default MarkDownLoader;

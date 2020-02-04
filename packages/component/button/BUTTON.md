@@ -5,6 +5,15 @@ Source file: [packages/component/button/_button.scss](https://github.com/kpn/kpn
 
 ---
 
+## Web component test
+```html*example
+<h3>Test button</h3>
+
+<kpn-button foo="Test button"></kpn-button>
+```
+
+---
+
 ## Customizable variables
 
 ### Font size
