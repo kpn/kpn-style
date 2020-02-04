@@ -8,16 +8,16 @@ import { AppContext } from './../App';
  */
 const SideBar = (props) => (
   <AppContext.Consumer>
-    {({setSideBarInActive}) => (  
+    {({setSideBarInActive}) => (
       <nav className="app-layout__side-bar side-bar">
         <div className="side-bar__action-bar">
           <button className="side-bar__close" onClick={setSideBarInActive}>Close</button>
         </div>
 
-        {props.children}     
+        {props.children}
       </nav>
     )}
-  </AppContext.Consumer>           
+  </AppContext.Consumer>
 );
 
 export { SideBar };
@@ -27,8 +27,8 @@ export { SideBar };
  */
 const SideBarMenu = (props) => (
   <ul className="side-bar__menu">
-    {props.children}  
-  </ul>      
+    {props.children}
+  </ul>
 );
 
 export { SideBarMenu };
@@ -39,11 +39,11 @@ export { SideBarMenu };
 const SideBarLinkWithoutRouter = (props) => {
   const path = props.history.location.pathname;
   let isActive;
-  
+
   // Different handling for root path otherwise startWith '/' will always return true
   if (path === '/' && props.to === '/') {
     isActive = true
-    
+
   } else if(props.to !== '/') {
     // Wrapped in startWith because link should stay active if nested link is active
     isActive = path.startsWith(props.to);
@@ -53,16 +53,16 @@ const SideBarLinkWithoutRouter = (props) => {
     <AppContext.Consumer>
       {({setSideBarInActive}) => (
         <li>
-          <NavLink 
-            className={`side-bar__link ${isActive ? 'side-bar__link--active' : ''}`} 
-            exact={props.exact ? true : false} 
+          <NavLink
+            className={`side-bar__link ${isActive ? 'side-bar__link--active' : ''}`}
+            exact={props.exact ? true : false}
             to={props.to}
             onClick={setSideBarInActive}>
             <i className={`ui-${props.icon}`}></i> {props.title}
           </NavLink>
         </li>
       )}
-    </AppContext.Consumer>        
+    </AppContext.Consumer>
   );
 };
 
@@ -75,7 +75,7 @@ export { SideBarLink };
 class SideBarSubMenuWithoutRouter extends React.Component {
   constructor(props) {
     super(props);
-    
+
     // Set initial state
     this.state = {
       active: this.hasActiveChild(),
@@ -85,10 +85,10 @@ class SideBarSubMenuWithoutRouter extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
 
-  componentWillMount() {
+  componentDidMount() {
     // // Set sub menu active when a route is changing
     this.historyListener = this.props.history.listen(() => {
-      this.setState({ 
+      this.setState({
         active: this.hasActiveChild(),
         visible: this.hasActiveChild()
       });
@@ -99,15 +99,15 @@ class SideBarSubMenuWithoutRouter extends React.Component {
     // Unlisten history
     this.historyListener();
   }
-  
+
   // Toggle visibility sub menu
-  handleClick() {  
-    this.setState({ 
+  handleClick() {
+    this.setState({
       visible: this.state.visible ? false : true
     });
   }
-  
-  // Look for active links in sub menu 
+
+  // Look for active links in sub menu
   hasActiveChild() {
     let hasActiveChild = false;
     React.Children.map(this.props.children, child => {
@@ -122,7 +122,7 @@ class SideBarSubMenuWithoutRouter extends React.Component {
   render() {
     return (
       <li>
-        <span className={`side-bar__link 
+        <span className={`side-bar__link
           ${this.state.visible ? 'side-bar__link--expanded' : 'side-bar__link--collapsed'}
           ${this.state.active ? 'side-bar__link--active' : ''}`
           } onClick={this.handleClick}>
@@ -131,7 +131,7 @@ class SideBarSubMenuWithoutRouter extends React.Component {
         </span>
         <ul className={`side-bar__sub-menu ${this.state.visible ? 'side-bar__sub-menu--visible' : ''}`}>
           {this.props.children}
-        </ul>       
+        </ul>
       </li>
     );
   }
