@@ -278,9 +278,6 @@ class App extends React.Component {
 
             {/* Theme */}
             <Route path='/theme/business-market' render={(props) => <MarkDownLoader content={BusinessMarketMd} title="Theme" {...props} />} />
-
-            {/* Accessibility */}
-            <Route path="/a11y" component={Accessibility} />
           </Main>
         </div>
       </AppContext.Provider>
