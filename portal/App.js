@@ -23,6 +23,9 @@ import ChangelogMd from './../CHANGELOG.md';
 // Live editor
 import LiveEditor from './LiveEditor';
 
+// Accessibility
+import Accessibility from './Accessibility';
+
 // Base
 import AnimationMd from './../packages/base/animation/ANIMATION.md';
 import ColorMd from './../packages/base/color/COLOR.md';
@@ -252,6 +255,9 @@ class App extends React.Component {
             {/* Theme */}
             <Route exact path="/theme" render={() => <Redirect to="/theme/business-market" />} />
             <Route path='/theme/business-market' render={(props) => <MarkDownLoader file={BusinessMarketMd} title="Theme" {...props} />} />
+
+            {/* Accessibility */}
+            <Route path="/a11y" component={Accessibility} />
           </Main>
         </div>
       </AppContext.Provider>

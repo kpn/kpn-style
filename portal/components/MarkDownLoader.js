@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import CodeBlock from './CodeBlock';
@@ -28,7 +28,7 @@ class MarkDownLoader extends React.Component {
         <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock}} source={this.state.markdown} escapeHtml={false} />
       </Content>
     )
-  }  
+  }
 }
 
 export default MarkDownLoader;
