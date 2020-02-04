@@ -9,10 +9,6 @@ import { TopBar, TopBarMenu } from './components/TopBar';
 /**
  * Pages
  */
-import { ButtonData } from './../packages/component/button/data.js';
-
-
-
 // Start
 import Start from './Start';
 
@@ -45,6 +41,7 @@ import AccordionMd from './../packages/component/accordion/ACCORDION.md';
 import ActionMenuMd from './../packages/component/action-menu/ACTION-MENU.md';
 import BlockMd from './../packages/component/block/BLOCK.md';
 import BreadcrumbMd from './../packages/component/breadcrumb/BREADCRUMB.md';
+import { ButtonData } from './../packages/component/button/data.js';
 import CardMd from './../packages/component/card/CARD.md';
 import ContentMd from './../packages/component/content/CONTENT.md';
 import DialogMd from './../packages/component/dialog/DIALOG.md';

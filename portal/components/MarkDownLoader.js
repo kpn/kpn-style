@@ -42,7 +42,7 @@ class MarkDownLoader extends React.Component {
           <>
             <div className="jumbotron">
               <div className="jumbotron__body">
-                <div className="jumbotron__title">Button</div>
+                <div className="jumbotron__title">{this.props.data.title}</div>
               </div>
             </div>
 
@@ -50,9 +50,9 @@ class MarkDownLoader extends React.Component {
               <ul className="tab__menu">
                 {
                   this.props.data.content.map((content) =>
-                    <>
+                    <React.Fragment key={content.title}>
                       {!content.unlisted &&
-                        <li className="tab__item">
+                        <li  className="tab__item">
                           <NavLink
                             activeClassName="tab__link--active"
                             className="tab__link"
@@ -61,8 +61,9 @@ class MarkDownLoader extends React.Component {
                           </NavLink>
                         </li>
                       }
-                    </>
-                )}
+                    </React.Fragment>
+                  )
+                }
               </ul>
             </nav>
           </>
