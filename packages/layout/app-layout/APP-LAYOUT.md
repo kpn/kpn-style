@@ -9,11 +9,11 @@ Source file: [packages/layout/app-layout/_app-layout.scss](https://github.com/kp
 
 #### Table of contents
   * [Styles](#Styles)
-    * [Overview of layout classes ](#Overview-of-layout-classes)
-    * [Chained classes  ](#Chained-classes)
-    * [Parent and child ](#Parent-and-child)
-    * [Side bar detection ](#Side-bar-detection)
-    * [Activate side bar ](#Activate-Side-bar)
+    * [Overview of layout classes](#Overview-of-layout-classes)
+    * [Chained classes](#Chained-classes)
+    * [Parent and child](#Parent-and-child)
+    * [Side bar detection](#Side-bar-detection)
+    * [Activate side bar](#Activate-Side-bar)
 
 ---
 
