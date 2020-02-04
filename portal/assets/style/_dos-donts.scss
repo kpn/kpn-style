@@ -1,0 +1,56 @@
+.dos-donts {
+  margin: 0 space(-1) space(4);
+
+  @include breakpoint(s) {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .dos-donts__do,
+  .dos-donts__dont {
+    @include box;
+    background-color: white;
+    padding: space(2);
+
+    @include breakpoint(xs, s) {
+      margin-bottom: space(2);
+    }
+
+    @include breakpoint(s) {
+      margin-left: space();
+      margin-right: space();
+      width: calc(50% - #{space(6)});
+    }
+
+    &::before {
+      @include heading;
+      display: block;
+      font-size: 24px;
+      margin-bottom: space(2);
+    }
+  }
+
+  .dos-donts__do {
+    border-bottom: 6px solid color(green);
+
+    &::before {
+      content: "Do";
+      color: color(green);
+    }
+  }
+
+  .dos-donts__dont {
+    border-bottom: 6px solid color(red);
+
+    &::before {
+      content: "Don't";
+      color: color(red);
+    }
+  }
+
+  .dos-donts__description {
+    font-style: italic;
+    margin: space() space() 0;
+    width: 100%;
+  }
+}
