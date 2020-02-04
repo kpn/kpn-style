@@ -11,3 +11,15 @@
 .stylish-cat {
   max-width: 280px;
 }
+
+h1,
+h2,
+h3 {
+  $header-height: $top-bar-height + $title-bar-height + space(3);
+  &:not([class])::before {
+    display: block;
+    height: $header-height;
+    margin-top: -$header-height;
+    content: "";
+  }
+}

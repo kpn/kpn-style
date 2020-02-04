@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 
+import { Anchor, Heading } from './Anchor';
 import CodeBlock from './CodeBlock';
 import Content from './Content';
 import ReplaceKpnStyleBundleVersion from './Convert';
@@ -70,7 +71,7 @@ class MarkDownLoader extends React.Component {
         }
 
         <div className="container">
-          <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock}} source={this.state.markdown} escapeHtml={false} />
+          <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock, link: Anchor, heading: Heading }} source={this.state.markdown} escapeHtml={false} />
         </div>
       </Content>
     )
