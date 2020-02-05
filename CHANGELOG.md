@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to KPN Style will be documented in this file.
 
+## v1.17.0 - 5 February 2020
+- Adds display property [helper classes](/#/base/common)
+- Adds the ability to place text in [Top bar action menu](/#/layout/top-bar) 
+
+This update also adds new features for the portal itself, for example: accesability tests, tabs and table of contents to improve the page structure. 
+
 ## v1.16.0 - 7 January 2020
 - [Table](/#/component/table) cell content will now be vertical aligned at the top.
 - [UI icon](/#/base/ui-icon) sizes are changed to follow KPN designs. `ui--small` to 18px, `ui--large` to 36px.
