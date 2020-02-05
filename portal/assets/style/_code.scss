@@ -44,6 +44,7 @@ div.code-toolbar {
 .code-example {
   @include box;
   background-color: color(grey, white);
+  margin-bottom: space(4);
   padding: space(2);
   position: relative; // Necessary for specific examples like Dialog
 

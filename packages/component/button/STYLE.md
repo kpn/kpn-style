@@ -1,29 +1,9 @@
 # Style
-Create any type of clickable button with ease. Inside a button you can put a short text (call to action) and a [UI icon](/#/base/ui-icon).
-
 Source file: [packages/component/button/_button.scss](https://github.com/kpn/kpn-style/blob/master/packages/component/button/_button.scss)
 
 ---
 
-## Customizable variables
-
-### Font size
-```scss
-$button-font-size-s: [value for small button];
-$button-font-size-m: [value for medium button];
-$button-font-size-l: [value for large button];
-```
-
-### Height
-```scss
-$button-height-s: [value for small button];
-$button-height-m: [value for medium button];
-$button-height-l: [value for large button];
-```
-
----
-
-## Styles
+## HTML/CSS examples
 
 ### Primary button
 ```html*example
@@ -31,7 +11,7 @@ $button-height-l: [value for large button];
 ```
 
 ### Buttons in group
-You can wrap a series of buttons together in a group.
+Wrap a series of buttons together in a group.
 
 ```html*example
 <div class="button-group">
@@ -57,6 +37,7 @@ You can wrap a series of buttons together in a group.
 
 ### Button with Progress spinner
 See also [Progress spinner](/#/component/progress).
+
 ```html*example
 <button class="button button--spinner">Loading</button>
 ```
@@ -108,12 +89,10 @@ Responsive buttons will span the full width of their container (like fluid butto
 ```
 
 #### Right aligned buttons
-*Make sure to always right align button groups at the bottom of a page or card. There should only be one primary button per page/functionality, which should be the rightmost one.*
-
 ```html*example
 <div class="button-group button-group--right">
-  <button class="button button--secondary">Secondary</button>
   <button class="button">Primary</button>
+  <button class="button button--secondary">Secondary</button>
 </div>
 ```
 
@@ -125,3 +104,23 @@ Reversed buttons will be shown from last to first (based on the HTML definition)
   <button class="button">Primary</button>
   <button class="button button--secondary">Secondary</button>
 </div>
+```
+
+---
+
+## Sass
+### Customizable variables
+
+#### Font size
+```scss
+$button-font-size-s: [value for small button];
+$button-font-size-m: [value for medium button];
+$button-font-size-l: [value for large button];
+```
+
+#### Height
+```scss
+$button-height-s: [value for small button];
+$button-height-m: [value for medium button];
+$button-height-l: [value for large button];
+```
