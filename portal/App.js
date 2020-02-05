@@ -1,4 +1,6 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
+import axe from 'react-axe';
 import { Redirect, Route } from 'react-router-dom';
 
 import Main from './components/Main';
@@ -74,6 +76,8 @@ import WebLayoutMd from './../packages/layout/web-layout/WEB-LAYOUT.md';
 
 // Theme
 import BusinessMarketMd from './../packages/theme/business-market/BUSINESS-MARKET.md';
+
+axe(React, ReactDOM, 1000);
 
 // App context
 const AppContext = React.createContext({

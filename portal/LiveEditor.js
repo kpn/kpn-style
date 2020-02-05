@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import Content from './components/Content';
 import CodeEditor from './components/CodeEditor';
