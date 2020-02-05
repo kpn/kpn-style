@@ -146,5 +146,11 @@
         color: color(blue);
       }
     }
+
+    small {
+      display: block;
+      font-size: 0.7em;
+      padding: space(0.5) space() 0;
+    }
   }
 }

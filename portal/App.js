@@ -77,7 +77,8 @@ import BusinessMarketMd from './../packages/theme/business-market/BUSINESS-MARKE
 
 // App context
 const AppContext = React.createContext({
-  sideBarActive: false
+  blackAndWhiteActive: false,
+  sideBarActive: false,
 });
 
 export { AppContext };
@@ -87,11 +88,25 @@ class App extends React.Component {
     super(props);
 
     this.state = {
+      blackAndWhiteActive: false,
       sideBarActive: false
     };
 
     this.setSideBarActive = this.setSideBarActive.bind(this);
     this.setSideBarInActive = this.setSideBarInActive.bind(this);
+    this.toggleBlackAndWhite = this.toggleBlackAndWhite.bind(this);
+  }
+
+  toggleBlackAndWhite() {
+    if(this.state.blackAndWhiteActive) {
+      this.setState({
+        blackAndWhiteActive: false
+      });
+    } else {
+      this.setState({
+        blackAndWhiteActive: true
+      });
+    }
   }
 
   setSideBarActive() {
@@ -131,8 +146,16 @@ class App extends React.Component {
 
   render() {
     return(
-      <AppContext.Provider value={{setSideBarActive: this.setSideBarActive, setSideBarInActive: this.setSideBarInActive}}>
-        <div className={`app-layout ${this.state.sideBarActive ? 'app-layout--active-side-bar' : ''}`}>
+      <AppContext.Provider value={{
+        setSideBarActive: this.setSideBarActive,
+        setSideBarInActive: this.setSideBarInActive,
+        toggleBlackAndWhite: this.toggleBlackAndWhite,
+        blackAndWhiteActive: this.state.blackAndWhiteActive
+        }}>
+        <div className={`app-layout
+          ${this.state.sideBarActive ? 'app-layout--active-side-bar' : ''}
+          ${this.state.blackAndWhiteActive ? 'app-layout--black-and-white' : ''}
+        `}>
           <TopBar title="KPN Style">
             <TopBarMenu />
           </TopBar>
