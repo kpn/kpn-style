@@ -1,3 +1,7 @@
+.app-layout--black-and-white .code-example {
+  filter: grayscale(1);
+}
+
 .kpn-style-logo {
   @include shadow(3);
   border-radius: 20px;
