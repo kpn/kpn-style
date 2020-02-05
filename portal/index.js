@@ -19,7 +19,7 @@ if(window.location.hostname !== 'style.kpn.com') {
 }
 
 ReactDOM.render((
-  <Router basename={'/'}>
+  <Router onUpdate={() => window.scrollTo(0, 0)} basename={'/'}>
     <App />
   </Router>
 ), document.getElementById('kpn-style-portal'));
