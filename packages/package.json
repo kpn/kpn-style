@@ -2,7 +2,7 @@
   "name": "@kpn-style/bundle",
   "description": "Bundle of all KPN Style packages",
   "keywords": [],
-  "version": "1.17.0",
+  "version": "1.17.1",
   "author": "KPN",
   "license": "MIT",
   "main": "_bundle.scss"
