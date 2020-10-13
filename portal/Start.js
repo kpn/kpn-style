@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 import portalPackageJson from '../package.json'
 import bundlePackageJson from './../packages/package.json'
 import Content from './components/Content';
+import KermitNotification from './components/KermitNotification';
 import logoKpnStyle from './assets/image/logo-kpn-style.png';
 
 const Start = () => (
@@ -31,6 +32,7 @@ const Start = () => (
     </div>
 
     <section className="container container--limited">
+      <KermitNotification classes="margin-bottom-3" />
       <div className="row">
         <div className="col col--m-4">
           <div className="tile tile--stretch">

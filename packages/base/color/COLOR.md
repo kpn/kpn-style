@@ -44,7 +44,7 @@ p {
 
 ### Green
 <div class="example-color">
-  <div class="example-color__green-subtle"><code>color(green, subtle)</code> <code>#f4fa43</code></div>
+  <div class="example-color__green-subtle"><code>color(green, subtle)</code> <code>#f4fae3</code></div>
   <div class="example-color__green-light"><code>color(green, light)</code> <code>#ccdd77</code></div>
   <div class="example-color__green-bright"><code>color(green, bright)</code> <code>#99cc00</code></div>
   <div class="example-color__green-default"><code>color(green)</code> <code>#009900</code></div>

@@ -6,6 +6,7 @@ import { Anchor, Heading } from './Anchor';
 import CodeBlock from './CodeBlock';
 import Content from './Content';
 import ReplaceKpnStyleBundleVersion from './Convert';
+import KermitNotification from './KermitNotification';
 
 class MarkDownLoader extends React.Component {
   constructor(props) {
@@ -71,6 +72,7 @@ class MarkDownLoader extends React.Component {
         }
 
         <div className="container">
+          <KermitNotification classes="margin-bottom-2" />
           <ReactMarkdown className="kpn-style" renderers={{code: CodeBlock, link: Anchor, heading: Heading }} source={this.state.markdown} escapeHtml={false} />
         </div>
       </Content>

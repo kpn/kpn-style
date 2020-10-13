@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to KPN Style will be documented in this file.
 
+## v1.17.1 - 13 October 2020
+- Puts KPN Style in maintenance mode
+- Fixes wrong color value in [color](/#/base/color) documentation 
+
 ## v1.17.0 - 5 February 2020
 - Adds display property [helper classes](/#/base/common)
 - Adds the ability to place text in [Top bar action menu](/#/layout/top-bar) 
